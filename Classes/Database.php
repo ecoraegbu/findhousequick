@@ -40,7 +40,6 @@ class Database{
             }
             if($this->query->execute()){
                 $this->results = $this->query->fetchAll(PDO::FETCH_OBJ);
-                //print_r($this->_results);
                 $this->count = $this->query->rowCount();
             }else{
                 $this->error = true;
@@ -87,7 +86,6 @@ class Database{
                 $x++;
             }
             $sql ="INSERT INTO {$table}(`". implode('`,`', $keys) ."`)VALUES({$values})";
-			print_r($sql);
            if(!$this->query($sql, $fields)->error()){
                 return true;
            
@@ -239,8 +237,10 @@ public function modify_table($db_name, $table_name, $table_structure) {
     }
 
     // Modify the table structure
-    $this->connection->exec($table_structure);
-    echo "Successfully modified table: $table_name\n";
+    if($this->connection->exec($table_structure)){
+        echo "Successfully modified table: $table_name\n";
+    };
+    
 }
 
 /**
