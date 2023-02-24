@@ -153,12 +153,103 @@ class Database{
         }
         return false;
     }
+
+/**
+ * Creates a new table with the given name and structure in the specified database, if it does not already exist.
+ *
+ * @param string $table_name the name of the table to create
+ * @param string $table_structure the structure of the table, as an SQL `CREATE TABLE` statement
+ */
+public function create_table($db_name, $table_name, $table_structure) {
+    $this->connection->exec("USE $db_name");
+    // Check if the table already exists
+    $stmt = $this->connection->query("SHOW TABLES LIKE '$table_name'");
+    if ($stmt->rowCount() > 0) {
+        echo "Error: Table '$table_name' already exists.\n";
+        return;
+    }
+
+    // Create the table
+    $this->connection->exec($table_structure);
+    echo "Successfully created table: $table_name\n";
+}
+
+/**
+ * Drops the table with the given name in the specified database, if it exists.
+ *
+ * @param string $table_name the name of the table to drop
+ */
+public function drop_table($db_name, $table_name) {
+    $this->connection->exec("USE $db_name");
+    // Check if the table exists
+    $stmt = $this->connection->prepare("SHOW TABLES LIKE ?");
+    $stmt->execute([$table_name]);
+    if ($stmt->rowCount() == 1) {
+        // If the table exists, drop it
+        $this->connection->exec("DROP TABLE $table_name");
+        echo "Successfully dropped table: $table_name\n";
+    } else {
+        // If the table does not exist, print an error message
+        echo "Error: Table '$table_name' does not exist.\n";
+    }
+}
+
+/**
+ * Drops the tables with the given names in the specified database, if they exist.
+ *
+ * @param string $db_name the name of the database to drop the tables from
+ * @param array $table_names an array of table names to drop
+ */
+public function drop_tables($db_name, $table_names) {
+    // Select the specified database
+    $this->connection->exec("USE $db_name");
+
+    // Loop through the array of table names
+    foreach ($table_names as $table_name) {
+        // Check if the table exists
+        $stmt = $this->connection->query("SHOW TABLES LIKE '$table_name'");
+        if ($stmt->rowCount() == 1) {
+            // If the table exists, drop it
+            $this->connection->exec("DROP TABLE $table_name");
+            echo "Successfully dropped table: $table_name\n";
+        } else {
+            // If the table does not exist, print an error message
+            echo "Error: Table '$table_name' does not exist.\n";
+        }
+    }
+}
+
+
+/**
+ * Modifies the structure of the given table in the specified database.
+ *
+ * @param string $db_name the name of the database to modify the table in
+ * @param string $table_name the name of the table to modify
+ * @param string $table_structure the new structure of the table, as an SQL `ALTER TABLE` statement
+ */
+public function modify_table($db_name, $table_name, $table_structure) {
+    // Select the specified database
+    $this->connection->exec("USE $db_name");
+
+    // Check if the table exists
+    $stmt = $this->connection->query("SHOW TABLES LIKE '$table_name'");
+    if ($stmt->rowCount() == 0) {
+        echo "Error: Table '$table_name' does not exist.\n";
+        return;
+    }
+
+    // Modify the table structure
+    $this->connection->exec($table_structure);
+    echo "Successfully modified table: $table_name\n";
+}
+
 /**
  * Executes the SQL script at the given file path on the specified database, if the file is readable.
  *
  * @param string $db_name the name of the database to execute the script on
  * @param string $script_path the file path of the SQL script to execute
  */
+
 public function execute_sql_script($db_name, $script_path) {
     // Check if the file is readable
     if (is_readable($script_path)) {
