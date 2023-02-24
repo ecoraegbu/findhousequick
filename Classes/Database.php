@@ -130,4 +130,59 @@ class Database{
     public function count(){
         return $this->count;
     }
+    
+    public function create_database($db_name) {
+        // Check if the database already exists
+        $stmt = $this->connection->prepare("SELECT SCHEMA_NAME FROM INFORMATION_SCHEMA.SCHEMATA WHERE SCHEMA_NAME = ?");
+        $stmt->execute([$db_name]);
+        if ($stmt->fetch()) {
+            // If the database already exists, print an error message and exit
+            die("Error: Database '$db_name' already exists.\n");
+        } else {
+            // If the database does not exist, create it
+            $this->connection->exec("CREATE DATABASE $db_name");
+            echo "Successfully created database: $db_name\n";
+        }
+    }
+    public function drop_database($db_name)
+    {
+        $sql = "DROP DATABASE $db_name";
+        if(!$this->query($sql)->error()){
+            echo "Successfully dropped database: $db_name\n";
+            return true;
+        }
+        return false;
+    }
+/**
+ * Executes the SQL script at the given file path on the specified database, if the file is readable.
+ *
+ * @param string $db_name the name of the database to execute the script on
+ * @param string $script_path the file path of the SQL script to execute
+ */
+public function execute_sql_script($db_name, $script_path) {
+    // Check if the file is readable
+    if (is_readable($script_path)) {
+        // Read the contents of the SQL script file
+        $sql_script = file_get_contents($script_path);
+
+        // Select the specified database
+        $this->connection->exec("USE $db_name");
+
+        // Prepare the SQL script for execution
+        $stmt = $this->connection->prepare($sql_script);
+
+        // Execute the SQL script
+        if ($stmt->execute()) {
+            echo "Successfully executed SQL script: $script_path\n";
+        } else {
+            // If the script fails to execute, print an error message and exit the program
+            die("Error: Could not execute SQL script '$script_path': " . implode(", ", $stmt->errorInfo()) . "\n");
+        }
+    } else {
+        // If the file is not readable, print an error message and exit the program
+        die("Error: Cannot read SQL script file '$script_path'.\n");
+    }
+}
+
+
 }

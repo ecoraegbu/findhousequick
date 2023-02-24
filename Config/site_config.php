@@ -1,9 +1,20 @@
 <?php
+$GLOBALS['config'] = array(
+    'remember' => array(
+        'cookie_name' => 'hash',
+        'cookie_expiry' => 604800
+    ),
+    'session' => array(
+        'session_name' => 'user',
+        'token_name' => 'token'
+    )
+);
+
 // database configuration
 define('DB_HOST', 'localhost');
-define('DB_NAME', 'your_database_name');
-define('DB_USER', 'your_database_username');
-define('DB_PASSWORD', 'your_database_password');
+define('DB_NAME', 'school');
+define('DB_USER', 'root');
+define('DB_PASSWORD', '');
 
 // website settings
 define('SITE_NAME', 'FindHouseQuick');

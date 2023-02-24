@@ -12,7 +12,7 @@ class Config {
     public static function get($path = null) {
         // Load the config array into the static variable if it hasn't been loaded yet
         if (!self::$config) {
-            self::$config = include 'config.php';
+            self::$config = include 'Config/site_config.php';
         }
 
         // If a path is specified, traverse the config array to find the value
@@ -27,7 +27,7 @@ class Config {
                     return false;
                 }
             }
-
+            echo ($config);
             return $config;
         }
 
