@@ -5,6 +5,7 @@ class ImageUploader {
   private $maxSize = 10485760; // maximum file size in bytes (10MB)
   private $uploadDirectory = 'uploads/'; // directory where uploaded files will be saved
 
+
   //create the uploads folder if it doesn't exist
   public function __construct($directory = null) {
     
@@ -21,11 +22,10 @@ class ImageUploader {
             throw new Exception('Error: Failed to create directory');
         }
       }
-      print($directory);
       $this->uploadDirectory =$directory;
     }
   // method to upload an image file
-  public function upload($file) {
+  public function upload($file, $image_name) {
     $filename = $file['name']; // get the file name
     $tempFilePath = $file['tmp_name']; // get the temporary file path on the server
     $fileExtension = pathinfo($filename, PATHINFO_EXTENSION); // get the file extension
@@ -42,8 +42,7 @@ class ImageUploader {
 
     // generate a unique file name and upload the file to the specified directory. we are going to replace 
     //uniqid with specific names
-    $uploadPath = $this->uploadDirectory . uniqid() . '.' . $fileExtension;
-    print($uploadPath);
+    $uploadPath = $this->uploadDirectory . $image_name . '.' . $fileExtension;
     if (!move_uploaded_file($tempFilePath, $uploadPath)) {
       throw new Exception('Error uploading file.');
     }
@@ -61,4 +60,5 @@ class ImageUploader {
   private function isValidSize($size) {
     return $size <= $this->maxSize;
   }
+
 }

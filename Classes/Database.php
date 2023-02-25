@@ -29,16 +29,19 @@ class Database{
     }
 
     public function query($sql, $params = array()){
+
         $this->error = false;
         if($this->query = $this->connection->prepare($sql)){
             $x =1;
             if(count($params)){
                 foreach($params as $param){
+                    
                    $this->query->bindValue($x, $param);
                     $x++;
                 }
             }
             if($this->query->execute()){
+
                 $this->results = $this->query->fetchAll(PDO::FETCH_OBJ);
                 $this->count = $this->query->rowCount();
             }else{

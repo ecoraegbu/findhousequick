@@ -1,89 +1,125 @@
 <?php
-
-class Validation {
-  // validate required field
-  public static function required($value, $fieldName) {
-    if (empty(trim($value))) {
-      return "$fieldName is required.";
+class Validator {
+    private $data;
+    private $errors = array();
+    private $db;
+    
+    public function __construct($data) {
+        $this->data = $data;
+        $this->db = Database::getInstance();
     }
-    return null;
-  }
+    
+    public function validate($rules) {
+        foreach($rules as $item => $rule) {
+            $value = trim($this->data[$item]);
+            $rules = explode('|', $rule);
 
-  // validate email address
-  public static function email($value, $fieldName) {
-    if (!filter_var($value, FILTER_VALIDATE_EMAIL)) {
-      return "Invalid $fieldName format.";
+            foreach($rules as $rule) {
+                $rule_value = null;
+                if(strpos($rule, ':') !== false) {
+                    list($rule, $rule_value) = explode(':', $rule, 2);
+                }
+
+                switch($rule) {
+                    case 'required':
+                        if(empty($value)) {
+                            $this->addError("{$item} is required.");
+                        }
+                        break;
+
+                    case 'matches':
+                        if($value != $this->data[$rule_value]){
+                            $this->addError("{$rule_value} must match $item");
+                        }
+                        break;
+
+                    case 'unique':
+                      print($rule_value);
+                        $check = $this->db->get($rule_value, array($item, '=', $value));
+                        if($check->count()){
+                            $this->addError("{$item} already exists.");
+                        }
+                        break;
+
+                    case 'regex':
+                        if(!preg_match("/$rule_value/", $value)) {
+                            $this->addError("{$item} must contain a capital letter and at least one number");
+                        }
+                        break;
+                        case 'alpha':
+                          if(!ctype_alpha($value)){
+                              $this->addError("{$item} must only contain letters.");
+                          }
+                          break;
+                      case 'alpha_num':
+                          if(!ctype_alnum($value)){
+                              $this->addError("{$item} must only contain letters and numbers.");
+                          }
+                          break;
+                      case 'alpha_dash':
+                          if(!preg_match('/^[a-zA-Z0-9_\-]+$/', $value)){
+                              $this->addError("{$item} must only contain letters, numbers, underscores, and dashes.");
+                          }
+                          break;
+                      case 'numeric':
+                          if(!is_numeric($value)){
+                              $this->addError("{$item} must be a number.");
+                          }
+                          break;
+                      case 'email':
+                          if(!filter_var($value, FILTER_VALIDATE_EMAIL)){
+                              $this->addError("{$item} is not a valid email address.");
+                          }
+                          break;
+                      case 'url':
+                          if(!filter_var($value, FILTER_VALIDATE_URL)){
+                              $this->addError("{$item} is not a valid URL.");
+                          }
+                          break;
+                      case 'ip':
+                          if(!filter_var($value, FILTER_VALIDATE_IP)){
+                              $this->addError("{$item} is not a valid IP address.");
+                          }
+                          break;
+                      case 'alpha_space':
+                          if(!preg_match('/^[a-zA-Z\s]+$/', $value)){
+                              $this->addError("{$item} must only contain letters and spaces.");
+                          }
+                          break;
+                      case 'min_length':
+                          if(strlen($value) < $rule_value){
+                              $this->addError("{$item} must be a minimum of {$rule_value} characters.");
+                          }
+                          break;
+                      case 'max_length':
+                          if(strlen($value) > $rule_value){
+                              $this->addError("{$item} must be a maximum of {$rule_value} characters.");
+                          }
+                          break;
+
+                    default:
+                        // do nothing
+                        break;
+                }
+            }
+        }
+
+        return $this;
     }
-    return null;
-  }
-
-  // validate integer
-  public static function integer($value, $fieldName) {
-    if (!is_numeric($value) || strpos($value, '.') !== false) {
-      return "$fieldName must be an integer.";
+    
+    public function passes() {
+        return empty($this->errors);
     }
-    return null;
-  }
-
-  // validate float
-  public static function float($value, $fieldName) {
-    if (!is_numeric($value)) {
-      return "$fieldName must be a float.";
+    
+    public function fails() {
+        return !$this->passes();
     }
-    return null;
-  }
-
-  // validate string length
-  public static function stringLength($value, $fieldName, $minLength = null, $maxLength = null) {
-    $length = strlen($value);
-
-    if ($minLength !== null && $length < $minLength) {
-      return "$fieldName must be at least $minLength characters long.";
+    
+    public function errors() {
+        return $this->errors;
     }
-
-    if ($maxLength !== null && $length > $maxLength) {
-      return "$fieldName must be no longer than $maxLength characters.";
+    
+    private function addError($error) {
+        $this->errors[] = $error;
     }
-
-    return null;
-  }
-
-  // validate regex pattern
-  public static function regex($value, $fieldName, $pattern) {
-    if (!preg_match($pattern, $value)) {
-      return "Invalid $fieldName format.";
-    }
-    return null;
-  }
-
-  // validate file upload
-  public static function fileUpload($file, $fieldName, $allowedExtensions = [], $maxSize = null) {
-    if (!isset($file['error']) || is_array($file['error'])) {
-      return "Invalid $fieldName format.";
-    }
-
-    switch ($file['error']) {
-      case UPLOAD_ERR_OK:
-        break;
-      case UPLOAD_ERR_NO_FILE:
-        return "$fieldName is required.";
-      case UPLOAD_ERR_INI_SIZE:
-      case UPLOAD_ERR_FORM_SIZE:
-        return "$fieldName file is too large.";
-      default:
-        return "Unknown error occurred while uploading $fieldName file.";
-    }
-
-    if ($maxSize !== null && $file['size'] > $maxSize) {
-      return "$fieldName file is too large.";
-    }
-
-    $fileExtension = pathinfo($file['name'], PATHINFO_EXTENSION);
-    if (!in_array($fileExtension, $allowedExtensions)) {
-      $allowedExtensionsString = implode(', ', $allowedExtensions);
-      return "$fieldName file must be of type $allowedExtensionsString.";
-    }
-
-    return null;
-  }
 }

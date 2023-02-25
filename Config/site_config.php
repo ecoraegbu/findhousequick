@@ -12,7 +12,7 @@ $GLOBALS['config'] = array(
 
 // database configuration
 define('DB_HOST', 'localhost');
-define('DB_NAME', 'school');
+define('DB_NAME', 'findhousequick');
 define('DB_USER', 'root');
 define('DB_PASSWORD', '');
 
