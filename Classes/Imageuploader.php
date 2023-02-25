@@ -5,6 +5,25 @@ class ImageUploader {
   private $maxSize = 10485760; // maximum file size in bytes (10MB)
   private $uploadDirectory = 'uploads/'; // directory where uploaded files will be saved
 
+  //create the uploads folder if it doesn't exist
+  public function __construct($directory = null) {
+    
+    if(!$directory){
+      // Check if the directory exists
+      $directory = ROOT_DIRECTORY . '/findhousequick/uploads/';
+    }
+    
+
+    if (!is_dir($directory)) {
+        // If the directory doesn't exist, create it
+        if (!mkdir($directory, 0777, true)) {
+            // If the directory can't be created, throw an exception
+            throw new Exception('Error: Failed to create directory');
+        }
+      }
+      print($directory);
+      $this->uploadDirectory =$directory;
+    }
   // method to upload an image file
   public function upload($file) {
     $filename = $file['name']; // get the file name
@@ -24,6 +43,7 @@ class ImageUploader {
     // generate a unique file name and upload the file to the specified directory. we are going to replace 
     //uniqid with specific names
     $uploadPath = $this->uploadDirectory . uniqid() . '.' . $fileExtension;
+    print($uploadPath);
     if (!move_uploaded_file($tempFilePath, $uploadPath)) {
       throw new Exception('Error uploading file.');
     }

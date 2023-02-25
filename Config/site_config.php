@@ -17,6 +17,7 @@ define('DB_USER', 'root');
 define('DB_PASSWORD', '');
 
 // website settings
+define('ROOT_DIRECTORY', $_SERVER['DOCUMENT_ROOT']);
 define('SITE_NAME', 'FindHouseQuick');
 define('BASE_URL', 'http://localhost/findhousequick/');
 define('DEFAULT_PAGE_TITLE', 'FindHouseQuick - Your One-Stop Real Estate Destination');
