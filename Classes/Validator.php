@@ -34,12 +34,13 @@ class Validator {
                         break;
 
                     case 'unique':
-                      print($rule_value);
-                        $check = $this->db->get($rule_value, array($item, '=', $value));
+                        list($table, $column) = explode(',', $rule_value, 2);
+                        $check = $this->db->get($table, array($column, '=', $value));
                         if($check->count()){
                             $this->addError("{$item} already exists.");
                         }
                         break;
+                        
 
                     case 'regex':
                         if(!preg_match("/$rule_value/", $value)) {

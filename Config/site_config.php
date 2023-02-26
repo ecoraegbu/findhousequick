@@ -8,7 +8,11 @@ $GLOBALS['config'] = array(
         'session_name' => 'user',
         'token_name' => 'token'
     )
-);
+); 
+
+
+
+
 
 // database configuration
 define('DB_HOST', 'localhost');
@@ -52,3 +56,4 @@ define('USER_ROLE_TENANT', 4);
 // other settings
 define('MAX_FILE_SIZE', 1024 * 1024 * 2); // maximum file size in bytes (2 MB)
 define('DEFAULT_TIMEZONE', 'Africa/Lagos'); // default timezone for date and time functions
+
