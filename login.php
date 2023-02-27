@@ -3,8 +3,9 @@ require_once 'core/init.php';
 
 Config::get('remember/cookie_name') ;
 if (Input::exists()){
+    
     if(Token::check(Input::get('token'))){
-
+        
         $data =[];
         $email = Input::get('email');
         $password = Input::get('password');
@@ -31,8 +32,7 @@ if (Input::exists()){
         
         } else {
                 foreach($validate->errors() as $error){
-                    echo $error.'<br>';
-                    echo $email.'<br>';
+                  
                 }
             }
     }

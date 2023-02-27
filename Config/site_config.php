@@ -52,6 +52,7 @@ define('USER_ROLE_ADMIN', 1);
 define('USER_ROLE_AGENT', 2);
 define('USER_ROLE_LANDLORD', 3);
 define('USER_ROLE_TENANT', 4);
+define('USER_ROLE_ORDINARY', 5);
 
 // other settings
 define('MAX_FILE_SIZE', 1024 * 1024 * 2); // maximum file size in bytes (2 MB)
