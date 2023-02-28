@@ -57,34 +57,41 @@ public function login ($email = null, $password = null, $remember = false){
     
 
     if (!$email && !$password && $this->exists()){
+        
         Session::put($this->sessionName, $this->data()->id);
      
 
     } else{
-    $user = $this->find($email);    
-
-        if($user){
-            if($this->data()->password === Hash::make($password, $this->data()->salt)){
-                Session::put($this->sessionName, $this->data()->email);
+        $user = $this->find($email);    
+            
+            if($user){
                 
-                if($remember){
-                    $hash = Hash::unique();
-                    $hashcheck = $this->database_connection->get('userssessions', array('userid', '=', $this->data()->id));
-                    if(!$hashcheck->count()){
-                        $this->database_connection->insert('userssessions', array(
-                            'userid' => $this->data()->id,
-                            'hash' => $hash
-                        ));
-                    }else{
-                        $hash = $hashcheck->first()->hash;
+                    
+                    
+                if($this->data()->password === Hash::make($password, $this->data()->salt)){
+                    
+                    Session::put($this->sessionName, $this->data()->email);
+                    
+                    if($remember){
+                        
+                        $hash = Hash::unique();
+                        $hashcheck = $this->database_connection->get('userssessions', array('userid', '=', $this->data()->id));
+                        if(!$hashcheck->count()){
+                            $this->database_connection->insert('userssessions', array(
+                                'userid' => $this->data()->id,
+                                'hash' => $hash
+                            ));
+                        }else{
+                            $hash = $hashcheck->first()->hash;
+                        }
+                        Cookie::put($this->cookieName, $hash, Config::get('remember/cookie_expiry'));
                     }
-                    Cookie::put($this->cookieName, $hash, Config::get('remember/cookie_expiry'));
-                }
+                    return true;
                 }
             }
-            return true;
+                
     }
-        return false;
+    return false;
 }
 //THE FUNCTION FOR UPDATING USER DATA IN THE DATABASE
 public function update($table, $fields, $id = null){

@@ -24,10 +24,12 @@ if (Input::exists()){
             $remember = (Input::get('remember') === 'on') ? true : false;
         
            $login = $user->login( Input::get('email'), Input::get('password'), $remember);
+           
             if($login){
+              
                 Redirect::to('index.php');
             }  else{
-                echo 'sorry';
+                die('sorry');
             }
         
         } else {
@@ -103,11 +105,11 @@ if (Input::exists()){
       <form action="login.php" method="post">
         <div class="form-group">
           <label for="email">Username</label>
-          <input type="text" name="email" id="email" required>
+          <input type="text" name="email" id="email" >
         </div>
         <div class="form-group">
           <label for="password">Password</label>
-          <input type="password" name="password" id="password" required>
+          <input type="password" name="password" id="password" >
         </div>
         <div class="form-group">
             <input type ="hidden" name="token" value ="<?php echo Token::generate(); ?>">

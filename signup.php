@@ -5,7 +5,7 @@ if(Input::exists()){
     if(Token::check(Input::get('token'))){
         
         $rules =[
-            'email' => 'required|email|max:255|unique:users,email',
+          'email' => 'required|email|max:255',
 	        'password' => 'required|string|min:8|max:255',
         ];
         $data = [];
