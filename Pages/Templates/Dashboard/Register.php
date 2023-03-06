@@ -1,5 +1,9 @@
 <?php include('Layout/AuthHeader.php') ?>
 
+<!-- Page Title -->
+<title>Sign Up | FindHouseQuick </title>
+</head>
+
 <body>
   <div class="grid grid-cols-1 md:grid-cols-none h-screen">
     <section class="bg-register hover:grayscale grayscale-0 transition-all hidden md:block bg-blend-multiply bg-primary bg-opacity-50 col-start-1 col-end-10">
@@ -16,13 +20,6 @@
 
 
         <form action="" class="mt-10">
-          <div class="relative bg-main flex items-center pl-2 rounded-lg">
-            <span class="inline-block bg-white p-2 text-primary rounded-lg">
-              <i icon-name="form-input" class="h-4 w-4"></i>
-            </span>
-            <input type="text" placeholder="Jane Doe" class="text-sm px-2 py-4 bg-main text-gray-700 rounded-lg w-full outline-none">
-          </div>
-          <!-- <small class="text-red-500">Name field is required</small> -->
 
           <div class="relative bg-main flex items-center pl-2 rounded-lg mt-3">
             <span class="inline-block bg-white p-2 text-primary rounded-lg">
@@ -54,7 +51,7 @@
           </div> -->
 
 
-          <button type="submit" class="mt-6 w-full px-6 py-3 text-white text-sm rounded-lg bg-primary font-medium hover:bg-blue-600">Login</button>
+          <button type="submit" class="mt-6 w-full px-6 py-3 text-white text-sm rounded-lg bg-primary font-medium hover:bg-blue-600">Sign Up</button>
 
         </form>
 
