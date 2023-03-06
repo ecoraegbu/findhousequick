@@ -5,6 +5,7 @@ class User{
     private $sessionName;
     private $cookieName;
     private $isloggedin;
+    private $errors = array();
 
 // CONSTRUCT METHOD AUTOMATICALLY INITIATES A CONNECTION TO THE DATABASE GETS THE SESSION NAME AND COOKIE NAME CHECKS IF A USER IS LOGGED IN OTHERWISES INITIATES THE FIND USER PROTOCOL
 public function __construct($user = null){
@@ -59,6 +60,7 @@ public function login ($email = null, $password = null, $remember = false){
     if (!$email && !$password && $this->exists()){
         
         Session::put($this->sessionName, $this->data()->id);
+        $this->isloggedin = true;
      
 
     } else{
@@ -86,8 +88,13 @@ public function login ($email = null, $password = null, $remember = false){
                         }
                         Cookie::put($this->cookieName, $hash, Config::get('remember/cookie_expiry'));
                     }
+                    $this->isloggedin = true;
                     return true;
+                } else{
+                    $this->addError("Invalid password.");
                 }
+            } else{
+                $this->addError("User not found.");
             }
                 
     }
@@ -129,5 +136,11 @@ public function exists(){
 public function data(){
     return $this->data; 
 }
+public function errors() {
+    return $this->errors;
+}
 
+private function addError($error) {
+    $this->errors[] = $error;
+}
 }

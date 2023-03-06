@@ -28,8 +28,9 @@ class Validator {
                         break;
 
                     case 'matches':
+
                         if($value != $this->data[$rule_value]){
-                            $this->addError("{$rule_value} must match $item");
+                            $this->addError("{$item}s must match");
                         }
                         break;
 
@@ -43,8 +44,9 @@ class Validator {
                         
 
                     case 'regex':
-                        if(!preg_match("/$rule_value/", $value)) {
-                            $this->addError("{$item} must contain a capital letter and at least one number");
+                        
+                        if(!preg_match($rule_value, $value)) {
+                            $this->addError("{$item} must contain a capital letter, a number and a special character");
                         }
                         break;
                         case 'alpha':
@@ -87,12 +89,12 @@ class Validator {
                               $this->addError("{$item} must only contain letters and spaces.");
                           }
                           break;
-                      case 'min_length':
+                      case 'min':
                           if(strlen($value) < $rule_value){
                               $this->addError("{$item} must be a minimum of {$rule_value} characters.");
                           }
                           break;
-                      case 'max_length':
+                      case 'max':
                           if(strlen($value) > $rule_value){
                               $this->addError("{$item} must be a maximum of {$rule_value} characters.");
                           }
