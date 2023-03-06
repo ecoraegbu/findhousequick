@@ -27,9 +27,11 @@ if (Input::exists()){
            
             if($login){
               
-                Redirect::to('index.php');
+                Redirect::to('findhousequick/index.php');
             }  else{
-                die('sorry');
+                foreach($user->errors() as $error){
+                  
+                }
             }
         
         } else {

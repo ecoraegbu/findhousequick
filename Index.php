@@ -1,6 +1,9 @@
 <?php
 require_once 'Core/Init.php';
-
+$user = new User();
+if($user->isloggedin()){
+    print_r($_SESSION);
+}
 
 $directory = new DirectoryCreator();
 if (Input::exists()){

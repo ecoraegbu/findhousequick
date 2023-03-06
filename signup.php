@@ -5,12 +5,14 @@ if(Input::exists()){
     if(Token::check(Input::get('token'))){
         
         $rules =[
-          'email' => 'required|email|max:255',
-	        'password' => 'required|string|min:8|max:255',
+          'email' => 'required|email|max:255|unique:users,email',
+	        'password' => 'required|string|min:8|max:20|matches:confirm_password|regex:/^(?=.*?[A-Z])(?=.*?[0-9])(?=.*?[@#$%&.*]).+$/',
+          'confirm_password' => 'required|string|min:8|max:255',
         ];
         $data = [];
         $data['email'] = Input::get('email');
         $data['password'] = Input::get('password');
+        $data['confirm_password'] = Input::get('confirm_password');
         $validate = new Validator($data);
         $result = $validate->validate($rules);
         $user = new User();
@@ -110,7 +112,7 @@ if(Input::exists()){
           <label for="password">Password:</label>
           <input type="password" name="password" id="password" >
           <label for="confirm-password">Confirm Password:</label>
-          <input type="password" name="confirm-password" id="confirm-password" >
+          <input type="password" name="confirm_password" id="confirm-password" >
           <input type ="hidden" name="token" value ="<?php echo Token::generate(); ?>">
           <input type="submit" value="Sign Up">
           <?php if (isset($error)): ?>
