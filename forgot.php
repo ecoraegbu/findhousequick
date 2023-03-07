@@ -25,7 +25,7 @@
           <!-- <small class="text-red-500">Email field is required</small> -->
 
 
-          <button type="submit" class="mt-6 w-full px-6 py-3 text-white text-sm rounded-lg bg-primary font-medium hover:bg-blue-600">Login</button>
+          <button type="submit" class="mt-6 w-full px-6 py-3 text-white text-sm rounded-lg bg-primary font-medium hover:bg-blue-600">Send Reset Email</button>
 
         </form>
 
