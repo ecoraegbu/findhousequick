@@ -72,7 +72,7 @@ public function login ($email = null, $password = null, $remember = false){
                     
                 if($this->data()->password === Hash::make($password, $this->data()->salt)){
                     
-                    Session::put($this->sessionName, $this->data()->email);
+                    Session::put($this->sessionName, $this->data()->id);
                     
                     if($remember){
                         
@@ -103,6 +103,7 @@ public function login ($email = null, $password = null, $remember = false){
 //THE FUNCTION FOR UPDATING USER DATA IN THE DATABASE
 public function update($table, $fields, $id = null){
 
+    
     if(!$id && $this->isloggedin()){
         $id = $this->data()->id;
     }

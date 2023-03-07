@@ -1,3 +1,50 @@
+<?php
+require_once('Core/Init.php');
+if(Input::exists()){
+    
+    if(Token::check(Input::get('token'))){
+        
+        $rules =[
+          'email' => 'required|email|max:255|unique:users,email',
+	        'password' => 'required|string|min:8|max:20|matches:confirm_password|regex:/^(?=.*?[A-Z])(?=.*?[0-9])(?=.*?[@#$%&.*]).+$/',
+          'confirm_password' => 'required|string|min:8|max:20',
+        ];
+        $data = [];
+        $data['email'] = Input::get('email');
+        $data['password'] = Input::get('password');
+        $data['confirm_password'] = Input::get('confirm_password');
+        $validation = new Validator($data);
+        $result = $validation->validate($rules);
+        $user = new User();
+
+        if($validation->passes()){
+            
+            $salt = Hash::salt(32);
+            try {
+                $user->create('users', array(
+                    'email' =>Input::get('email'),
+                    'password' => Hash::make(Input::get('password'), $salt),
+                    'salt' => $salt,
+                    'joined' =>date('Y-m-d H:i:s'),
+                    'role' => USER_ROLE_ORDINARY,
+                    ));
+                    //Session::flash()
+                }
+                catch(Exception $e) {
+                    die($e->getMessage());
+                }
+            }else {
+                foreach($validation->errors() as $error){
+                    
+                    
+                }
+            }
+
+        } else {
+            
+        }
+    }
+?>
 <?php include('./Templates/Auth/Header.php') ?>
 
 <!-- Page Title -->
@@ -19,13 +66,13 @@
         <p class="text-sm text-gray-500 mt-1">Get started, managing your properties better and easy</p>
 
 
-        <form action="" class="mt-10">
+        <form action="register.php" method="post" class="mt-10">
 
           <div class="relative bg-main flex items-center pl-2 rounded-lg mt-3">
             <span class="inline-block bg-white p-2 text-primary rounded-lg">
               <i icon-name="mail" class="h-4 w-4"></i>
             </span>
-            <input type="text" placeholder="you@example.com" class="text-sm px-2 py-4 bg-main text-gray-700 rounded-lg w-full outline-none">
+            <input type="text" name="email" id="email" placeholder="you@example.com" class="text-sm px-2 py-4 bg-main text-gray-700 rounded-lg w-full outline-none">
           </div>
           <!-- <small class="text-red-500">Email field is required</small> -->
 
@@ -34,7 +81,7 @@
             <span class="inline-block bg-white p-2 text-primary rounded-lg">
               <i icon-name="lock" class="h-4 w-4"></i>
             </span>
-            <input type="text" placeholder="Your Password" class="text-sm px-2 py-4 bg-main text-gray-700 rounded-lg w-full outline-none">
+            <input type="password" name="password" id="password" placeholder="Your Password" class="text-sm px-2 py-4 bg-main text-gray-700 rounded-lg w-full outline-none">
           </div>
           <!-- <small class="text-red-500">Password field is required</small> -->
 
@@ -42,8 +89,12 @@
             <span class="inline-block bg-white p-2 text-primary rounded-lg">
               <i icon-name="lock" class="h-4 w-4"></i>
             </span>
-            <input type="text" placeholder="Comfirm Your Password" class="text-sm px-2 py-4 bg-main text-gray-700 rounded-lg w-full outline-none">
+            <input type="password" name="confirm_password" id="confirm_password" placeholder="Comfirm Your Password" class="text-sm px-2 py-4 bg-main text-gray-700 rounded-lg w-full outline-none">
           </div>
+          <input type ="hidden" name="token" value ="<?php echo Token::generate(); ?>">
+          <?php if (isset($error)) : ?>
+            <small class="text-red-500"><?php echo $error; ?></small>
+          <?php endif; ?>
           <!-- <small class="text-red-500">Password field is required</small> -->
 
           <!-- <div class="text-right mt-1">
