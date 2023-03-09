@@ -39,26 +39,9 @@ if (Input::exists()) {
     }
   }
 
-  require_once 'core/init.php';
 
-  Config::get('remember/cookie_name');
-  if (Input::exists()) {
 
-    if (Token::check(Input::get('token'))) {
 
-      $data = [];
-      $email = Input::get('email');
-      $password = Input::get('password');
-      $data['email'] = $email;
-      $data['password'] = $password;
-      $rules = [
-        'email' => 'required|email|max:255',
-        'password' => 'required|string|min:8|max:255',
-      ];
-
-      $validate = new Validator($data);
-      $result = $validate->validate($rules);
-      if ($validate->passes()) {
 
         $user = new User();
 
@@ -78,7 +61,7 @@ if (Input::exists()) {
       }
     }
   }
-}
+
 ?>
 <?php include('./Templates/Auth/Header.php') ?>
 
@@ -100,15 +83,15 @@ if (Input::exists()) {
         <h2 class="text-3xl font-bold text-gray-900">Welcome back!</h2>
         <p class="text-sm text-gray-500 mt-1">Start managing your properties better and easy</p>
 
-        <div class="mt-4 bg-error p-4 rounded-lg text-white flex justify-between items-center gap-4">
+<!--         <div class="mt-4 bg-error p-4 rounded-lg text-white flex justify-between items-center gap-4">
           <div class="">
             <p class="font-bold -mb-1">Unable to login</p>
             <p class="text-sm">User details found, please try again</p>
           </div>
           <i icon-name="x" class="h-4 w-4"></i>
-        </div>
+        </div> -->
 
-        <form action="" class="mt-10">
+        <form action="login.php" method="post" class="mt-10">
 
           <div class="relative bg-main flex items-center pl-2 rounded-lg">
             <span class="inline-block bg-white p-2 text-primary rounded-lg">
@@ -124,16 +107,24 @@ if (Input::exists()) {
             </span>
             <input type="password" name="password" autocomplete="nope" placeholder="Your Password" class="text-sm px-2 py-4 bg-main text-gray-700 rounded-lg w-full outline-none">
           </div>
-          <small class="text-red-500">Password field is required</small>
+          <!-- <small class="text-red-500">Password field is required</small> -->
 
           <?php if (isset($error)) : ?>
             <small class="text-red-500"><?php echo $error; ?></small>
           <?php endif; ?>
 
+          <div class="grid gap-x-4 gap-y-2 grid-cols-1 sm:grid-cols-2 mt-2">
 
-          <div class="text-right mt-1">
-            <a href="forgot.php" class="text-sm text-primary font-semibold">Forgot Password?</a>
+            <div class="flex items-center gap-1 ">
+              <input type="checkbox" class="accent-primary" name="remember" id="remember">
+              <label for="remember" class="text-sm text-gray-500 font-semibold">Keep me logged In</label>
+            </div>
+            <div class="text-right">
+              <a href="forgot.php" class="text-sm text-primary font-semibold">Forgot Password?</a>
+            </div>
           </div>
+
+
 
           <!-- Token generation -->
           <input type="hidden" name="token" value="<?php echo Token::generate(); ?>">

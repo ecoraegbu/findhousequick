@@ -1,3 +1,7 @@
+<?php
+require_once(dirname(__FILE__,2).'/Core/Init.php');
+
+?>
 <?php include('Layout/Head.php') ?>
 
 <body>

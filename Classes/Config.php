@@ -1,5 +1,5 @@
 <?php
-include 'Config/site_config.php';
+include dirname(__FILE__,2).'/Config/site_config.php';
 class Config {
 
     // Static variable to cache the config array

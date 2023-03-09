@@ -1,3 +1,55 @@
+<?php
+require_once 'core/init.php';
+if(Input::exists()){
+
+  if(Token::check(Input::get('token'))){
+    $data =[];
+      $email = Input::get('email');
+      $data['email'] = $email;
+        $rules = [ 'email' => 'required|email'];
+        $validation = new Validator($data);
+        $result = $validation->validate($rules);
+        if($validation->passes()){
+          //generate a token
+          $reset_token = Token::generate();
+          $expiration_time = time() + 3600; // token expires in 1 hour
+
+          //store the token in the database
+          $user = new User;
+          $fields = array(
+            'password_reset' => $reset_token,
+            'reset_token_expiration' => $expiration_time
+          );
+          if($user->find($email)){
+              // create the url pass the user email address and user id to the url
+              $reset_url = BASE_URL . "forgot.php?reset_token=" . $reset_token . "&email=" . $user->data()->email. "&userid=" . $user->data()->id;
+
+              $message = "Click the following link to reset your password: $reset_url";
+              //mail($email, "Password Reset", $message);
+            try{
+              // update the data base, and send the email to the user
+              $user->update('users', $fields, $user->data()->id);
+              // Send an email to the user
+              echo $reset_url;
+            } catch(Exception $e){
+  
+            }
+          }else{
+            // user records not found add error that would be echoed out.
+            $error = "user record not found";
+          }
+
+        }else{
+          foreach($validation->errors() as $error){
+
+          }
+        }
+
+  }
+
+}
+
+?>
 <?php include('./Templates/Auth/Header.php') ?>
 
 <body>
@@ -15,17 +67,23 @@
         <p class="text-sm text-gray-500 mt-1">Did you forget your password again? You can change your password</p>
 
 
-        <form action="" class="mt-10">
+        <form action="forgot.php" method="post" class="mt-10">
           <div class="relative bg-main flex items-center pl-2 rounded-lg">
             <span class="inline-block bg-white p-2 text-primary rounded-lg">
               <i icon-name="mail" class="h-4 w-4"></i>
             </span>
-            <input type="text" placeholder="you@example.com" class="text-sm px-2 py-4 bg-main text-gray-700 rounded-lg w-full outline-none">
+            <input type="text" name="email" id="email" placeholder="you@example.com" class="text-sm px-2 py-4 bg-main text-gray-700 rounded-lg w-full outline-none">
+            <input type="hidden" name="token" value="<?php echo Token::generate(); ?>">
           </div>
+          <?php if (isset($error)) : ?>
+            <small class="text-red-500"><?php echo $error; ?></small>
+          <?php endif; ?>
           <!-- <small class="text-red-500">Email field is required</small> -->
 
 
+
           <button type="submit" class="mt-6 w-full px-6 py-3 text-white text-sm rounded-lg bg-primary font-medium hover:bg-blue-600">Send Reset Email</button>
+
 
         </form>
 
