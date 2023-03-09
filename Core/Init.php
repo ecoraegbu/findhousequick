@@ -1,9 +1,16 @@
 <?php
 session_start();
+
+
+// Add the root directory to the include path
+$rootDirectory = dirname(__FILE__,2);
+
+//echo $rootDirectory.'/Core/Init.php';
 spl_autoload_register(function ($class) {
-    require_once 'Classes/' . $class . '.php';
+    $rootDirectory = dirname(__FILE__,2);
+    require_once $rootDirectory.'/Classes/' . $class . '.php';
 });
-require_once 'Functions/Sanitize.php';
+require_once $rootDirectory.'/Functions/Sanitize.php';
 
 if (Cookie::exists(Config::get('remember/cookie_name')) && !Session::exists(Config::get('session/session_name'))) {
     $hash = Cookie::get(Config::get('remember/cookie_name'));

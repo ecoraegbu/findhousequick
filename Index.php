@@ -38,7 +38,7 @@ if($user->isloggedin()){
         } 
 
 }else{
-    redirect::to(BASE_URL.'login.php');
+    redirect::to(BASE_URL.'pages/home.php');
 }
 
 $directory = new Directorycreator();
