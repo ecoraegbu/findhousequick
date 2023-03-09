@@ -73,7 +73,7 @@ class Database{
     }
 
     public function get($table, $where){
-        $result = $this->action('SELECT *', $table, $where);
+        //$result = $this->action('SELECT *', $table, $where);
             return $this->action('SELECT *', $table, $where);
     }
     public function delete($table, $where){
