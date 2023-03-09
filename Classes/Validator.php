@@ -24,6 +24,7 @@ class Validator {
                     case 'required':
                         if(empty($value)) {
                             $this->addError("{$item} is required.");
+                            return;
                         }
                         break;
 
@@ -31,6 +32,7 @@ class Validator {
 
                         if($value != $this->data[$rule_value]){
                             $this->addError("{$item}s must match");
+                            return;
                         }
                         break;
 
@@ -39,6 +41,7 @@ class Validator {
                         $check = $this->db->get($table, array($column, '=', $value));
                         if($check->count()){
                             $this->addError("{$item} already exists.");
+                            return;
                         }
                         break;
                         
@@ -47,56 +50,67 @@ class Validator {
                         
                         if(!preg_match($rule_value, $value)) {
                             $this->addError("{$item} must contain a capital letter, a number and a special character");
+                            return; 
                         }
                         break;
                         case 'alpha':
                           if(!ctype_alpha($value)){
                               $this->addError("{$item} must only contain letters.");
+                              return;
                           }
                           break;
                       case 'alpha_num':
                           if(!ctype_alnum($value)){
                               $this->addError("{$item} must only contain letters and numbers.");
+                              return;
                           }
                           break;
                       case 'alpha_dash':
                           if(!preg_match('/^[a-zA-Z0-9_\-]+$/', $value)){
                               $this->addError("{$item} must only contain letters, numbers, underscores, and dashes.");
+                              return;
                           }
                           break;
                       case 'numeric':
                           if(!is_numeric($value)){
                               $this->addError("{$item} must be a number.");
+                              return;
                           }
                           break;
                       case 'email':
                           if(!filter_var($value, FILTER_VALIDATE_EMAIL)){
                               $this->addError("{$item} is not a valid email address.");
+                              return;
                           }
                           break;
                       case 'url':
                           if(!filter_var($value, FILTER_VALIDATE_URL)){
                               $this->addError("{$item} is not a valid URL.");
+                              return;
                           }
                           break;
                       case 'ip':
                           if(!filter_var($value, FILTER_VALIDATE_IP)){
                               $this->addError("{$item} is not a valid IP address.");
+                              return;
                           }
                           break;
                       case 'alpha_space':
                           if(!preg_match('/^[a-zA-Z\s]+$/', $value)){
                               $this->addError("{$item} must only contain letters and spaces.");
+                              return;
                           }
                           break;
                       case 'min':
                           if(strlen($value) < $rule_value){
                               $this->addError("{$item} must be a minimum of {$rule_value} characters.");
+                              return;
                           }
                           break;
                       case 'max':
                           if(strlen($value) > $rule_value){
                               $this->addError("{$item} must be a maximum of {$rule_value} characters.");
+                              return;
                           }
                           break;
 
