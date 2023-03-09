@@ -12,23 +12,23 @@ if($user->isloggedin()){
             switch ($_SESSION['user_role']) {
                 case USER_ROLE_ADMIN:
                     // Redirect the admin to the admin dashboard
-                    header('Location: ' . BASE_URL . 'admin/dashboard');
+                    header('Location: ' . BASE_URL . 'admin/dashboard.php');
                     exit();
                 case USER_ROLE_AGENT:
                     // Redirect the agent to the agent dashboard
-                    header('Location: ' . BASE_URL . 'agent/dashboard');
+                    header('Location: ' . BASE_URL . 'agent/dashboard.php');
                     exit();
                 case USER_ROLE_LANDLORD:
                     // Redirect the landlord to the landlord dashboard
-                    header('Location: ' . BASE_URL . 'landlord/dashboard');
+                    header('Location: ' . BASE_URL . 'landlord/dashboard.php');
                     exit();
                 case USER_ROLE_TENANT:
                     // Redirect the tenant to the tenant dashboard
-                    header('Location: ' . BASE_URL . 'tenant/dashboard');
+                    header('Location: ' . BASE_URL . 'tenant/dashboard.php');
                     exit();
                 case USER_ROLE_ORDINARY:
                     // Redirect the ordinary user to the homepage
-                    header('Location: ' . BASE_URL . 'pages/templates/dashboard/dashboard.php');
+                    header('Location: ' . BASE_URL . 'pages/dashboard.php');
                     exit();
                 default:
                     // Redirect any other user to the homepage

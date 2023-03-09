@@ -49,11 +49,12 @@ define('GOOGLE_GEO_API_KEY', 'your-api-key');
 define('GOOGLE_GEO_API_TIMEOUT', 30); // seconds
 
 // user roles
-define('USER_ROLE_ADMIN', 1);
-define('USER_ROLE_AGENT', 2);
-define('USER_ROLE_LANDLORD', 3);
-define('USER_ROLE_TENANT', 4);
-define('USER_ROLE_ORDINARY', 5);
+define('USER_ROLE_ADMIN', 6);
+define('USER_ROLE_AGENT', 5);
+define('USER_ROLE_LANDLORD', 4);
+define('USER_ROLE_TENANT', 3);
+define('USER_ROLE_ORDINARY', 2);
+define('USER_ROLE_GUEST', 1);
 
 // other settings
 define('MAX_FILE_SIZE', 1024 * 1024 * 2); // maximum file size in bytes (2 MB)
