@@ -35,9 +35,16 @@
             <input type="text" placeholder="Your Password" class="text-sm px-2 py-4 bg-main text-gray-700 rounded-lg w-full outline-none">
           </div>
           <!-- <small class="text-red-500">Password field is required</small> -->
+          <div class="grid gap-x-4 gap-y-2 grid-cols-1 sm:grid-cols-2 mt-2">
 
-          <div class="text-right mt-1">
-            <a href="Resetpassword.php" class="text-sm text-primary font-semibold">Forgot Password?</a>
+            <div class="flex items-center gap-1 ">
+              <input type="checkbox" class="accent-primary" name="remember" id="remember">
+              <label for="remember" class="text-sm text-gray-500 font-semibold">Keep me logged In</label>
+            </div>
+
+            <div class="text-right">
+              <a href="forgot.php" class="text-sm text-primary font-semibold">Forgot Password?</a>
+            </div>
           </div>
 
 
