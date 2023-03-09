@@ -1,64 +1,45 @@
 <?php
+require_once 'core/init.php';
 
-require_once 'Core/Init.php';
+Config::get('remember/cookie_name') ;
+if (Input::exists()){
+    
+    if(Token::check(Input::get('token'))){
+        
+        $data =[];
+        $email = Input::get('email');
+        $password = Input::get('password');
+        $data['email'] = $email;
+        $data['password'] = $password;
+        $rules = [
+            'email' => 'required|email|max:255',
+            'password' => 'required|string|min:8|max:255',];
 
-Config::get('remember/cookie_name');
-if (Input::exists()) {
-
-  if (Token::check(Input::get('token'))) {
-
-    $data = [];
-    $email = Input::get('email');
-    $password = Input::get('password');
-    $data['email'] = $email;
-    $data['password'] = $password;
-    $rules = [
-      'email' => 'required|email|max:255',
-      'password' => 'required|string|min:8|max:255',
-    ];
-
-    $validate = new Validator($data);
-    $result = $validate->validate($rules);
-    if ($validate->passes()) {
-
-      $user = new User();
-
-      $remember = (Input::get('remember') === 'on') ? true : false;
-
-      $login = $user->login(Input::get('email'), Input::get('password'), $remember);
-
-      if ($login) {
-
-        Redirect::to('index.php');
-      } else {
-        die('sorry');
-      }
-    } else {
-      foreach ($validate->errors() as $error) {
-      }
-    }
-  }
-
-
-
-
-
-        $user = new User();
-
-        $remember = (Input::get('remember') === 'on') ? true : false;
-
-        $login = $user->login(Input::get('email'), Input::get('password'), $remember);
-
-        if ($login) {
-          Redirect::to('findhousequick/index.php');
+        $validate = new Validator($data);
+        $result = $validate->validate($rules);
+        if ($validate->passes()){
+            
+            $user = new User();
+            
+            $remember = (Input::get('remember') === 'on') ? true : false;
+        
+           $login = $user->login( Input::get('email'), Input::get('password'), $remember);
+           
+            if($login){
+              
+                Redirect::to('findhousequick/index.php');
+            }  else{
+                foreach($user->errors() as $error){
+                  
+                }
+            }
+        
         } else {
-          foreach ($user->errors() as $error) {
-          }
-        }
-      } else {
-        foreach ($validate->errors() as $error) {
-        }
-      }
+                foreach($validate->errors() as $error){
+                  
+                }
+            }
+
     }
   }
 
@@ -151,5 +132,5 @@ if (Input::exists()) {
 
     </section>
   </div>
-  <?php include('./Templates/Auth/Footer.php'); ?>
+  <?php include('./Templates/Auth/Footer.php') ?>
 </body>

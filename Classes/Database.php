@@ -43,7 +43,12 @@ class Database{
             if($this->query->execute()){
 
                 $this->results = $this->query->fetchAll(PDO::FETCH_OBJ);
-                $this->count = $this->query->rowCount();
+                if($this->results !== false) {
+                    $this->count = $this->query->rowCount();
+                }else {
+                    $this->count = 0;
+                }
+                
             }else{
                 $this->error = true;
             }
@@ -68,6 +73,7 @@ class Database{
     }
 
     public function get($table, $where){
+        $result = $this->action('SELECT *', $table, $where);
             return $this->action('SELECT *', $table, $where);
     }
     public function delete($table, $where){
