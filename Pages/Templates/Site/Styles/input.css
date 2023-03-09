@@ -3,6 +3,10 @@
 @tailwind utilities;
 
 
+html {
+  @apply font-roboto-c
+}
+
 [x-cloak] {
-  @apply hidden; 
+  @apply hidden;
 }
