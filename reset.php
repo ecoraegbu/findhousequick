@@ -29,15 +29,16 @@ if(Token::check(Input::get('token'))){
 
   $validate = new Validator($data);
   $result = $validate->validate($rules);
-  $user = new User();
+ 
   if ($validate->passes()){
+    $user = new User();
 
     $salt = Hash::salt(32);
   
     $connection = Database::getInstance();
     $token = $connection->get('users', array('password_reset', '=' ,$reset_token));
     if($token->count()){
-      if($token->first()->reset_token_expiration > time()){
+      if($token->first()->reset_token_expiration < time()){
         $error = 'reset link expired';
       } else{
         try {
@@ -114,7 +115,7 @@ if(Token::check(Input::get('token'))){
             <input type="text" name="confirm_password" placeholder="Comfirm New Password" class="text-sm px-2 py-4 bg-main text-gray-700 rounded-lg w-full outline-none">
           </div>
           <!-- Error -->
-          <small class="text-red-500"><?php echo isset($error); ?></small> 
+          <small class="text-red-500"><?php echo isset($error)? $error : ''; ?></small> 
 
           <button type="submit" class="mt-6 w-full px-6 py-3 text-white text-sm rounded-lg bg-primary font-medium hover:bg-blue-600">Save Password</button>
 
