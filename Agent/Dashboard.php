@@ -46,7 +46,7 @@ if (!$user->isloggedin()){
             <i icon-name="user-plus" class="h-6 w-6"></i>
           </div>
           <div class="">
-            <p class="text-sm text-gray-400">Total Landlords</p>
+            <p class="text-sm text-gray-400">Rents Due</p>
             <p class="text-2xl font-bold tracking-tighter text-gray-800">2039</p>
           </div>
         </div>
@@ -56,7 +56,7 @@ if (!$user->isloggedin()){
             <i icon-name="users" class="h-6 w-6"></i>
           </div>
           <div class="">
-            <p class="text-sm text-gray-400">Total Users</p>
+            <p class="text-sm text-gray-400">Complaints</p>
             <p class="text-2xl font-bold tracking-tighter text-gray-800">2039</p>
           </div>
         </div>

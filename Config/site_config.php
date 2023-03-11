@@ -61,3 +61,4 @@ define('USER_ROLE_GUEST', 1);
 define('MAX_FILE_SIZE', 1024 * 1024 * 2); // maximum file size in bytes (2 MB)
 define('DEFAULT_TIMEZONE', 'Africa/Lagos'); // default timezone for date and time functions
 
+?>

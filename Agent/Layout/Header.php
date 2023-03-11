@@ -25,7 +25,7 @@
     <div class="flex items-center gap-3 text-sm">
       <img src="./../Assets/login.jpg" class="object-cover h-8 w-8 bg-primary rounded-full" alt="">
       <div class="">
-        <p class="font-semibold -mb-1">Sarah Reichert</p>
+        <p class="font-semibold -mb-1"><?php echo $user->user_details($user->data()->id)->details()->first_name . ' ' . $user->user_details($user->data()->id)->details()->last_name;?></p>
         <small class="text-gray-400">Estate developer</small>
       </div>
     </div>

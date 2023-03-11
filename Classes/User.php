@@ -2,6 +2,7 @@
 class User{
     private $database_connection;
     private $data;
+    private $user_details;
     private $sessionName;
     private $cookieName;
     private $isloggedin;
@@ -43,6 +44,16 @@ public function find($user = null){
         }
     }
     return false;
+}
+public function user_details($userid){
+    
+    
+    $user_details = $this->database_connection->get('user_details', array('user_id', '=', $userid));
+    if ($user_details->count()){
+        $this->user_details = $user_details->first();
+        return $this;
+        
+    }
 }
 
 
@@ -136,6 +147,10 @@ public function exists(){
 // DATA FUNCTION HELPS MAKE THE PRIVATE PROPERTY 'DATA' AVAILABLE FOR USE
 public function data(){
     return $this->data; 
+}
+public function details(){
+
+    return $this->user_details;
 }
 public function errors() {
     return $this->errors;
