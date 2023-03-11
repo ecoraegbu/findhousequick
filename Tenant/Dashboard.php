@@ -1,6 +1,12 @@
 <?php
 require_once(dirname(__FILE__,2).'/Core/Init.php');
-
+$user = new User();
+if (!$user->isloggedin()){
+  Redirect::to(BASE_URL);
+}else{
+  //check user authorization and redirect to appropriate page
+  // 
+}
 ?>
 <?php include('Layout/Head.php') ?>
 

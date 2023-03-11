@@ -22,7 +22,7 @@ if(Input::exists()){
           );
           if($user->find($email)){
               // create the url pass the user email address and user id to the url
-              $reset_url = BASE_URL . "forgot.php?reset_token=" . $reset_token . "&email=" . $user->data()->email. "&userid=" . $user->data()->id;
+              $reset_url = BASE_URL . "reset.php?reset_token=" . $reset_token . "&email=" . $user->data()->email. "&userid=" . $user->data()->id;
 
               $message = "Click the following link to reset your password: $reset_url";
               //mail($email, "Password Reset", $message);
