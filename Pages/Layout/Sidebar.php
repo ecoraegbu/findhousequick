@@ -12,12 +12,12 @@
 
       <!-- Dropdown -->
       <li class="px-10 relative hover:before:absolute hover:before:left-0 hover:before:bg-primary hover:before:bg-opacity-25 hover:before:h-full hover:before:w-1 hover:before:rounded-full">
-        <div class="group">
-          <a href="" class="group transition-all py-3 px-5 flex items-center gap-4 group-hover:bg-primary group-hover:bg-opacity-25 rounded-lg">
+        <div class="group" x-data="{open:false}">
+          <button @click="open=!open" class="w-full group transition-all py-3 px-5 flex items-center gap-4 group-hover:bg-primary group-hover:bg-opacity-25 rounded-lg">
             <i icon-name="component" class="h-5 w-5"></i> <span>Components</span>
-          </a>
+          </button>
 
-          <ul class="bg-primary bg-opacity-25 rounded-md hidden group-hover:block">
+          <ul class="bg-primary bg-opacity-25 rounded-md" x-cloak x-show="open" @click.outside="open=false">
             <li class="">
               <a href="Alerts.php" class="flex items-center gap-4 py-2.5 px-5 text-sm text-gray-300 hover:text-white">
                 <i icon-name="chevron-right" class="h-4 w-4"></i> <span>Banners</span>
