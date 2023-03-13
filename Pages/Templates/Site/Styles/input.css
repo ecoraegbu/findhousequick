@@ -10,3 +10,12 @@ html {
 [x-cloak] {
   @apply hidden;
 }
+
+
+.swiper-thumb .swiper-slide {
+  @apply opacity-60;
+}
+
+.swiper-thumb .swiper-slide-thumb-active {
+  @apply opacity-100;
+}
