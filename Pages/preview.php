@@ -1,4 +1,4 @@
-<?php include('Layout/Head.php') ?>
+<?php include('SiteAssets/Layout/Head.php') ?>
 
 
 <title>Preview | FindHouseQuick</title>
@@ -7,7 +7,7 @@
 <body class="">
 
   <header class="">
-    <?php include('Layout/Navbar.php') ?>
+    <?php include('SiteAssets/Layout/Navbar.php') ?>
   </header>
 
   <!-- Preview Section -->
@@ -217,7 +217,7 @@
 
 
 
-  <?php include('Layout/Footer.php') ?>
+  <?php include('SiteAssets/Layout/Footer.php') ?>
   <!-- Slide -->
   <script>
     const swiper = new Swiper('.swiper-similar', {

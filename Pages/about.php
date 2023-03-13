@@ -1,4 +1,4 @@
-<?php include('Layout/Head.php') ?>
+<?php include('SiteAssets/Layout/Head.php') ?>
 
 
 <title>About | FindHouseQuick</title>
@@ -7,7 +7,7 @@
 <body class="">
 
   <header class="">
-    <?php include('Layout/Navbar.php') ?>
+    <?php include('SiteAssets/Layout/Navbar.php') ?>
   </header>
 
   <!-- Hero Section -->
@@ -32,7 +32,7 @@
 
       <div class="mt-10 relative z-0 bg-blue-50 grid gap-10 grid-cols-1 md:grid-cols-2 lg:grid-cols-3 p-16 rounded-[50px] before:block before:w-full before:h-full md:before:bg-primary md:before:absolute md:before:-z-10 md:before:-rotate-6 md:before:rounded-[50px] md:before:inset-0">
         <div class="bg-white shadow-card text-center rounded-3xl py-4 px-8">
-          <img src="./Assets//icons/property-management.png" alt="icon" class="w-40 mx-auto mb-4">
+          <img src="./SiteAssets/Assets/icons/property-management.png" alt="icon" class="w-40 mx-auto mb-4">
           <h2 class="text-lg font-bold text-text">Property Management</h2>
           <p class="text-sm text-gray-600">
             A service that assists property owners in managing their properties, such as tenant screening, rent collection, maintenance, and repairs.
@@ -40,21 +40,21 @@
         </div>
 
         <div class="bg-white shadow-card text-center rounded-3xl py-4 px-8">
-          <img src="./Assets//icons/property-sales.png" alt="icon" class="w-40 mx-auto mb-4">
+          <img src="./SiteAssets/Assets/icons/property-sales.png" alt="icon" class="w-40 mx-auto mb-4">
           <h2 class="text-lg font-bold text-text">Property Sales</h2>
           <p class="text-sm text-gray-600">
             A tool that provides users with an estimated value of their property or one they are interested in purchasing. </p>
         </div>
 
         <div class="bg-white shadow-card text-center rounded-3xl py-4 px-8">
-          <img src="./Assets//icons/property-search.png" alt="icon" class="w-40 mx-auto mb-4">
+          <img src="./SiteAssets/Assets/icons/property-search.png" alt="icon" class="w-40 mx-auto mb-4">
           <h2 class="text-lg font-bold text-text">Property Search</h2>
           <p class="text-sm text-gray-600">
             A search engine that enables users to search for properties based on their desired criteria, such as location, price range, property type, etc. </p>
         </div>
 
         <div class="bg-white shadow-card text-center rounded-3xl py-4 px-8">
-          <img src="./Assets//icons/property-search.png" alt="icon" class="w-40 mx-auto mb-4">
+          <img src="./SiteAssets/Assets/icons/property-search.png" alt="icon" class="w-40 mx-auto mb-4">
           <h2 class="text-lg font-bold text-text">Property Development</h2>
           <p class="text-sm text-gray-600">
             A tool that provides users with an estimated value of their property or one they are interested in purchasing.
@@ -62,7 +62,7 @@
         </div>
 
         <div class="bg-white shadow-card text-center rounded-3xl py-4 px-8">
-          <img src="./Assets//icons/tenant-selection.png" alt="icon" class="w-40 mx-auto mb-4">
+          <img src="./SiteAssets/Assets/icons/tenant-selection.png" alt="icon" class="w-40 mx-auto mb-4">
           <h2 class="text-lg font-bold text-text">Tenant Selection</h2>
           <p class="text-sm text-gray-600">
             A tool that provides users with an estimated value of their property or one they are interested in purchasing.
@@ -70,7 +70,7 @@
         </div>
 
         <div class="bg-white shadow-card text-center rounded-3xl py-4 px-8">
-          <img src="./Assets//icons/tenant-selection.png" alt="icon" class="w-40 mx-auto mb-4">
+          <img src="./SiteAssets/Assets/icons/tenant-selection.png" alt="icon" class="w-40 mx-auto mb-4">
           <h2 class="text-lg font-bold text-text">Tenant Selection</h2>
           <p class="text-sm text-gray-600">
             A tool that provides users with an estimated value of their property or one they are interested in purchasing.
@@ -178,5 +178,5 @@
   <!-- End -->
 
 
-  <?php include('Layout/Footer.php') ?>
+  <?php include('SiteAssets/Layout/Footer.php') ?>
 </body>

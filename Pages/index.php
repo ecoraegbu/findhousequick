@@ -1,4 +1,4 @@
-<?php include('Layout/Head.php') ?>
+<?php include('SiteAssets/Layout/Head.php') ?>
 
 
 <title>Home | FindHouseQuick</title>
@@ -7,7 +7,7 @@
 <body class="">
 
   <header class="">
-    <?php include('Layout/Navbar.php') ?>
+    <?php include('SiteAssets/Layout/Navbar.php') ?>
   </header>
 
   <!-- Hero Section -->
@@ -35,7 +35,7 @@
 
           </div>
 
-          <img src="./Assets/house.png" class="hidden absolute w-[900px] bottom-0 z-0 md:-right-96 md:block lg:-right-32" alt="">
+          <img src="./SiteAssets/Assets/house.png" class="hidden absolute w-[900px] bottom-0 z-0 md:-right-96 md:block lg:-right-32" alt="">
 
         </div>
       </div>
@@ -150,5 +150,5 @@
 
   <!-- Listing End -->
 
-  <?php include('Layout/Footer.php') ?>
+  <?php include('SiteAssets/Layout/Footer.php') ?>
 </body>
