@@ -54,8 +54,19 @@
 
       <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-10 mt-10">
 
-        <div class="shadow-card p-4 rounded-lg  bg-white">
-          <img src="https://images.pexels.com/photos/1974596/pexels-photo-1974596.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" class="aspect-square object-cover rounded-lg" alt="">
+        <!-- Cards -->
+        <div class="shadow-card p-4 rounded-lg bg-white group hover:-translate-y-4 transition-all">
+          <div class="relative">
+            <img src="https://images.pexels.com/photos/1974596/pexels-photo-1974596.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" class="aspect-square object-cover rounded-lg" alt="">
+            <div class="w-full h-full bg-black bg-opacity-50 opacity-0  group-hover:opacity-100 absolute inset-0 rounded-lg p-2 transition-all">
+              <div class="flex flex-wrap gap-1">
+                <span class="bg-primary text-white px-2 py-1.5 text-sm rounded-md">Available</span>
+                <span class="bg-success text-white px-2 py-1.5 text-sm rounded-md">For Sale</span>
+                <span class="bg-purple-700 text-white px-2 py-1.5 text-sm rounded-md">For Rent</span>
+                <span class="bg-error text-white px-2 py-1.5 text-sm rounded-md">Occupied</span>
+              </div>
+            </div>
+          </div>
 
           <a href="" class="block mt-3 text-text hover:text-opacity-80 font-semibold text-xl truncate" title="Real Bluestyle house Working on">Real Bluestyle house Working on</a>
           <p class="text-sm text-gray-400 -mt-1">San Diego, California USA</p>
@@ -63,7 +74,6 @@
           <p class="text-primary font-semibold mt-1 text-xl">N3,000,000 <small class="text-gray-500 font-normal">/yearly</small>
           </p>
         </div>
-
 
         <div class="shadow-card p-4 rounded-lg  bg-white">
           <img src="https://images.pexels.com/photos/1022936/pexels-photo-1022936.jpeg?auto=compress&cs=tinysrgb&w=600" class="aspect-square object-cover rounded-lg" alt="">
