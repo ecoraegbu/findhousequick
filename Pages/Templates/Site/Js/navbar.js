@@ -1,26 +1,26 @@
-let isOpen = false;
 
-const sidebar = document.getElementById('sidebar');
+const navbar = document.getElementById('navbar');
 const menuBtn = document.getElementById('menu')
+const close = document.getElementById('close')
 
 menuBtn.addEventListener('click', function() {
-  if (sidebar.classList.contains('absolute')) {
-    openSidebar()
+  if (navbar.classList.contains('fixed')) {
+    openNavbar()
   } else {
-    closeSidebar();
+    closeNavbar();
   }
 })
 
-sidebar.addEventListener('click', function(e) {
-  console.dir(e.target)
+close.addEventListener('click', function(e) {
+  closeNavbar()
 })
 
-const openSidebar = () => {
-  sidebar.classList.add('left-0');
-  sidebar.classList.remove('-left-full')
+const openNavbar = () => {
+  navbar.classList.add('flex');
+  navbar.classList.remove('hidden')
 }
 
-const closeSidebar = () => {
-  sidebar.classList.add('-left-full');
-  sidebar.classList.remove('left-0')
+const closeNavbar = () => {
+  navbar.classList.add('hidden');
+  navbar.classList.remove('flex')
 }

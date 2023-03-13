@@ -4,6 +4,7 @@ module.exports = {
   theme: {
     fontFamily: {
       'sans': ['Manrope', 'sans-serif'],
+      'roboto-c': ['Roboto Condensed', 'sans-serif'],
     },
     extend: {
       colors: {
@@ -17,9 +18,11 @@ module.exports = {
         'warning-light': '#FEF7EA',
         error: '#FB5659',
         'error-light': '#FAF0EA',
+        'text': '#041B38'
       },
       boxShadow: {
-        side: '0px 4px 30px rgba(0 0 0 /.1)'
+        side: '0px 4px 30px rgba(0 0 0 /.1)',
+        card: '0px 4px 50px rgba(0 0 0 /.1)'
       },
       minWidth: {
         table: '768px'
@@ -28,6 +31,7 @@ module.exports = {
         'login': 'url("./../Assets/login.jpg")',
         'register': 'url("./../Assets/register.jpg")',
         'reset': 'url("./../Assets/reset.jpg")',
+        'hero': 'url("./../Assets/bg.png")',
       }
     },
   },
