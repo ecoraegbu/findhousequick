@@ -12,16 +12,16 @@
     <!-- Navbar -->
     <ul id="navbar" class="items-center text-xl md:text-base gap-y-8 md:gap-6 inset-0 bg-white z-50 fixed md:relative hidden md:flex flex-col md:flex-row justify-center flex-1 text-center">
       <li class="md:ml-auto">
-        <a href="" class="text-gray-500 hover:text-primary">Home</a>
+        <a href="index.php" class="text-gray-500 hover:text-primary">Home</a>
       </li>
       <li class="">
-        <a href="" class="text-gray-500 hover:text-primary">Listings</a>
+        <a href="listings.php" class="text-gray-500 hover:text-primary">Listings</a>
       </li>
       <li class="">
-        <a href="" class="text-gray-500 hover:text-primary">About Us</a>
+        <a href="about.php" class="text-gray-500 hover:text-primary">About Us</a>
       </li>
       <li class="">
-        <a href="" class="text-gray-500 hover:text-primary">Get In Touch</a>
+        <a href="contact.php" class="text-gray-500 hover:text-primary">Get In Touch</a>
       </li>
       <li class="md:ml-auto items-center gap-6 md:flex">
         <a href="" class="bg-primary p-2 rounded-md inline-block">

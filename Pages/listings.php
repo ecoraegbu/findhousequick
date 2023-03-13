@@ -1,4 +1,4 @@
-<?php include('Layout/Head.php') ?>
+<?php include('SiteAssets/Layout/Head.php') ?>
 
 
 <title>Home | FindHouseQuick</title>
@@ -7,7 +7,7 @@
 <body class="">
 
   <header class="">
-    <?php include('Layout/Navbar.php') ?>
+    <?php include('SiteAssets/Layout/Navbar.php') ?>
   </header>
 
   <!-- Hero Section -->
@@ -252,5 +252,5 @@
 
 
 
-  <?php include('Layout/Footer.php') ?>
+  <?php include('SiteAssets/Layout/Footer.php') ?>
 </body>
