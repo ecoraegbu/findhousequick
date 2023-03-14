@@ -12,7 +12,7 @@
     <!-- Navbar -->
     <ul id="navbar" class="items-center text-xl md:text-base gap-y-8 md:gap-6 inset-0 bg-white z-50 fixed md:relative hidden md:flex flex-col md:flex-row justify-center flex-1 text-center">
       <li class="md:ml-auto">
-        <a href="index.php" class="text-gray-500 hover:text-primary">Home</a>
+        <a href="home.php" class="text-gray-500 hover:text-primary">Home</a>
       </li>
       <li class="">
         <a href="listings.php" class="text-gray-500 hover:text-primary">Listings</a>
@@ -30,8 +30,8 @@
 
         <!-- Authentication buttons -->
         <div class="mt-4 md:mt-0 flex gap-4">
-          <a href="" class="border border-primary text-primary font-medium px-4 py-2 rounded-md hover:bg-primary hover:text-white">Login</a>
-          <a href="" class="bg-primary text-white font-medium px-4 py-2 rounded-md hover:bg-blue-600">Register</a>
+          <a href="../login.php" class="border border-primary text-primary font-medium px-4 py-2 rounded-md hover:bg-primary hover:text-white">Login</a>
+          <a href="../register.php" class="bg-primary text-white font-medium px-4 py-2 rounded-md hover:bg-blue-600">Register</a>
         </div>
       </li>
       <li id="close" class="block md:hidden absolute top-4 right-4 text-gray-600">

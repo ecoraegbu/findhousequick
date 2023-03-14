@@ -12,3 +12,5 @@ a pane where they can update their profile
 make payments
 view receipts and tenancy agreements
 upload documents etc.
+should have the capacity for the user to view property listed by the same agent, view similar properties
+add functionality for rating properties and comments. nearest landmark.
