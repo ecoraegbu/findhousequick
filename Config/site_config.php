@@ -44,6 +44,12 @@ define('MAIL_PASSWORD', 'your_email_password');
 define('MAIL_FROM_NAME', 'FindHouseQuick Support');
 define('MAIL_FROM_EMAIL', 'support@findhousequick.com');
 
+// contact settings
+define('EMAIL_ADDRESS', 'support@findhousequick.com');
+define('ADDRESS', '39, Ohonre street, off adolor college road, Ugbowo. Benin City, Edo State');
+define('PHONE', '+2348100253033');
+define('BUSINESS_NAME', 'FINDHOUSEQUICK');
+
 // geolocation
 define('GOOGLE_GEO_API_URL', 'https://www.googleapis.com/geolocation/v1/geolocate');
 define('GOOGLE_GEO_API_KEY', 'your-api-key');

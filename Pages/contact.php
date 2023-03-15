@@ -1,3 +1,4 @@
+<?php require_once(dirname(__FILE__,2).'/Core/Init.php');?>
 <?php include('SiteAssets/Layout/Head.php') ?>
 
 
@@ -66,29 +67,29 @@
         <div class="md:pl-10 md:border-l md:border-l-gray-200">
           <div class="text-text">
             <h2 class="text-xl font-bold">Call Us</h2>
-            <p class="text-gray-400 my-1">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Porro, cum.</p>
+            <p class="text-gray-400 my-1"></p>
             <div class="flex items-center gap-2">
               <span class="inline-block p-2 rounded-lg bg-primary text-white"><i icon-name="phone" class="h-4 w-4"></i></span>
-              <p class="font-bold">080283783</p>
+              <p class="font-bold"><?php echo PHONE;?></p>
             </div>
           </div>
 
           <div class="text-text mt-8">
             <h2 class="text-xl font-bold">Email Us</h2>
-            <p class="text-gray-400 my-1">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Porro, cum.</p>
+            <p class="text-gray-400 my-1"></p>
             <div class="flex items-center gap-2">
               <span class="inline-block p-2 rounded-lg bg-primary text-white"><i icon-name="mail" class="h-4 w-4"></i></span>
-              <p class="font-bold">example2mail.com</p>
+              <p class="font-bold"><?php echo EMAIL_ADDRESS;?></p>
             </div>
           </div>
 
 
           <div class="text-text mt-8">
             <h2 class="text-xl font-bold">Visit Us</h2>
-            <p class="text-gray-400 my-1">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Porro, cum.</p>
+            <p class="text-gray-400 my-1"></p>
             <div class="flex items-center gap-2">
-              <span class="inline-block p-2 rounded-lg bg-primary text-white"><i icon-name="map-pin mt-8" class="h-4 w-4"></i></span>
-              <p class="font-bold">15031 Gladys Center</p>
+              <span class="inline-block p-2 rounded-lg bg-primary text-white"><i icon-name="map-pin" class="h-4 w-4"></i></span>
+              <p class="font-bold"><?php echo ADDRESS;?></p>
             </div>
           </div>
 
