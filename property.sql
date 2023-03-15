@@ -21,4 +21,3 @@ CREATE TABLE property (
   FOREIGN KEY (landlord_id) REFERENCES users(id),
   FOREIGN KEY (agent_id) REFERENCES users(id)
 );
-

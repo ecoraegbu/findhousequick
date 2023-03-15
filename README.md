@@ -14,3 +14,5 @@ view receipts and tenancy agreements
 upload documents etc.
 should have the capacity for the user to view property listed by the same agent, view similar properties
 add functionality for rating properties and comments. nearest landmark.
+
+we would have to add property type, and number of flats to the property table. also, the number of occupied flats in the property.
