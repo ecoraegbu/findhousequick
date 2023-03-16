@@ -15,4 +15,17 @@ upload documents etc.
 should have the capacity for the user to view property listed by the same agent, view similar properties
 add functionality for rating properties and comments. nearest landmark.
 
-we would have to add property type, and number of flats to the property table. also, the number of occupied flats in the property.
+we would have to add property type, and number of flats to the property table. also, the number of occupied flats in the property. a functionality to check if the number of flats is greater than the number of flats occupied, if this is false, the occupied column for the particular property would be updated to 1 for yes.
+
+in the frontend, when details of the property is called, the occupied column would be the indicator based on which the appropriate status buttons would be displayed.
+
+when a user signs up, the user would be free to browse the listings on the page. when he or she finds a property and wants it, the user can pay for it, rent it or book an inspection session.
+
+case rent. 
+the user role would be updated from ordinary user to tenant in the database,
+the payment table would be updated to reflect the current records
+the property table would be updated to mark the flat as occupied or add 1 to the number of flats occupied
+
+case lease
+
+case purchase/buy

@@ -283,6 +283,13 @@ public function execute_sql_script($db_name, $script_path) {
         die("Error: Cannot read SQL script file '$script_path'.\n");
     }
 }
+public function agent($query){
+  
+   if (!$this->query($query)->error()){
+    return $this;
 
+   }
+    
+}
 
 }
