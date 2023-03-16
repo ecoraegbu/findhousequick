@@ -55,9 +55,9 @@ class Landlord{
             return $result->first();
         }
     
-    }    public function get_agent_total_properties($agent_id) {
-        $query = "SELECT COUNT(*) AS total_properties FROM property p JOIN agents a 
-                  ON a.agent_id = p.agent_id WHERE a.agent_id = <agent_id>;";
+    }    public function get_landlord_total_properties($landlord_id) {
+        $query = "SELECT COUNT(*) AS total_properties FROM property p JOIN landlord l 
+                  ON l.landlord_id = p.landlord_id WHERE l.landlord_id = $landlord_id;";
     
         $result = $this->connection->agent($query);
         if ($result->count()){

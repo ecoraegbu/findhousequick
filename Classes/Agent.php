@@ -48,7 +48,7 @@ class Agent{
     
     }    public function get_agent_total_properties($agent_id) {
         $query = "SELECT COUNT(*) AS total_properties FROM property p JOIN agents a 
-                  ON a.agent_id = p.agent_id WHERE a.agent_id = <agent_id>;";
+                  ON a.agent_id = p.agent_id WHERE a.agent_id = $agent_id;";
     
         $result = $this->connection->agent($query);
         if ($result->count()){
