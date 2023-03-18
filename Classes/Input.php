@@ -18,7 +18,12 @@ class Input {
                 return $get_value;
             }
         }
+        if (isset($_FILES[$item])) {
+            return $_FILES[$item];
+        }
         
         return null;
     }
+
+    
 }

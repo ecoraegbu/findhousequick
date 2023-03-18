@@ -24,9 +24,9 @@
         <a href="contact.php" class="text-gray-500 hover:text-primary">Get In Touch</a>
       </li>
       <li class="md:ml-auto items-center gap-6 md:flex">
-        <a href="" class="bg-primary p-2 rounded-md inline-block">
+        <!-- <a href="" class="bg-primary p-2 rounded-md inline-block">
           <i icon-name="search" class="h-4 w-4 text-white"></i>
-        </a>
+        </a> -->
 
         <!-- Authentication buttons -->
         <div class="mt-4 md:mt-0 flex gap-4">

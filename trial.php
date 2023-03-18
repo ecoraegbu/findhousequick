@@ -2,9 +2,10 @@
 require_once('Core/Init.php');
 $user = new User();
 $directory = new Directorycreator();
+$property = new Property();
 
 if(!$user->isloggedin()){
-    Redirect::to('index.php');
+    Redirect::to(BASE_URL);
 }elseif((int)$user->data()->role !== USER_ROLE_AGENT){
     Redirect::to('404');
 }else{
@@ -15,7 +16,7 @@ if(!$user->isloggedin()){
         
             $data =[];
 
-            $address = Input::get('address');
+            $address = Input::get('address') ;
             $city = Input::get('city');
             $state = Input::get('state');
             $lga = Input::get('lga');
@@ -27,12 +28,18 @@ if(!$user->isloggedin()){
             $bedrooms = Input::get('bedrooms');
             $bathrooms = Input::get('bathrooms');
             $toilets = Input::get('toilets');
-            $images = Input::get('images');
-            $is_available = Input::get('is_available');
-            $id = session::get('user');
+            $is_available = (Input::get('is_available') === 'on')? 1 : 0;
+            $user_id = session::get('user');
             $user_role = session::get('user_role');
             //the field to update with the user id for either landlord or agent will depend on the user role, 
             $field_name = ($user_role == 4) ? 'agent_id' : (($user_role == 5) ? 'landlord_id' : null);
+            $image1 = (Input::get('image1'))? Input::get('image1') : null;
+            $image2 = (Input::get('image2'))? Input::get('image2') : null;
+            $image3 = (Input::get('image3'))? Input::get('image3') : null;
+            $image4 = (Input::get('image4'))? Input::get('image4') : null;
+            $image5 = (Input::get('image5'))? Input::get('image5') : null;
+            $image6 = (Input::get('image6'))? Input::get('image6') : null;
+
 
 
             
@@ -50,10 +57,9 @@ if(!$user->isloggedin()){
             $data['bedrooms'] = $bedrooms;
             $data['bathrooms'] = $bathrooms;
             $data['toilets'] = $toilets;
-            $data['images'] = $images;
             $data['is_available'] = $is_available;
-            $data['landlord_id'] = $landlord_id;
-            $data['agent_id'] = $agent_id;
+            $data['profile_pic'] = $image1;
+            
     
             $rules = [
                 'address' => 'required|string|max:255',
@@ -69,15 +75,16 @@ if(!$user->isloggedin()){
                 'bathrooms' => 'required|numeric',
                 'toilets' => 'required|numeric',
                 'is_available' => 'nullable|boolean',
-                'landlord_id' => 'nullable|integer',
-                'agent_id' => 'nullable|integer'
+                'profile_pic' => 'required|image'
             ];
     
 
             $validate = new Validator($data);
             $result = $validate->validate($rules);
             if ($validate->passes()){
-                echo 'validation passed';
+                        //this new property method will create a new record in the property table of the database
+
+                $property_id  = Hash::generate_unique_id(10, $user_id);
                 $path =[];
                 foreach ($_FILES as $fieldName => $file) {
                     // The imageupload class has been built to rename the images with the $fieldName which is usually
@@ -87,7 +94,7 @@ if(!$user->isloggedin()){
             
                     //$source = $fieldName; it is property name here. when uploading profile pics then profile pics would be used
                     try {
-                        $folder = $directory->createdirectory('/uploads/', 'property/', '2');
+                        $folder = $directory->createdirectory('/uploads/', 'property/', $user_id, $property_id);
                         //the $objectid of the user would be used to create the folder where the user's pics would be
                         //uploaded into
         
@@ -97,16 +104,37 @@ if(!$user->isloggedin()){
                 
         
                     } catch (Exception $e) {
-                        // Handle the exception, such as displaying an error message to the user
+                        Session::flash('failure_message', $e->getMessage());
                     }
             
                 }
+
                 //here the database is updated so you can use the new_property method of the property class.
                 // the url for each image uploaded. is returned in the $path array as $fieldName => $folder.'/'fieldName
                 //next we encode this path as a json object and store it in the url field 
                 //$connection->insert('property', array('name' => $path));
+
                 $json_object = json_encode($path);
-                $property->new_property();
+                $details = [
+                    "address" => $address,
+                    "city" => $city,
+                    "state" => $state,
+                    "lga" => $lga,
+                    "type" => $type,
+                    "status" => $status,
+                    "purpose" => $purpose,
+                    "price" => $price,
+                    "description" => $description,
+                    "bedrooms" => $bedrooms,
+                    "bathrooms" => $bathrooms,
+                    "toilets" => $toilets,
+                    "images" => $json_object,
+                    "is_available" => $is_available,
+                    $field_name => $user_id,
+                    "property_id" => $property_id
+                ];
+                $property->new_property($details);
+
             }else{
                 foreach($validate->errors() as $error){
 
@@ -182,6 +210,11 @@ if(!$user->isloggedin()){
 	</style>
 </head>
 <body>
+<div class="alert">
+  <?php if(session::exists('message')): ?>
+    <?php echo session::flash('message'); ?>
+  <?php endif; ?>
+</div>
 
 	<h1>File Upload Form</h1>
 	<form method="post" action="" enctype="multipart/form-data">
@@ -205,21 +238,15 @@ if(!$user->isloggedin()){
     <label for="price">Price:</label>
     <input type="number" id="price" name="price" value ="<?php echo Input::get('price') ? Input::get('price') : '';?>" >
     <label for="description">Description:</label>
-    <textarea id="description" name="description" value ="<?php echo Input::get('description') ? Input::get('description') : '';?>" ></textarea>
+    <textarea id="description" name="description" value ="<?php echo Input::get('description') ? Input::get('description') :'';?>" ></textarea>
     <label for="bedrooms">number of Bedrooms:</label>
     <input type="number" id="bedrooms" name="bedrooms" value ="<?php echo Input::get('bedrooms') ? Input::get('bedrooms') : '';?>" >
     <label for="bathrooms">number of Bathrooms:</label>
     <input type="number" id="bathrooms" name="bathrooms" value ="<?php echo Input::get('bathrooms') ? Input::get('bathrooms') : '';?>" >
     <label for="toilets">number of Toilets:</label>
     <input type="number" id="toilets" name="toilets" value ="<?php echo Input::get('toilets') ? Input::get('toilets') : '';?>" >
-    <label for="images">Images:</label>
-    <input type="hidden" id="images" name="images" value ="">
     <label for="is_available">Is Available:</label>
-    <input type="checkbox" id="is_available" name="is_available" value ="<?php echo Input::get('is_available') ? Input::get('is_available') : '';?>" >
-    <label for="landlord_id">Landlord ID:</label>
-    <input type="number" id="landlord_id" name="landlord_id" value ="<?php echo Input::get('landlord_id') ? Input::get('landlord_id') : '';?>">
-    <label for="agent_id">Agent ID:</label>
-    <input type="number" id="agent_id" name="agent_id" value ="<?php echo Input::get('agent_id') ? Input::get('agent_id') : '';?>">
+    <input type="checkbox" id="is_available" name="is_available"  >
     <label for="profile-pic">Profile Pic:</label>
     <input type="file" name="profile-pic" accept="image/*">
     <label for="bedroom-pic">Bedroom Pic:</label>
@@ -230,6 +257,16 @@ if(!$user->isloggedin()){
     <input type="submit" value="Submit">
     
 </form>
+<script>
+  // Wait for 3 seconds before removing the flash message
+  setTimeout(function() {
+    var message = document.querySelector('.alert');
+    if (message) {
+      message.parentNode.removeChild(message);
+    }
+  }, 3000);
+</script>
+
 </body>
 </html>
 

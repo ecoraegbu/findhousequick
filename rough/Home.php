@@ -51,9 +51,10 @@ require_once(dirname(__FILE__,2).'/Core/Init.php');
   <!-- Listings Section -->
   <section class="px-10 sm:px-20 md:px-10 my-20">
     <div class="max-w-6xl mx-auto">
-      <!-- <span class="text-primary font-light text-lg">Our featured properties.</span>
-      <h1 class="text-5xl font-bold text-text before:block before:bg-gray-100 before:h-48 before:w-36 before:absolute before:left-0 before:-mt-16 before:rounded-lg before:-z-10">Our Listings.</h1>
- -->
+      <span class="text-primary font-light text-lg">Our featured properties.</span>
+      <h1 class="text-5xl font-bold text-text before:block before:bg-gray-100 before:h-48 before:w-36 before:absolute before:left-0 before:-mt-16 before:rounded-lg before:-z-10">
+        Our Listings.</h1>
+
 
       <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-10 mt-10">
 
