@@ -1,6 +1,9 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-  content: ["./Pages/**/*.{html,php,js}"],
+  content: [
+    "./Pages/**/*.{html,php,js}",
+    "./**/*.{html,php,js}"
+  ],
   theme: {
     fontFamily: {
       'sans': ['Manrope', 'sans-serif'],
