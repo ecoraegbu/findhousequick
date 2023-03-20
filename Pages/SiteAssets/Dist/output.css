@@ -752,10 +752,6 @@ video {
   display: flex;
 }
 
-.inline-flex {
-  display: inline-flex;
-}
-
 .table {
   display: table;
 }
@@ -970,6 +966,10 @@ video {
   justify-content: space-between;
 }
 
+.gap-1 {
+  gap: 0.25rem;
+}
+
 .gap-10 {
   gap: 2.5rem;
 }
@@ -992,10 +992,6 @@ video {
 
 .gap-8 {
   gap: 2rem;
-}
-
-.gap-1 {
-  gap: 0.25rem;
 }
 
 .gap-x-16 {
@@ -1150,6 +1146,11 @@ video {
   background-color: rgb(243 232 255 / var(--tw-bg-opacity));
 }
 
+.bg-purple-700 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(126 34 206 / var(--tw-bg-opacity));
+}
+
 .bg-sidebar {
   --tw-bg-opacity: 1;
   background-color: rgb(10 79 169 / var(--tw-bg-opacity));
@@ -1185,9 +1186,8 @@ video {
   background-color: rgb(255 255 255 / var(--tw-bg-opacity));
 }
 
-.bg-purple-700 {
-  --tw-bg-opacity: 1;
-  background-color: rgb(126 34 206 / var(--tw-bg-opacity));
+.bg-opacity-0 {
+  --tw-bg-opacity: 0;
 }
 
 .bg-opacity-25 {
@@ -1502,12 +1502,12 @@ video {
   color: rgb(255 255 255 / var(--tw-text-opacity));
 }
 
-.opacity-50 {
-  opacity: 0.5;
-}
-
 .opacity-0 {
   opacity: 0;
+}
+
+.opacity-50 {
+  opacity: 0.5;
 }
 
 .bg-blend-multiply {
@@ -1647,11 +1647,6 @@ html {
   background-color: rgb(255 255 255 / var(--tw-bg-opacity));
 }
 
-.hover\:-translate-y-2:hover {
-  --tw-translate-y: -0.5rem;
-  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
-}
-
 .hover\:-translate-y-4:hover {
   --tw-translate-y: -1rem;
   transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
@@ -1776,10 +1771,6 @@ html {
   background-color: rgb(229 231 235 / var(--tw-bg-opacity));
 }
 
-.group:hover .group-hover\:block {
-  display: block;
-}
-
 .group:hover .group-hover\:bg-primary {
   --tw-bg-opacity: 1;
   background-color: rgb(24 119 242 / var(--tw-bg-opacity));
@@ -1789,8 +1780,8 @@ html {
   --tw-bg-opacity: 0.25;
 }
 
-.group:hover .group-hover\:bg-opacity-100 {
-  --tw-bg-opacity: 1;
+.group:hover .group-hover\:bg-opacity-50 {
+  --tw-bg-opacity: 0.5;
 }
 
 .group:hover .group-hover\:opacity-100 {

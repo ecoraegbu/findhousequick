@@ -144,7 +144,7 @@ $document_root = 'C:\wamp64\www\findhousequick';
           <div class="swiper-slide border border-gray-100 p-4 rounded-lg bg-white group">
             <div class="relative">
               <img src="https://images.pexels.com/photos/1974596/pexels-photo-1974596.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" class="aspect-square object-cover rounded-lg" alt="">
-              <div class="w-full h-full bg-black bg-opacity-50 opacity-0  group-hover:opacity-100 absolute inset-0 rounded-lg p-2 transition-all">
+              <div class="w-full h-full bg-black bg-opacity-0 group-hover:bg-opacity-50 absolute inset-0 rounded-lg p-2 transition-all">
                 <div class="flex flex-wrap gap-1">
                   <span class="bg-primary text-white px-2 py-1.5 text-sm rounded-md">Available</span>
                   <span class="bg-success text-white px-2 py-1.5 text-sm rounded-md">For Sale</span>
