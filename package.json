@@ -6,8 +6,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "pnpm tailwindcss -i ./Pages/Styles/input.css -o ./Pages/Dist/output.css --watch",
-    "site": "pnpm tailwindcss -i ./Pages/SiteAssets/Styles/input.css -o ./Pages/SiteAssets/Dist/output.css --watch",
-    "wok": "pnpm tailwindcss -i ./Agent/Styles/input.css -o ./Agent/Dist/output.css --watch"
+    "site": "pnpm tailwindcss -i ./Pages/SiteAssets/Styles/input.css -o ./Pages/SiteAssets/Dist/output.css --watch"
   },
   "keywords": [],
   "author": "",
