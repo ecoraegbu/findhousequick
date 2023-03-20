@@ -9,4 +9,7 @@ class Hash {
     public static function unique(){
         return self::make(uniqid());
     }
+    public static function generate_unique_id($length, $prefix = '') {
+        return $prefix . '_' . substr(md5(uniqid()), 0, $length);
+    }
 }

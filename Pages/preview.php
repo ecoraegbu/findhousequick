@@ -1,4 +1,25 @@
-<?php include('SiteAssets/Layout/Head.php') ?>
+<?php 
+include('SiteAssets/Layout/Head.php') ;
+require_once(dirname(__FILE__,2).'/Core/Init.php');
+if(Input::exists()){
+  $property_id = Input::get('property');
+  $property = new Property();
+  $house = $property->get_property_details($property_id);
+  $images = json_decode($house->images);
+  $pictures = [];
+  // Define the document root of your web server
+$document_root = 'C:\wamp64\www\findhousequick';
+    foreach ($images as $name => $value){
+      // Define the file path to be converted
+      $file_path = $images->{$name};
+      // Remove the document root from the beginning of the file path
+      $file_path = str_replace($document_root, '', $file_path);
+      // Prepend '../' to the file path
+      $relative_path = '..' . $file_path;
+      $pictures[$name] = $relative_path;
+    }
+}
+?>
 
 
 <title>Preview | FindHouseQuick</title>
@@ -18,28 +39,28 @@
         <div class="swiper swiper-preview">
           <div class="swiper-wrapper">
             <div class="swiper-slide">
-              <img src="https://images.pexels.com/photos/1022936/pexels-photo-1022936.jpeg?auto=compress&cs=tinysrgb&w=600" class="w-full h-[460px] object-cover rounded-2xl" alt="">
+              <img src="<?php echo $pictures['profile-pic']; ?>" class="w-full h-[460px] object-cover rounded-2xl" alt="">
             </div>
             <div class="swiper-slide">
-              <img src="https://images.pexels.com/photos/2128329/pexels-photo-2128329.jpeg?auto=compress&cs=tinysrgb&w=600" class="w-full h-[460px] object-cover rounded-2xl" alt="">
+              <img src="<?php echo $pictures['bedroom-pic']; ?>" class="w-full h-[460px] object-cover rounded-2xl" alt="">
             </div>
             <div class="swiper-slide">
-              <img src="https://images.pexels.com/photos/323780/pexels-photo-323780.jpeg?auto=compress&cs=tinysrgb&w=600" class="w-full h-[460px] object-cover rounded-2xl" alt="">
+              <img src="<?php echo $pictures['parlor-pic']; ?>" class="w-full h-[460px] object-cover rounded-2xl" alt="">
             </div>
           </div>
         </div>
 
-        <!-- Thumbnail -->
+        <!-- Thumbnail use php to programmatically create the slide. for the number of pictures in the picture array/ the size of the array. -->
         <div thumbsSlider="" class="swiper swiper-thumb flex flex-wrap gap-4 mt-4">
           <div class="swiper-wrapper">
             <div class="swiper-slide">
-              <img src="https://images.pexels.com/photos/1022936/pexels-photo-1022936.jpeg?auto=compress&cs=tinysrgb&w=600" class="aspect-square w-24  object-cover rounded-md" alt="">
+              <img src="<?php echo $pictures['profile-pic']; ?>" class="aspect-square w-24  object-cover rounded-md" alt="">
             </div>
             <div class="swiper-slide">
-              <img src="https://images.pexels.com/photos/2128329/pexels-photo-2128329.jpeg?auto=compress&cs=tinysrgb&w=600" class="aspect-square w-24 object-cover rounded-md" alt="">
+              <img src="<?php echo $pictures['bedroom-pic']; ?>" class="aspect-square w-24 object-cover rounded-md" alt="">
             </div>
             <div class="swiper-slide">
-              <img src="https://images.pexels.com/photos/323780/pexels-photo-323780.jpeg?auto=compress&cs=tinysrgb&w=600" class="aspect-square w-24 object-cover rounded-md" alt="">
+              <img src="<?php echo $pictures['parlor-pic']; ?>" class="aspect-square w-24 object-cover rounded-md" alt="">
             </div>
           </div>
         </div>
@@ -49,30 +70,30 @@
         <!-- Status Card -->
         <div class="">
           <!-- Available -->
-          <span class="bg-primary-light text-primary px-2 py-1.5 text-sm rounded-md">Available</span>
+          <span class="bg-success-light text-success px-2 py-1.5 text-sm rounded-md"><?php echo $house->status;?></span>
           <!-- For Sale -->
-          <span class="bg-success-light text-success px-2 py-1.5 text-sm rounded-md ml-2">For Sale</span>
+          <span class="bg-primary-light text-primary px-2 py-1.5 text-sm rounded-md ml-2"><?php echo $house->purpose;?></span>
           <!-- For Rent -->
-          <span class="bg-purple-100 text-purple-700 px-2 py-1.5 text-sm rounded-md ml-2">For Rent</span>
+          <!-- <span class="bg-purple-100 text-purple-700 px-2 py-1.5 text-sm rounded-md ml-2">For Rent</span> -->
           <!-- Not Available -->
-          <span class="bg-error-light text-error px-2 py-1.5 text-sm rounded-md ml-2">Not Available</span>
+          <!-- <span class="bg-error-light text-error px-2 py-1.5 text-sm rounded-md ml-2">Not Available</span> -->
         </div>
 
-        <h1 class="text-5xl text-text font-bold mt-4 mb-5">Nomaden Omah Sekut</h1>
-        <p class="text-gray-600 font-light text-lg">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat reiciendis at ipsam, nihil fuga dolorem debitis laboriosam aliquam laborum explicabo, sapiente maxime molestias eveniet ad labore modi harum unde dolores id odio maiores fugiat et incidunt. Nihil, reprehenderit et, rem debitis repudiandae deleniti culpa commodi, illo cupiditate sint sit libero.</p>
+        <h1 class="text-5xl text-text font-bold mt-4 mb-5"><?php echo $house->type . ', '. $house->city?></h1>
+        <p class="text-gray-600 font-light text-lg"><?php echo $house->description?>.</p>
 
 
         <div class="flex flex-wrap gap-4 mt-10">
           <div class="flex items-center gap-2 font-semibold border border-gray-200 px-2 py-2 rounded-lg">
-            <span class="bg-primary text-white px-1.5 py-0.5 rounded-lg inline-block text-xl">05</span>
+            <span class="bg-primary text-white px-1.5 py-0.5 rounded-lg inline-block text-xl"><?php echo $house->toilets;?></span>
             <span class="text-gray-600">Toilets</span>
           </div>
           <div class="flex items-center gap-2 font-semibold border border-gray-200 px-2 py-2 rounded-lg">
-            <span class="bg-primary text-white px-1.5 py-0.5 rounded-lg inline-block text-xl">12</span>
+            <span class="bg-primary text-white px-1.5 py-0.5 rounded-lg inline-block text-xl"><?php echo $house->bathrooms;?></span>
             <span class="text-gray-600">Bathrooms</span>
           </div>
           <div class="flex items-center gap-2 font-semibold border border-gray-200 px-2 py-2 rounded-lg">
-            <span class="bg-primary text-white px-1.5 py-0.5 rounded-lg inline-block text-xl">24</span>
+            <span class="bg-primary text-white px-1.5 py-0.5 rounded-lg inline-block text-xl"><?php echo $house->bedrooms;?></span>
             <span class="text-gray-600">Rooms</span>
           </div>
           <div class="flex items-center gap-2 font-semibold border border-gray-200 px-2 py-2 rounded-lg">
@@ -88,7 +109,7 @@
 
 
         <div class="mt-10">
-          <p class="text-primary text-2xl font-bold">N20,500,000 <small class="text-gray-500 font-normal">/yearly</small></p>
+          <p class="text-primary text-2xl font-bold"><?php echo $house->price;?> <small class="text-gray-500 font-normal">/ Per year</small></p>
         </div>
 
         <div class="mt-2">

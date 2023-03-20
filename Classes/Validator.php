@@ -113,7 +113,37 @@ class Validator {
                               return;
                           }
                           break;
-
+                      case 'array':
+                          if(!is_array($value)){
+                              $this->addError("{$item} must be an array.");
+                              return;
+                            }
+                            break;
+                        case 'image':
+                            $allowedExtensions = ['jpg', 'jpeg', 'png', 'gif'];
+                            $fileExtension = pathinfo($value['name'], PATHINFO_EXTENSION);
+                            if(!in_array($fileExtension, $allowedExtensions)){
+                                $this->addError("{$item} must be an image file (jpg, jpeg, png, gif).");
+                                return;
+                            }
+                            break;
+                        case 'nullable':
+                            if($value === null || $value === ''){
+                                return;
+                            }
+                            break;
+                        case 'json_object':
+                            $decoded = json_decode($value);
+                            if (json_last_error() !== JSON_ERROR_NONE) {
+                                $this->addError("{$item} must be a valid JSON object.");
+                                return;
+                            }
+                            if (!is_object($decoded)) {
+                                $this->addError("{$item} must be a JSON object.");
+                                return;
+                            }
+                            break;
+                            
                     default:
                         // do nothing
                         break;

@@ -39,6 +39,7 @@ if ($user->isloggedin()) {
     redirect::to(BASE_URL . 'pages/home.php');
 }
 
+
 $directory = new Directorycreator();
 if (Input::exists()) {
 }
