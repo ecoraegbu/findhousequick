@@ -1,8 +1,10 @@
 <?php
 require_once(dirname(__FILE__,2).'/Core/Init.php');
-
+$property = new Property();
+$properties = $property->get_all_property();
 ?>
 <?php include('SiteAssets/Layout/Head.php') ?>
+
 
 
 <title>Home | FindHouseQuick</title>
@@ -48,6 +50,10 @@ require_once(dirname(__FILE__,2).'/Core/Init.php');
   <!-- Hero End -->
 
 
+
+
+
+
   <!-- Listings Section -->
   <section class="px-10 sm:px-20 md:px-10 my-20">
     <div class="max-w-6xl mx-auto">
@@ -56,32 +62,57 @@ require_once(dirname(__FILE__,2).'/Core/Init.php');
  -->
 
       <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-10 mt-10">
+      <?php
+foreach($properties as $property):?>
+    <?php $urls = json_decode($property->images);
+    
+    
+// Define the document root of your web server
+$document_root = 'C:\wamp64\www\findhousequick';
 
-        <!-- Cards -->
-        <div class="shadow-card p-4 rounded-lg bg-white group hover:-translate-y-4 transition-all">
-          <div class="relative">
-            <img src="https://images.pexels.com/photos/1974596/pexels-photo-1974596.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" class="aspect-square object-cover rounded-lg" alt="">
-            <div class="w-full h-full bg-black bg-opacity-50 opacity-0  group-hover:opacity-100 absolute inset-0 rounded-lg p-2 transition-all">
-              <div class="flex flex-wrap gap-1">
-                <span class="bg-primary text-white px-2 py-1.5 text-sm rounded-md">Available</span>
-                <span class="bg-success text-white px-2 py-1.5 text-sm rounded-md">For Sale</span>
-                <span class="bg-purple-700 text-white px-2 py-1.5 text-sm rounded-md">For Rent</span>
-                <span class="bg-error text-white px-2 py-1.5 text-sm rounded-md">Occupied</span>
-              </div>
-            </div>
-          </div>
+// Define the file path to be converted
+$file_path = $urls->{'profile-pic'};
 
-          <a href="" class="block mt-3 text-text hover:text-opacity-80 font-semibold text-xl truncate" title="Real Bluestyle house Working on">Real Bluestyle house Working on</a>
-          <p class="text-sm text-gray-400 -mt-1">San Diego, California USA</p>
+// Remove the document root from the beginning of the file path
+$file_path = str_replace($document_root, '', $file_path);
 
-          <p class="text-primary font-semibold mt-1 text-xl">N3,000,000 <small class="text-gray-500 font-normal">/yearly</small>
-          </p>
-        </div>
+// Replace backslashes with forward slashes
+//$file_path = str_replace('\\', '/', $file_path);
+
+// Prepend '../' to the file path
+$relative_path = '..' . $file_path;
+
+
+?>
+
+
+    
+    <div class="shadow-card p-4 rounded-lg bg-white group transition-all">
+  <div class="relative">
+
+    <img src="<?php echo $relative_path?>" class="aspect-square object-cover rounded-lg" alt="">
+    <div class="w-full h-full absolute inset-0 rounded-lg p-2">
+      <span class="bg-primary text-white px-2 py-1.5 text-sm rounded-md absolute top-0 left-0 z-10"><?php echo $property->purpose;?></span>
+      <span class="bg-success text-white px-2 py-1.5 text-sm rounded-md absolute top-0 right-0 z-10"><?php echo $property->status;?></span>
+      <div class="w-full h-full bg-black bg-opacity-50 opacity-0 group-hover:opacity-100 absolute inset-0 rounded-lg p-2 transition-all">
+
+      </div>
+    </div>
+  </div>
+
+  <a href=" preview.php?property= <?php echo $property->id?>" class="block mt-3 text-text hover:text-opacity-80 font-semibold text-xl truncate" title="Real Bluestyle house Working on"><?php echo $property->type.', '.$property->city; ?>.</a>
+  <p class="text-sm text-gray-400 -mt-1"><?php echo $property->city .', '. $property->state;?></p>
+
+  <p class="text-primary font-semibold mt-1 text-xl"> <small class="text-gray-500 font-normal"><?php echo $property->price ?>/yearly</small>
+  </p>
+</div>
+    
+        <?php endforeach; ?>
 
         <!--testing clickable div-->
 
 
-  <div class="shadow-card p-4 rounded-lg bg-white group transition-all">
+<!--   <div class="shadow-card p-4 rounded-lg bg-white group transition-all">
   <div class="relative">
     <img src="https://images.pexels.com/photos/1974596/pexels-photo-1974596.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" class="aspect-square object-cover rounded-lg" alt="">
     <div class="w-full h-full absolute inset-0 rounded-lg p-2">
@@ -102,7 +133,7 @@ require_once(dirname(__FILE__,2).'/Core/Init.php');
 
        
 
-        <!--end of testing -->
+       end of testing 
 
         <div class="shadow-card p-4 rounded-lg  bg-white">
           <img src="https://images.pexels.com/photos/1022936/pexels-photo-1022936.jpeg?auto=compress&cs=tinysrgb&w=600" class="aspect-square object-cover rounded-lg" alt="">
@@ -177,7 +208,7 @@ require_once(dirname(__FILE__,2).'/Core/Init.php');
         </div>
 
 
-      </div>
+      </div> -->
 
       <div class="text-center mt-16">
         <a href="" class="px-6 py-3 text-white bg-primary inline-block rounded-lg hover:bg-blue-600">View More</a>

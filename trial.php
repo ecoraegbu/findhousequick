@@ -33,7 +33,7 @@ if(!$user->isloggedin()){
             $user_role = session::get('user_role');
             //the field to update with the user id for either landlord or agent will depend on the user role, 
             $field_name = ($user_role == 4) ? 'agent_id' : (($user_role == 5) ? 'landlord_id' : null);
-            $image1 = (Input::get('image1'))? Input::get('image1') : null;
+            $profile_pic = (Input::get('profile-pic'))? Input::get('profile-pic') : null;
             $image2 = (Input::get('image2'))? Input::get('image2') : null;
             $image3 = (Input::get('image3'))? Input::get('image3') : null;
             $image4 = (Input::get('image4'))? Input::get('image4') : null;
@@ -58,7 +58,7 @@ if(!$user->isloggedin()){
             $data['bathrooms'] = $bathrooms;
             $data['toilets'] = $toilets;
             $data['is_available'] = $is_available;
-            $data['profile_pic'] = $image1;
+            //$data['profile-pic'] = $profile_pic;
             
     
             $rules = [
@@ -75,7 +75,7 @@ if(!$user->isloggedin()){
                 'bathrooms' => 'required|numeric',
                 'toilets' => 'required|numeric',
                 'is_available' => 'nullable|boolean',
-                'profile_pic' => 'required|image'
+                //'profile-pic' => 'required|image'
             ];
     
 
