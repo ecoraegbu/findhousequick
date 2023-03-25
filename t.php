@@ -1,6 +1,8 @@
 <?php
 require_once(dirname(__FILE__).'/Core/Init.php');
-$property = new Property();
+
+
+/* $property = new Property();
 $house = $property->get_property_details(3);
 $properties = $property->get_all_property();
 foreach($properties as $property){
@@ -22,3 +24,34 @@ foreach($properties as $property){
     <p><?php echo $fruit; ?></p>
     <!-- some more HTML code -->
 <?php endforeach; ?>
+ */
+/* $connection = Database::getInstance();
+$connection->execute_sql_script('findhousequick','Sql/states.sql'); */
+?>
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>State and LGA Dropdowns</title>
+    
+
+  </head>
+  <body>
+    <form>
+      <label for="state-dropdown">State:</label>
+      <select id="state-dropdown" name="state" data-table="states">
+
+        <option value="">Select a state</option>
+      </select>
+      <br>
+      <label for="lga-dropdown">LGA:</label>
+      <select id="lga-dropdown" name="lga" data-table="lgas">
+
+        <option value="">Select an LGA</option>
+      </select>
+      <input type="submit">
+    </form>
+    <script src="populatedropdown.js"></script>
+  </body>
+</html>
