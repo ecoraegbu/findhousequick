@@ -28,7 +28,7 @@ $document_root = 'C:\wamp64\www\findhousequick';
 <body class="">
 
   <header class="">
-    <?php include('SiteAssets/Layout/Navbar.php') ?>
+    <?php //include('SiteAssets/Layout/Navbar.php') ?>
   </header>
 
   <!-- Preview Section -->
