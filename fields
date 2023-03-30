@@ -1,10 +1,16 @@
-
-A. GENERAL COMPONENTS FOR THE MAIN ADMIN PANEL, THE UI SHOULD BE DIVIDED INTO THE FOLLOWING CATEGORIES.
-User Management:
+-----------
+PLEASE NOTE!
+unless where specified, Any thing that displays from the data base would mostly be text. Every views page such as view tenant, or view property displays from the database. The important thing is the organization and arrangement of these components on the page. give allowance for component name, and component value (component refers to data from the database such as name. for example for a user whose first name is Emmanuel. the component name = First name, component value = Emmanuel) 
+-----------
+-------------------------------------------------------------------------------------------------------------------------
+A. GENERAL COMPONENTS FOR THE MAIN ADMIN PANEL.
+-------------------------------------------------------------------------------------------------------------------------
+THE UI FOR THE ADMIN SHOULD BE DIVIDED INTO THE FOLLOWING CATEGORIES.
+1. User Management:
 
 * Add User button: 
 - Allows the administrator to add a new user.
-- Use the Same form as the update profile but this time with the name and email fields present
+- Use the update profile form but this time with the name and email fields present
 
 * View User: 
 - Allows the administrator to view a specific user. 
@@ -26,7 +32,7 @@ User Management:
 - Additionally, add a few buttons for assigning roles, etc.
 
 
-Property Management:
+2. Property Management:
 
 * Add Property: 
 - Allows the administrator to add a new property.
@@ -48,29 +54,44 @@ Property Management:
 * Edit Property: 
 - Allows the administrator to edit a property's information, such as address, price, property type, and property images.
 - Use update property page with additionally check boxes to mark property as unlisted etc.
-: Allows the administrator to delete a property listing.
 
-Transaction Management:
+
+3. Support and Communication:
+
+Support Tickets table: Displays a list of support tickets submitted by users.
+Messaging system: Allows the administrator to send and receive messages to/from users.
+
+
+4. Transaction Management:
 
 Payment History table: Displays a list of all transactions and their basic information, such as transaction date, amount, and payment status.
 Generate Invoice button: Allows the administrator to generate an invoice for a transaction.
 Refund button: Allows the administrator to process a refund for a transaction.
 
-Analytics and Reporting:
+5. Analytics and Reporting:
 
 Traffic Analytics chart: Displays a graph of site traffic and user engagement over time.
 User Analytics table: Displays a list of user behavior metrics, such as login frequency, property views, and transaction history.
 Export Data button: Allows the administrator to export data from the dashboard in various formats, such as CSV or Excel.
 
-Support and Communication:
-
-Support Tickets table: Displays a list of support tickets submitted by users.
-Messaging system: Allows the administrator to send and receive messages to/from users.
-
-Security and Privacy:
-
+6. Security and Privacy:
+--------------------
 B. SPECIFIC PAGES
-//PROFILE
+-------------------
+THE FOLLOWING ARE SPECIFIC PAGES THAT SHOULD BE BUILT. MOST SPECIFIC PAGES ARE REUSABLE WITH FEW ALTERATIONS DEPENDING ON THE AUTHORIZATION LEVEL OR USER ROLE.
+
+1. update profile form
+2. view profile (Data from database, but would have an image/avatar)
+3. edit profile page
+4. add property page
+5. property preview page (data from database, but would have pictures of the property)
+6. update property
+6. list pages use the form for listing which you have already built.
+
+-----------------------
+C. FIELDS FOR THE PAGES
+-----------------------
+//PROFILE FIELDS
 First Name
 Middle Name
 Last Name
@@ -88,9 +109,9 @@ State (dropdown)
 local government area (dropdown)
 Country
 Profile Picture/Avatar
-Edit profile 
+Edit profile (button)
 
-//NEW PROPERTY
+//PROPERTY FIELDS
 property type (dropdown, if others is selected, field for text input with default value "enter property type" activates)
 Address
 city
@@ -106,14 +127,14 @@ number of bathrooms
 other features
 image form fields with name field
 
-//View Tenants
+//View Tenants would display from the data base
 Tenant Details such as full names, email adress, phone number, (all those details collected in the update profile )
 tenants image/avatar
 tenancy details such as date tenancy commenced, date tenancy expires, apartment occupied, rent amount, notices issued, view messages
 
 
 
-Navigation Menu: A navigation menu with links to different sections of the dashboard, such as User Management, Property Management, Transaction Management, Analytics and Reporting, Support and Communication, and Security and Privacy.
+
 
 
 
