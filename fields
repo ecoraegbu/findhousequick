@@ -1,0 +1,19 @@
+//PROFILE
+First Name
+Middle Name
+Last Name
+Email Address (read only)
+Change password button
+Date of Birth
+Gender
+Phone Number
+Marital Status
+Employment Status (dropdown, if employed is selected, fields for Job type, Work Address, and Employer details activates )
+Religion
+Address
+City
+State (dropdown)
+local government area (dropdown)
+Country
+Profile Picture/Avatar
+Edit profile 
