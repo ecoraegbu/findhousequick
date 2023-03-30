@@ -1,3 +1,75 @@
+
+A. GENERAL COMPONENTS FOR THE MAIN ADMIN PANEL, THE UI SHOULD BE DIVIDED INTO THE FOLLOWING CATEGORIES.
+User Management:
+
+* Add User button: 
+- Allows the administrator to add a new user.
+- Use the Same form as the update profile but this time with the name and email fields present
+
+* View User: 
+- Allows the administrator to view a specific user. 
+- Use the same form as the view profile.
+- Have buttons for user control such as block user, delete user, edit user etc.
+- Additionally, should have a search form where a user can be found by username, email, or names. and search results displayed. 
+- Should also display additional details such as the users role, and other things, (can't remember them right now.)
+- The edit user button would lead to the edit user page
+
+* User List table: 
+- Displays a list of all users and their basic information, such as name, email, and user role.
+- Should have the view user button which would lead to the view user section
+- Should have approve user button
+- Should be able to sort users based on their location, user role, etc
+
+* Edit User: 
+- Allows the administrator to edit a user's information, such as name, email, password, and user role.
+- Use the edit profile page
+- Additionally, add a few buttons for assigning roles, etc.
+
+
+Property Management:
+
+* Add Property: 
+- Allows the administrator to add a new property.
+- Use add property page
+
+* View Property:
+- Allows the administrator to view a property.
+- Use property preview page, but modify it to output the property information from the database( can have one style for text output which would be reusable)
+- Should have a search form for finding specific properties based on the landlord, property id, etc.
+- Should have a Delete Property button and an edit property button
+
+* View Property List: 
+- Displays a list of all properties and their basic information, such as address, price, and property type.
+- Should be able to sort properties based on location, price, property type, property purpose(for sale or rent or lease or shortlet), and property status.
+- Should have an Approve Property button, Delete property button and view property button
+- shoud have check boxes in case we have to select multiple property for mass action.
+
+
+* Edit Property: 
+- Allows the administrator to edit a property's information, such as address, price, property type, and property images.
+- Use update property page with additionally check boxes to mark property as unlisted etc.
+: Allows the administrator to delete a property listing.
+
+Transaction Management:
+
+Payment History table: Displays a list of all transactions and their basic information, such as transaction date, amount, and payment status.
+Generate Invoice button: Allows the administrator to generate an invoice for a transaction.
+Refund button: Allows the administrator to process a refund for a transaction.
+
+Analytics and Reporting:
+
+Traffic Analytics chart: Displays a graph of site traffic and user engagement over time.
+User Analytics table: Displays a list of user behavior metrics, such as login frequency, property views, and transaction history.
+Export Data button: Allows the administrator to export data from the dashboard in various formats, such as CSV or Excel.
+
+Support and Communication:
+
+Support Tickets table: Displays a list of support tickets submitted by users.
+Messaging system: Allows the administrator to send and receive messages to/from users.
+
+Security and Privacy:
+
+B. SPECIFIC PAGES
 //PROFILE
 First Name
 Middle Name
@@ -17,3 +89,45 @@ local government area (dropdown)
 Country
 Profile Picture/Avatar
 Edit profile 
+
+//NEW PROPERTY
+property type (dropdown, if others is selected, field for text input with default value "enter property type" activates)
+Address
+city
+state
+local government area
+status (dropdown, (available, occupied))
+purpose(dropdown,(for sale, for rent, for lease, for shortlet))
+description(text field)
+price
+number of bedrooms
+number of toilets
+number of bathrooms
+other features
+image form fields with name field
+
+//View Tenants
+Tenant Details such as full names, email adress, phone number, (all those details collected in the update profile )
+tenants image/avatar
+tenancy details such as date tenancy commenced, date tenancy expires, apartment occupied, rent amount, notices issued, view messages
+
+
+
+Navigation Menu: A navigation menu with links to different sections of the dashboard, such as User Management, Property Management, Transaction Management, Analytics and Reporting, Support and Communication, and Security and Privacy.
+
+
+
+
+User Profile Page: Allows the administrator to view detailed information about a specific user, such as their name, email address, contact information, and account status.
+
+User Information Form Fields: Allows the administrator to edit and update the user's information, such as their name, email address, phone number, and mailing address.
+
+User Roles and Permissions: Allows the administrator to view and manage the user's role and permissions within the web app, such as granting or revoking agent or landlord privileges.
+
+Login History: Allows the administrator to view the user's login history, including their login date and time, IP address, and device information.
+
+User Activity Logs: Allows the administrator to view a log of the user's activity within the web app, such as their property listings, transactions, and support tickets.
+
+Account Status: Allows the administrator to change the user's account status, such as activating or deactivating the account, or suspending the account for violating the web app's terms and conditions.
+
+Delete User Account: Allows the administrator to delete the user's account and all associated data from the web app, if necessary.
