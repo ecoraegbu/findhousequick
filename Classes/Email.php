@@ -61,10 +61,11 @@ class Email {
       if (!$result) {
         throw new Exception("Failed to send message.");
       }
-      return "Message sent successfully.";
+      return true;
     } catch (Exception $e) {
-      return "Failed to send message: " . $e->getMessage();
+      echo  "Failed to send message: " . $e->getMessage();
     }
+    return false;
   }
   
 }
