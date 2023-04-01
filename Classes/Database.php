@@ -71,6 +71,37 @@ class Database{
            }
     return false;
     }
+    public function actions($action, $table, $where = array()){
+
+        $this->error = false;
+        if(count($where) > 0){
+            $operators = array('=','>','<','>=','<=','LIKE');
+            $conditions = array();
+            $values = array();
+            
+            foreach($where as $condition){
+                if(count($condition) === 3){
+                    $field    = $condition[0];
+                    $operator = $condition[1];
+                    $value    = $condition[2];
+    
+                    if(in_array($operator, $operators)){
+                        $conditions[] = "{$field} {$operator} ?";
+                        $values[] = $value;
+                    }
+                }
+            }
+    
+            $sql = "{$action} FROM {$table} WHERE " . implode(" AND ", $conditions);
+    
+            if(!$this->query($sql, $values)->error()){
+                return $this;
+            }
+        }
+    
+        return false;
+    }
+    
 
     public function get($table, $where){
         //$result = $this->action('SELECT *', $table, $where);

@@ -1,15 +1,11 @@
 <?php
 
-/* Author: Emmanuel Oraegbu
-Github: ecoraegbu
-email: ecoraegbu@gmail.com */
-
 class Notifications {
-    private $db;
+    private $database_connection;
     private static $notification;
 
     function __construct() {
-        $this->db = Database::getInstance();
+        $this->database_connection = Database::getInstance();
     }
 
     public static function notifiction(){
@@ -21,125 +17,73 @@ class Notifications {
     }
 
     function sendNotification($user_id, $message) {
-        // Code to insert the notification into the database
-    }
-
-    function markAsRead($notification_id) {
-        $stmt = $this->db->prepare("UPDATE notifications SET read = 1 WHERE id = ?");
-        $stmt->bind_param("i", $notification_id);
-        $stmt->execute();
-        $stmt->close();
-    }
-
-    function getUnreadNotifications($user_id) {
-        $notifications = array();
-
-        $stmt = $this->db->prepare("SELECT * FROM notifications WHERE user_id = ? AND read = 0");
-        $stmt->bind_param("i", $user_id);
-        $stmt->execute();
-
-        $result = $stmt->get_result();
-        while ($row = $result->fetch_assoc()) {
-            $notifications[] = $row;
-        }
-
-        $stmt->close();
-
-        return $notifications;
-    }
-
-    function deleteNotification($notification_id) {
-        $stmt = $this->db->prepare("DELETE FROM notifications WHERE id = ?");
-        $stmt->bind_param("i", $notification_id);
-        $stmt->execute();
-        $stmt->close();
-    }
-
-    function getNotificationCount($user_id) {
-        $stmt = $this->db->prepare("SELECT COUNT(*) as count FROM notifications WHERE user_id = ?");
-        $stmt->bind_param("i", $user_id);
-        $stmt->execute();
-
-        $result = $stmt->get_result();
-        $count = $result->fetch_assoc()['count'];
-
-        $stmt->close();
-
-        return $count;
-    }
-
-    function deleteOldNotifications($days) {
-        $cutoff = date('Y-m-d H:i:s', strtotime('-'.$days.' days'));
-
-        $stmt = $this->db->prepare("DELETE FROM notifications WHERE created_at < ?");
-        $stmt->bind_param("s", $cutoff);
-        $stmt->execute();
-        $stmt->close();
-    }
-}
-class Notifications {
-    private $db;
-    private static $notification;
-
-    function __construct() {
-        $this->db = Database::getInstance();
-    }
-
-    public static function notifiction(){
-        if(!isset(self::$notification)){
-            self::$notification = new Notifications();
-
-        }
-        return self::$notification;
-    }
-
-    function sendNotification($user_id, $message) {
-        $sql = "INSERT INTO notifications (user_id, message) VALUES (?, ?)";
-        $params = array('is', $user_id, $message);
-        $this->db->query($sql, $params);
+        $sql = "INSERT INTO notifications (user_id, messages) VALUES (?, ?)";
+        $params = array($user_id, $message);
+        $this->database_connection->query($sql, $params);
     }
 
     function markAsRead($notification_id) {
         $sql = "UPDATE notifications SET read = 1 WHERE id = ?";
-        $params = array('i', $notification_id);
-        $this->db->query($sql, $params);
+        $params = array($notification_id);
+        $this->database_connection->query($sql, $params);
     }
 
     function getUnreadNotifications($user_id) {
         $notifications = array();
 
         $sql = "SELECT * FROM notifications WHERE user_id = ? AND read = 0";
-        $params = array('i', $user_id);
-        $result = $this->db->query($sql, $params);
-
-        while ($row = $result->fetch_assoc()) {
+        $params = array($user_id);
+        $result = $this->database_connection->query($sql, $params);
+// I think it is best to use a for each loop here to get the notifications as an array not as an object.
+        while ($row = $result->results()) {
             $notifications[] = $row;
         }
 
         return $notifications;
     }
 
+
     function deleteNotification($notification_id) {
         $sql = "DELETE FROM notifications WHERE id = ?";
-        $params = array('i', $notification_id);
-        $this->db->query($sql, $params);
+        $params = array($notification_id);
+        $this->database_connection->query($sql, $params);
     }
 
+    public function delete_notifications($notification_id) {
+        if (is_array($notification_id)) {
+            // Delete multiple messages from the database
+            $placeholders = implode(',', array_fill(0, count($notification_id), '?'));
+            $sql = "DELETE FROM messages WHERE id IN ($placeholders)";
+            $params = $notification_id;
+        } else {
+            // Delete a single message from the database
+            $sql = "DELETE FROM messages WHERE id = ?";
+            $params = array($notification_id);
+        }
+        
+        $result = $this->database_connection->query($sql, $params);
+        
+        if (!$result->error()) {
+            return true;
+        } else {
+            return false;
+        }
+    }
     function getNotificationCount($user_id) {
         $sql = "SELECT COUNT(*) as count FROM notifications WHERE user_id = ?";
-        $params = array('i', $user_id);
-        $result = $this->db->query($sql, $params);
+        $params = array($user_id);
+        $result = $this->database_connection->query($sql, $params);
 
-        $count = $result->fetch_assoc()['count'];
+        $count = $result->count();
 
         return $count;
     }
-
     function deleteOldNotifications($days) {
         $cutoff = date('Y-m-d H:i:s', strtotime('-'.$days.' days'));
 
         $sql = "DELETE FROM notifications WHERE created_at < ?";
-        $params = array('s', $cutoff);
-        $this->db->query($sql, $params);
+        $params = array($cutoff);
+        $this->database_connection->query($sql, $params);
     }
+
 }
