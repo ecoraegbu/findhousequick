@@ -3,7 +3,7 @@
 
 <title>About | FindHouseQuick</title>
 </head>
-
+<div></div>
 <body class="">
 
   <header class="">
