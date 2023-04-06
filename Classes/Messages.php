@@ -32,14 +32,14 @@ class Messages{
   public function sent_messages($user_id){
     // Retrieve all outbound message from the database.
     $sql = "SELECT * FROM messages WHERE sender_id = ?";
-    $params = array('i', $user_id);
+    $params = array($user_id);
     $messages = $this->database_connection->query($sql, $params)->results();
     return $messages;
   }
   public function inbox($user_id){
     // Retrieve all inbound message from the database.
     $sql = "SELECT * FROM messages WHERE recipient_id = ?";
-    $params = array('i', $user_id);
+    $params = array($user_id);
     $messages = $this->database_connection->query($sql, $params)->results();
     return $messages;
 
@@ -48,7 +48,7 @@ class Messages{
   public function get_message($message_id) {
     // Retrieve a message from a data store, such as a database
     $sql = "SELECT * FROM messages WHERE id = ?";
-    $params = array('i', $message_id);
+    $params = array($message_id);
     $message = $this->database_connection->query($sql, $params);
     return $message->results();
     

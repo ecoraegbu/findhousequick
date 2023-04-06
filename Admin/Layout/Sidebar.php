@@ -91,12 +91,12 @@
           <ul class="bg-primary bg-opacity-25 rounded-md" x-cloak x-show="open" @click.outside="open=false">
             <li class="">
               <a href="Alerts.php" class="flex items-center gap-4 py-2.5 px-5 text-sm text-gray-300 hover:text-white">
-                <i icon-name="chevron-right" class="h-4 w-4"></i> <span>Banners</span>
+                <i icon-name="chevron-right" class="h-4 w-4"></i> <span>Messages</span>
               </a>
             </li>
             <li class="">
               <a href="" class="flex items-center gap-4 py-2.5 px-5 text-sm text-gray-300 hover:text-white">
-                <i icon-name="chevron-right" class="h-4 w-4"></i> <span>Cards</span>
+                <i icon-name="chevron-right" class="h-4 w-4"></i> <span>Tickets</span>
               </a>
             </li>
 

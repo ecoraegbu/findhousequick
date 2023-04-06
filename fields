@@ -1,6 +1,7 @@
 -----------
 PLEASE NOTE!
 unless where specified, Any thing that displays from the data base would mostly be text. Every views page such as view tenant, or view property displays from the database. The important thing is the organization and arrangement of these components on the page. give allowance for component name, and component value (component refers to data from the database such as name. for example for a user whose first name is Emmanuel. the component name = First name, component value = Emmanuel) 
+Any lists uses the table. you've already built that.
 -----------
 -------------------------------------------------------------------------------------------------------------------------
 A. GENERAL COMPONENTS FOR THE MAIN ADMIN PANEL.
