@@ -1,7 +1,7 @@
 <?php
 require_once(dirname(__FILE__).'/Core/Init.php');
 
-
+print(Hash::generate_unique_id(10,'chu'));
 /* $property = new Property();
 $house = $property->get_property_details(3);
 $properties = $property->get_all_property();
@@ -29,7 +29,7 @@ foreach($properties as $property){
 $connection->execute_sql_script('findhousequick','Sql/states.sql'); */
 ?>
 
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
 <html>
   <head>
     <meta charset="UTF-8">
@@ -54,4 +54,4 @@ $connection->execute_sql_script('findhousequick','Sql/states.sql'); */
     </form>
     <script src="populatedropdown.js"></script>
   </body>
-</html>
+</html> -->

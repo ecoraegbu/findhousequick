@@ -9,11 +9,11 @@ class DirectoryCreator
         $this->baseDirectory = $baseDirectory;
     }
 
-    public function createdirectory($directory, $subdirectory, $objectName, $prop = null)
+    public static function createdirectory($directory, $subdirectory, $objectName, $prop = null)
     {
       
         // Create the directory path
-        $directoryPath = $this->baseDirectory . $directory . $subdirectory . $objectName;
+        $directoryPath = self::$baseDirectory . $directory . $subdirectory . $objectName;
       
         // Create the directory if it doesn't exist
         if (!file_exists($directoryPath)) {

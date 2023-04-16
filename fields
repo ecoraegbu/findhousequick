@@ -9,28 +9,18 @@ A. GENERAL COMPONENTS FOR THE MAIN ADMIN PANEL.
 THE UI FOR THE ADMIN SHOULD BE DIVIDED INTO THE FOLLOWING CATEGORIES.
 1. User Management:
 
-* Add User button: 
+* Add User: 
 - Allows the administrator to add a new user.
 - Use the update profile form but this time with the name and email fields present
 
-* View User: 
-- Allows the administrator to view a specific user. 
-- Use the same form as the view profile.
-- Have buttons for user control such as block user, delete user, edit user etc.
-- Additionally, should have a search form where a user can be found by username, email, or names. and search results displayed. 
-- Should also display additional details such as the users role, and other things, (can't remember them right now.)
-- The edit user button would lead to the edit user page
 
-* User List table: 
+* View Users: 
 - Displays a list of all users and their basic information, such as name, email, and user role.
 - Should have the view user button which would lead to the view user section
 - Should have approve user button
 - Should be able to sort users based on their location, user role, etc
 
-* Edit User: 
-- Allows the administrator to edit a user's information, such as name, email, password, and user role.
-- Use the edit profile page
-- Additionally, add a few buttons for assigning roles, etc.
+
 
 
 2. Property Management:
@@ -59,35 +49,56 @@ THE UI FOR THE ADMIN SHOULD BE DIVIDED INTO THE FOLLOWING CATEGORIES.
 
 3. Support and Communication:
 
-Support Tickets table: Displays a list of support tickets submitted by users.
-Messaging system: Allows the administrator to send and receive messages to/from users.
+* Tickets : (javascript will fetch the requested results from the database and display them.)
+- Displays a list of open support tickets opened for each user complaints.
+- Has the functionality to close open tickets by marking as closed.
+- Can view history of tickets (past tickets) with the view closed tickets button.
+please note that the closed tickets view and the open tickets view are the same
+
+* Messages: 
+- read messages
+- send messages
+- write messages
+- delete messages.
 
 
 4. Transaction Management:
 
-Payment History table: Displays a list of all transactions and their basic information, such as transaction date, amount, and payment status.
-Generate Invoice button: Allows the administrator to generate an invoice for a transaction.
+* View Payments: Displays a list of all transactions and their basic information, such as transaction date, amount, and payment status.
+- View all transactions
+- View individual transaction
+- Invoice
+
 Refund button: Allows the administrator to process a refund for a transaction.
 
 5. Analytics and Reporting:
+(we would get to this later on)
 
 Traffic Analytics chart: Displays a graph of site traffic and user engagement over time.
 User Analytics table: Displays a list of user behavior metrics, such as login frequency, property views, and transaction history.
 Export Data button: Allows the administrator to export data from the dashboard in various formats, such as CSV or Excel.
 
 6. Security and Privacy:
+update security policy (leave this)
 --------------------
 B. SPECIFIC PAGES
 -------------------
 THE FOLLOWING ARE SPECIFIC PAGES THAT SHOULD BE BUILT. MOST SPECIFIC PAGES ARE REUSABLE WITH FEW ALTERATIONS DEPENDING ON THE AUTHORIZATION LEVEL OR USER ROLE.
 
-1. update profile form
-2. view profile (Data from database, but would have an image/avatar)
-3. edit profile page
-4. add property page
-5. property preview page (data from database, but would have pictures of the property)
-6. update property
-6. list pages use the form for listing which you have already built.
+1. View User
+2. Edit User
+3. Update profile form (similar to the edit user, but this is actually for the admin staff himself)
+4. View profile (Data from database, but would have an image/avatar)
+5. Edit profile page
+6. Add property page
+7. Property preview page (data from database, but would have pictures of the property)
+8. Update property
+9. list pages use the form for listing which you have already built.
+10. Invoice/receipt
+11. view payments (for all payments, use the table already existing, action buttons are "view transaction", and "process refund")
+12. view transaction (for individual payments)
+
+
 
 -----------------------
 C. FIELDS FOR THE PAGES
@@ -153,3 +164,15 @@ User Activity Logs: Allows the administrator to view a log of the user's activit
 Account Status: Allows the administrator to change the user's account status, such as activating or deactivating the account, or suspending the account for violating the web app's terms and conditions.
 
 Delete User Account: Allows the administrator to delete the user's account and all associated data from the web app, if necessary.
+* View User: 
+- Allows the administrator to view a specific user. 
+- Use the same form as the view profile.
+- Have buttons for user control such as block user, delete user, edit user etc.
+- Additionally, should have a search form where a user can be found by username, email, or names. and search results displayed. 
+- Should also display additional details such as the users role, and other things, (can't remember them right now.)
+- The edit user button would lead to the edit user page
+
+* Edit User: 
+- Allows the administrator to edit a user's information, such as name, email, password, and user role.
+- Use the edit profile page
+- Additionally, add a few buttons for assigning roles, etc.

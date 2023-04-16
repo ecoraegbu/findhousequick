@@ -21,18 +21,13 @@
           <ul class="bg-primary bg-opacity-25 rounded-md" x-cloak x-show="open" @click.outside="open=false">
             <li class="">
               <a href="#NewUser" class="flex items-center gap-4 py-2.5 px-5 text-sm text-gray-300 hover:text-white">
-                <i icon-name="chevron-right" class="h-4 w-4"></i> <span>New User</span>
-              </a>
-            </li>
-            <li class="">
-              <a href="" class="flex items-center gap-4 py-2.5 px-5 text-sm text-gray-300 hover:text-white">
-                <i icon-name="chevron-right" class="h-4 w-4"></i> <span>View User</span>
+                <i icon-name="chevron-right" class="h-4 w-4"></i> <span>Create New User</span>
               </a>
             </li>
 
             <li class="">
               <a href="Buttons.php" class="flex items-center gap-4 py-2.5 px-5 text-sm text-gray-300 hover:text-white">
-                <i icon-name="chevron-right" class="h-4 w-4"></i> <span>Users List</span>
+                <i icon-name="chevron-right" class="h-4 w-4"></i> <span>View Users</span>
               </a>
             </li>
           </ul>
@@ -91,7 +86,7 @@
 
           <ul class="bg-primary bg-opacity-25 rounded-md" x-cloak x-show="open" @click.outside="open=false">
             <li class="">
-              <a href="Alerts.php" class="flex items-center gap-4 py-2.5 px-5 text-sm text-gray-300 hover:text-white">
+              <a href="" class="flex items-center gap-4 py-2.5 px-5 text-sm text-gray-300 hover:text-white">
                 <i icon-name="chevron-right" class="h-4 w-4"></i> <span>Messages</span>
               </a>
             </li>
@@ -100,24 +95,17 @@
                 <i icon-name="chevron-right" class="h-4 w-4"></i> <span>Tickets</span>
               </a>
             </li>
-
-            <li class="">
-              <a href="Buttons.php" class="flex items-center gap-4 py-2.5 px-5 text-sm text-gray-300 hover:text-white">
-                <i icon-name="chevron-right" class="h-4 w-4"></i> <span>Buttons</span>
-              </a>
-            </li>
-
             <li class="">
               <a href="" class="flex items-center gap-4 py-2.5 px-5 text-sm text-gray-300 hover:text-white">
-                <i icon-name="chevron-right" class="h-4 w-4"></i> <span>Modals</span>
+                <i icon-name="chevron-right" class="h-4 w-4"></i> <span>Complaints</span>
               </a>
             </li>
 
-            <li class="">
-              <a href="Paginations.php" class="flex items-center gap-4 py-2.5 px-5 text-sm text-gray-300 hover:text-white">
-                <i icon-name="chevron-right" class="h-4 w-4"></i> <span>Pagination</span>
-              </a>
-            </li>
+
+
+
+
+
 
           </ul>
         </div>
@@ -134,30 +122,12 @@
           <ul class="bg-primary bg-opacity-25 rounded-md" x-cloak x-show="open" @click.outside="open=false">
             <li class="">
               <a href="Alerts.php" class="flex items-center gap-4 py-2.5 px-5 text-sm text-gray-300 hover:text-white">
-                <i icon-name="chevron-right" class="h-4 w-4"></i> <span>Banners</span>
+                <i icon-name="chevron-right" class="h-4 w-4"></i> <span>View Payments</span>
               </a>
             </li>
             <li class="">
               <a href="" class="flex items-center gap-4 py-2.5 px-5 text-sm text-gray-300 hover:text-white">
-                <i icon-name="chevron-right" class="h-4 w-4"></i> <span>Cards</span>
-              </a>
-            </li>
-
-            <li class="">
-              <a href="Buttons.php" class="flex items-center gap-4 py-2.5 px-5 text-sm text-gray-300 hover:text-white">
-                <i icon-name="chevron-right" class="h-4 w-4"></i> <span>Buttons</span>
-              </a>
-            </li>
-
-            <li class="">
-              <a href="" class="flex items-center gap-4 py-2.5 px-5 text-sm text-gray-300 hover:text-white">
-                <i icon-name="chevron-right" class="h-4 w-4"></i> <span>Modals</span>
-              </a>
-            </li>
-
-            <li class="">
-              <a href="Paginations.php" class="flex items-center gap-4 py-2.5 px-5 text-sm text-gray-300 hover:text-white">
-                <i icon-name="chevron-right" class="h-4 w-4"></i> <span>Pagination</span>
+                <i icon-name="chevron-right" class="h-4 w-4"></i> <span>Refunds</span>
               </a>
             </li>
 
@@ -179,29 +149,6 @@
                 <i icon-name="chevron-right" class="h-4 w-4"></i> <span>Banners</span>
               </a>
             </li>
-            <li class="">
-              <a href="" class="flex items-center gap-4 py-2.5 px-5 text-sm text-gray-300 hover:text-white">
-                <i icon-name="chevron-right" class="h-4 w-4"></i> <span>Cards</span>
-              </a>
-            </li>
-
-            <li class="">
-              <a href="Buttons.php" class="flex items-center gap-4 py-2.5 px-5 text-sm text-gray-300 hover:text-white">
-                <i icon-name="chevron-right" class="h-4 w-4"></i> <span>Buttons</span>
-              </a>
-            </li>
-
-            <li class="">
-              <a href="" class="flex items-center gap-4 py-2.5 px-5 text-sm text-gray-300 hover:text-white">
-                <i icon-name="chevron-right" class="h-4 w-4"></i> <span>Modals</span>
-              </a>
-            </li>
-
-            <li class="">
-              <a href="Paginations.php" class="flex items-center gap-4 py-2.5 px-5 text-sm text-gray-300 hover:text-white">
-                <i icon-name="chevron-right" class="h-4 w-4"></i> <span>Pagination</span>
-              </a>
-            </li>
 
           </ul>
         </div>
@@ -218,31 +165,8 @@
 
           <ul class="bg-primary bg-opacity-25 rounded-md" x-cloak x-show="open" @click.outside="open=false">
             <li class="">
-              <a href="Alerts.php" class="flex items-center gap-4 py-2.5 px-5 text-sm text-gray-300 hover:text-white">
-                <i icon-name="chevron-right" class="h-4 w-4"></i> <span>Banners</span>
-              </a>
-            </li>
-            <li class="">
               <a href="" class="flex items-center gap-4 py-2.5 px-5 text-sm text-gray-300 hover:text-white">
-                <i icon-name="chevron-right" class="h-4 w-4"></i> <span>Cards</span>
-              </a>
-            </li>
-
-            <li class="">
-              <a href="Buttons.php" class="flex items-center gap-4 py-2.5 px-5 text-sm text-gray-300 hover:text-white">
-                <i icon-name="chevron-right" class="h-4 w-4"></i> <span>Buttons</span>
-              </a>
-            </li>
-
-            <li class="">
-              <a href="" class="flex items-center gap-4 py-2.5 px-5 text-sm text-gray-300 hover:text-white">
-                <i icon-name="chevron-right" class="h-4 w-4"></i> <span>Modals</span>
-              </a>
-            </li>
-
-            <li class="">
-              <a href="Paginations.php" class="flex items-center gap-4 py-2.5 px-5 text-sm text-gray-300 hover:text-white">
-                <i icon-name="chevron-right" class="h-4 w-4"></i> <span>Pagination</span>
+                <i icon-name="chevron-right" class="h-4 w-4"></i> <span>Update security Policy</span>
               </a>
             </li>
 
