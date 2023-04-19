@@ -19,7 +19,7 @@ $GLOBALS['config'] = array(
 define('DB_HOST', 'localhost');
 define('DB_NAME', 'findhousequick');
 define('DB_USER', 'root');
-define('DB_PASSWORD', '');
+define('DB_PASSWORD', 'piano');
 
 // website settings
 define('ROOT_DIRECTORY', $_SERVER['DOCUMENT_ROOT']);
