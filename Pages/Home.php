@@ -21,13 +21,13 @@ $properties = $property->get_all_property();
     <div class="bg-primary md:bg-gradient-to-r md:from-primary md:via-primary md:to-primary-light overflow-hidden h-auto bg-cover">
       <div class="relative h-full flex items-end justify-between">
         <div class="px-10 py-14 md:px-20 flex items-center h-full">
-          <div class="relative z-10">
+          <div class="relative z-10 p-16">
             <h1 class="text-6xl font-bold text-white ">
               Let's Find Your <br> Dream Home. </h1>
-            <p class="max-w-lg mt-4 mb-8 text-white ">
+            <!-- <p class="max-w-lg mt-4 mb-8 text-white ">
               We are a real estate agency that will help you find the best residence you dream of, let's
               discuss for your dream house!
-            </p>
+            </p> -->
 
             <div class="relative flex items-center max-w-md">
               <input type="text" class="bg-white  p-5 w-full outline-none rounded-lg shadow-md" placeholder="Search for listings">
