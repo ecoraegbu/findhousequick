@@ -5,7 +5,7 @@ $properties = $property->get_all_property();
 ?>
 <?php include('SiteAssets/Layout/Head.php') ?>
 
-
+<link rel="stylesheet" href="./SiteAssets/Plugins/css/splide.min.css">
 
 <title>Home | FindHouseQuick</title>
 </head>
@@ -53,14 +53,14 @@ $properties = $property->get_all_property();
 
   <!-- Listings Section -->
   <section class="px-10 sm:px-20 md:px-10 my-20">
-    <div class="max-w-6xl mx-auto">
+    <div class="max-w-7xl mx-auto">
       <!-- <span class="text-primary font-light text-lg">Our featured properties.</span>
       <h1 class="text-5xl font-bold text-text before:block before:bg-gray-100 before:h-48 before:w-36 before:absolute before:left-0 before:-mt-16 before:rounded-lg before:-z-10">Our Listings.</h1>
  -->
 
-      <div class="flex gap-6">
+      <div class="flex gap-12">
 
-        <div class="basis-60">
+        <div class="basis-60 hidden lg:block">
           <div class="sticky top-0 z-10  py-4 shadow-lg">
             <p class="text-xl text-slate-700 font-medium px-4">Categories</p>
             <ul>
@@ -103,31 +103,25 @@ $properties = $property->get_all_property();
 
         <div class="flex-1">
 
-          <div class="">
 
-            <!-- Slider main container -->
-            <div class="swiper h-64 w-full">
-              <!-- Additional required wrapper -->
-              <div class="swiper-wrapper">
-                <!-- Slides -->
-                <div class="swiper-slide">
+          <div class="splide" data-splide='{"type":"loop"}' aria-label="Splide Basic HTML Example">
+            <div class="splide__track">
+              <ul class="splide__list">
+                <li class="splide__slide h-72 w-full">
                   <img src="https://images.pexels.com/photos/2581922/pexels-photo-2581922.jpeg?auto=compress&cs=tinysrgb&w=600" alt="" class="w-full h-full object-cover">
-                </div>
-                <div class="swiper-slide">
+                </li>
+                <li class="splide__slide h-72 w-full">
                   <img src="https://images.pexels.com/photos/7193708/pexels-photo-7193708.jpeg?auto=compress&cs=tinysrgb&w=600" alt="" class="w-full h-full object-cover">
-                </div>
-                <div class="swiper-slide">
+
+                </li>
+                <li class="splide__slide h-72 w-full">
                   <img src="https://images.pexels.com/photos/16082425/pexels-photo-16082425.jpeg?auto=compress&cs=tinysrgb&w=600" alt="" class="w-full h-full object-cover">
-                </div>
-              </div>
 
-              <!-- If we need navigation buttons -->
-              <div class="swiper-button-prev"></div>
-              <div class="swiper-button-next"></div>
+                </li>
+              </ul>
             </div>
-
-
           </div>
+
 
           <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-10 mt-10">
             <?php
@@ -192,21 +186,27 @@ $properties = $property->get_all_property();
 
   </section>
 
+
+
   <!-- Listing End -->
 
   <?php include('SiteAssets/Layout/Footer.php') ?>
 
+  <script src="./SiteAssets/Plugins/js/splide.min.js"></script>
+
   <script>
-    const swiper = new Swiper('.swiper', {
-      direction: 'vertical',
-      loop: true,
+    new Splide('.splide').mount();
 
-      navigation: {
-        nextEl: '.swiper-button-next',
-        prevEl: '.swiper-button-prev',
-      },
+    // const swiper = new Swiper('.swiper', {
+    //   direction: 'vertical',
+    //   loop: true,
+
+    //   navigation: {
+    //     nextEl: '.swiper-button-next',
+    //     prevEl: '.swiper-button-prev',
+    //   },
 
 
-    });
+    // });
   </script>
 </body>
