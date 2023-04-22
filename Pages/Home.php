@@ -52,7 +52,7 @@ $properties = $property->get_all_property();
 
 
   <!-- Listings Section -->
-  <section class="px-10 sm:px-20 md:px-10 my-20">
+  <section class="px-10 sm:px-20 md:px-10 my-8">
     <div class="max-w-7xl mx-auto">
       <!-- <span class="text-primary font-light text-lg">Our featured properties.</span>
       <h1 class="text-5xl font-bold text-text before:block before:bg-gray-100 before:h-48 before:w-36 before:absolute before:left-0 before:-mt-16 before:rounded-lg before:-z-10">Our Listings.</h1>
