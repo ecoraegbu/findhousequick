@@ -53,7 +53,7 @@ $properties = $property->get_all_property();
 
   <!-- Listings Section -->
   <section class="px-10 sm:px-20 md:px-10 my-8">
-    <div class="max-w-7xl mx-auto">
+    <div class="max-w-7xl mx-10">
       <!-- <span class="text-primary font-light text-lg">Our featured properties.</span>
       <h1 class="text-5xl font-bold text-text before:block before:bg-gray-100 before:h-48 before:w-36 before:absolute before:left-0 before:-mt-16 before:rounded-lg before:-z-10">Our Listings.</h1>
  -->
@@ -61,9 +61,201 @@ $properties = $property->get_all_property();
       <div class="flex gap-12">
 
         <div class="basis-60 hidden lg:block">
-          <div class="sticky top-0 z-10  py-4 shadow-lg">
+          <div class="sticky top-0 z-10  py-4 shadow-lg border-b">
             <p class="text-xl text-slate-700 font-medium px-4">Categories</p>
             <ul>
+              <li class="group px-4">
+                <div class="border-b group-hover border-b-gray-200 py-2 flex justify-between items-center">
+                  <div class="">
+
+                    <p class="text-slate-400 -mb-1">Cars</p>
+                    <span class="text-slate-600">24,000 ads</span>
+
+                  </div>
+                  <div class="">
+                    <i icon-name="chevron-right" class="h-4 w-4"></i>
+                  </div>
+                </div>
+
+                <div class="absolute hidden shadow-lg bg-white group-hover:block top-0 left-full h-64 w-60">
+                  <div class="group-hover px-4 py-2">
+                    <p class="text-slate-400 -mb-1">Cars</p>
+                    <span class="text-slate-600">24,000 ads</span>
+                  </div>
+                  <div class="group-hover px-4 py-2">
+                    <p class="text-slate-400 -mb-1">Cars</p>
+                    <span class="text-slate-600">24,000 ads</span>
+                  </div>
+                  <div class="group-hover px-4 py-2">
+                    <p class="text-slate-400 -mb-1">Cars</p>
+                    <span class="text-slate-600">24,000 ads</span>
+                  </div>
+                  <div class="group-hover px-4 py-2">
+                    <p class="text-slate-400 -mb-1">Cars</p>
+                    <span class="text-slate-600">24,000 ads</span>
+                  </div>
+                </div>
+              </li>
+              <li class="group px-4">
+                <div class="border-b group-hover border-b-gray-200 py-2 flex justify-between items-center">
+                  <div class="">
+
+                    <p class="text-slate-400 -mb-1">Cars</p>
+                    <span class="text-slate-600">24,000 ads</span>
+
+                  </div>
+                  <div class="">
+                    <i icon-name="chevron-right" class="h-4 w-4"></i>
+                  </div>
+                </div>
+
+                <div class="absolute hidden shadow-lg bg-white group-hover:block top-0 left-full h-64 w-60">
+                  <div class="group-hover px-4 py-2">
+                    <p class="text-slate-400 -mb-1">Cars</p>
+                    <span class="text-slate-600">24,000 ads</span>
+                  </div>
+                  <div class="group-hover px-4 py-2">
+                    <p class="text-slate-400 -mb-1">Cars</p>
+                    <span class="text-slate-600">24,000 ads</span>
+                  </div>
+                  <div class="group-hover px-4 py-2">
+                    <p class="text-slate-400 -mb-1">Cars</p>
+                    <span class="text-slate-600">24,000 ads</span>
+                  </div>
+                  <div class="group-hover px-4 py-2">
+                    <p class="text-slate-400 -mb-1">Cars</p>
+                    <span class="text-slate-600">24,000 ads</span>
+                  </div>
+                </div>
+              </li>
+              <li class="group px-4">
+                <div class="border-b group-hover border-b-gray-200 py-2 flex justify-between items-center">
+                  <div class="">
+
+                    <p class="text-slate-400 -mb-1">Cars</p>
+                    <span class="text-slate-600">24,000 ads</span>
+
+                  </div>
+                  <div class="">
+                    <i icon-name="chevron-right" class="h-4 w-4"></i>
+                  </div>
+                </div>
+
+                <div class="absolute hidden shadow-lg bg-white group-hover:block top-0 left-full h-64 w-60">
+                  <div class="group-hover px-4 py-2">
+                    <p class="text-slate-400 -mb-1">Cars</p>
+                    <span class="text-slate-600">24,000 ads</span>
+                  </div>
+                  <div class="group-hover px-4 py-2">
+                    <p class="text-slate-400 -mb-1">Cars</p>
+                    <span class="text-slate-600">24,000 ads</span>
+                  </div>
+                  <div class="group-hover px-4 py-2">
+                    <p class="text-slate-400 -mb-1">Cars</p>
+                    <span class="text-slate-600">24,000 ads</span>
+                  </div>
+                  <div class="group-hover px-4 py-2">
+                    <p class="text-slate-400 -mb-1">Cars</p>
+                    <span class="text-slate-600">24,000 ads</span>
+                  </div>
+                </div>
+              </li>
+              <li class="group px-4">
+                <div class="border-b group-hover border-b-gray-200 py-2 flex justify-between items-center">
+                  <div class="">
+
+                    <p class="text-slate-400 -mb-1">Cars</p>
+                    <span class="text-slate-600">24,000 ads</span>
+
+                  </div>
+                  <div class="">
+                    <i icon-name="chevron-right" class="h-4 w-4"></i>
+                  </div>
+                </div>
+
+                <div class="absolute hidden shadow-lg bg-white group-hover:block top-0 left-full h-64 w-60">
+                  <div class="group-hover px-4 py-2">
+                    <p class="text-slate-400 -mb-1">Cars</p>
+                    <span class="text-slate-600">24,000 ads</span>
+                  </div>
+                  <div class="group-hover px-4 py-2">
+                    <p class="text-slate-400 -mb-1">Cars</p>
+                    <span class="text-slate-600">24,000 ads</span>
+                  </div>
+                  <div class="group-hover px-4 py-2">
+                    <p class="text-slate-400 -mb-1">Cars</p>
+                    <span class="text-slate-600">24,000 ads</span>
+                  </div>
+                  <div class="group-hover px-4 py-2">
+                    <p class="text-slate-400 -mb-1">Cars</p>
+                    <span class="text-slate-600">24,000 ads</span>
+                  </div>
+                </div>
+              </li>
+              <li class="group px-4">
+                <div class="border-b group-hover border-b-gray-200 py-2 flex justify-between items-center">
+                  <div class="">
+
+                    <p class="text-slate-400 -mb-1">Cars</p>
+                    <span class="text-slate-600">24,000 ads</span>
+
+                  </div>
+                  <div class="">
+                    <i icon-name="chevron-right" class="h-4 w-4"></i>
+                  </div>
+                </div>
+
+                <div class="absolute hidden shadow-lg bg-white group-hover:block top-0 left-full h-64 w-60">
+                  <div class="group-hover px-4 py-2">
+                    <p class="text-slate-400 -mb-1">Cars</p>
+                    <span class="text-slate-600">24,000 ads</span>
+                  </div>
+                  <div class="group-hover px-4 py-2">
+                    <p class="text-slate-400 -mb-1">Cars</p>
+                    <span class="text-slate-600">24,000 ads</span>
+                  </div>
+                  <div class="group-hover px-4 py-2">
+                    <p class="text-slate-400 -mb-1">Cars</p>
+                    <span class="text-slate-600">24,000 ads</span>
+                  </div>
+                  <div class="group-hover px-4 py-2">
+                    <p class="text-slate-400 -mb-1">Cars</p>
+                    <span class="text-slate-600">24,000 ads</span>
+                  </div>
+                </div>
+              </li>
+              <li class="group px-4">
+                <div class="border-b group-hover border-b-gray-200 py-2 flex justify-between items-center">
+                  <div class="">
+
+                    <p class="text-slate-400 -mb-1">Cars</p>
+                    <span class="text-slate-600">24,000 ads</span>
+
+                  </div>
+                  <div class="">
+                    <i icon-name="chevron-right" class="h-4 w-4"></i>
+                  </div>
+                </div>
+
+                <div class="absolute hidden shadow-lg bg-white group-hover:block top-0 left-full h-64 w-60">
+                  <div class="group-hover px-4 py-2">
+                    <p class="text-slate-400 -mb-1">Cars</p>
+                    <span class="text-slate-600">24,000 ads</span>
+                  </div>
+                  <div class="group-hover px-4 py-2">
+                    <p class="text-slate-400 -mb-1">Cars</p>
+                    <span class="text-slate-600">24,000 ads</span>
+                  </div>
+                  <div class="group-hover px-4 py-2">
+                    <p class="text-slate-400 -mb-1">Cars</p>
+                    <span class="text-slate-600">24,000 ads</span>
+                  </div>
+                  <div class="group-hover px-4 py-2">
+                    <p class="text-slate-400 -mb-1">Cars</p>
+                    <span class="text-slate-600">24,000 ads</span>
+                  </div>
+                </div>
+              </li>
               <li class="group px-4">
                 <div class="border-b group-hover border-b-gray-200 py-2 flex justify-between items-center">
                   <div class="">
@@ -101,10 +293,10 @@ $properties = $property->get_all_property();
         </div>
 
 
-        <div class="flex-1">
+        <div class="flex-1 ">
 
 
-          <div class="splide" data-splide='{"type":"loop"}' aria-label="Splide Basic HTML Example">
+          <div class="splide shadow-card" data-splide='{"type":"loop"}' aria-label="Splide Basic HTML Example">
             <div class="splide__track">
               <ul class="splide__list">
                 <li class="splide__slide h-72 w-full">
