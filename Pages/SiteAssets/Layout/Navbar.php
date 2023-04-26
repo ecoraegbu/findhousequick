@@ -1,6 +1,6 @@
-<nav class="px-4 py-6">
+<nav class="px-4 py-3">
 
-  <div class="flex justify-between items-center max-w-6xl mx-auto">
+  <div class="flex justify-between items-center max-w-7xl mx-auto">
     <!-- Logo -->
     <div class="text-2xl text-primary font-semibold mr-auto">FindHouseQuick</div>
 

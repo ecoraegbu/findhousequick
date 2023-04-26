@@ -1,5 +1,5 @@
 <?php 
-include('SiteAssets/Layout/Head.php') ;
+include('SiteAssets/Layout/Head.php');
 require_once(dirname(__FILE__,2).'/Core/Init.php');
 if(Input::exists()){
   $property_id = Input::get('property');
@@ -28,11 +28,11 @@ $document_root = 'C:\wamp64\www\findhousequick';
 <body class="">
 
   <header class="">
-    <?php //include('SiteAssets/Layout/Navbar.php') ?>
+    <?php #include('SiteAssets/Layout/Navbar.php') ?>
   </header>
 
   <!-- Preview Section -->
-  <section class="px-4">
+  <section class="px-4 pt-8">
     <div class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-x-16 gap-y-8">
       <!-- Slider with thumbnail -->
       <div class="">
@@ -143,7 +143,7 @@ $document_root = 'C:\wamp64\www\findhousequick';
 
           <div class="swiper-slide border border-gray-100 p-4 rounded-lg bg-white group">
             <div class="relative">
-              <img src="https://images.pexels.com/photos/1974596/pexels-photo-1974596.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" class="aspect-square object-cover rounded-lg" alt="">
+              <img src="https://images.pexels.com/photos/1974596/pexels-photo-1974596.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" class="aspect-video w-full object-cover rounded-lg" alt="">
               <div class="w-full h-full bg-black bg-opacity-50 opacity-0  group-hover:opacity-100 absolute inset-0 rounded-lg p-2 transition-all">
                 <div class="flex flex-wrap gap-1">
                   <span class="bg-primary text-white px-2 py-1.5 text-sm rounded-md">Available</span>
@@ -164,7 +164,7 @@ $document_root = 'C:\wamp64\www\findhousequick';
 
 
           <div class="swiper-slide border border-gray-100 p-4 rounded-lg  bg-white">
-            <img src="https://images.pexels.com/photos/1022936/pexels-photo-1022936.jpeg?auto=compress&cs=tinysrgb&w=600" class="aspect-square object-cover rounded-lg" alt="">
+            <img src="https://images.pexels.com/photos/1022936/pexels-photo-1022936.jpeg?auto=compress&cs=tinysrgb&w=600" class="aspect-video w-full object-cover rounded-lg" alt="">
 
             <h2 class="mt-3 text-text font-semibold text-xl">Real Bluestyle house</h2>
             <p class="text-sm text-gray-400 -mt-1">San Diego, California USA</p>
@@ -173,7 +173,7 @@ $document_root = 'C:\wamp64\www\findhousequick';
           </div>
 
           <div class="swiper-slide border border-gray-100 p-4 rounded-lg  bg-white">
-            <img src="https://images.pexels.com/photos/2128329/pexels-photo-2128329.jpeg?auto=compress&cs=tinysrgb&w=600" class="aspect-square object-cover rounded-lg" alt="">
+            <img src="https://images.pexels.com/photos/2128329/pexels-photo-2128329.jpeg?auto=compress&cs=tinysrgb&w=600" class="aspect-video w-full object-cover rounded-lg" alt="">
 
             <h2 class="mt-3 text-text font-semibold text-xl">Real Bluestyle house</h2>
             <p class="text-sm text-gray-400 -mt-1">San Diego, California USA</p>
@@ -182,17 +182,7 @@ $document_root = 'C:\wamp64\www\findhousequick';
           </div>
 
           <div class="swiper-slide border border-gray-100 p-4 rounded-lg  bg-white">
-            <img src="https://images.pexels.com/photos/323780/pexels-photo-323780.jpeg?auto=compress&cs=tinysrgb&w=600" class="aspect-square object-cover rounded-lg" alt="">
-
-            <h2 class="mt-3 text-text font-semibold text-xl">Real Bluestyle house</h2>
-            <p class="text-sm text-gray-400 -mt-1">San Diego, California USA</p>
-
-            <p class="text-primary font-semibold mt-1 text-xl">N3,000,000 <small class="text-gray-500 font-normal">/yearly</small></p>
-          </div>
-
-
-          <div class="swiper-slide border border-gray-100 p-4 rounded-lg  bg-white">
-            <img src="https://images.pexels.com/photos/1974596/pexels-photo-1974596.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" class="aspect-square object-cover rounded-lg" alt="">
+            <img src="https://images.pexels.com/photos/323780/pexels-photo-323780.jpeg?auto=compress&cs=tinysrgb&w=600" class="aspect-video w-full object-cover rounded-lg" alt="">
 
             <h2 class="mt-3 text-text font-semibold text-xl">Real Bluestyle house</h2>
             <p class="text-sm text-gray-400 -mt-1">San Diego, California USA</p>
@@ -202,7 +192,17 @@ $document_root = 'C:\wamp64\www\findhousequick';
 
 
           <div class="swiper-slide border border-gray-100 p-4 rounded-lg  bg-white">
-            <img src="https://images.pexels.com/photos/1022936/pexels-photo-1022936.jpeg?auto=compress&cs=tinysrgb&w=600" class="aspect-square object-cover rounded-lg" alt="">
+            <img src="https://images.pexels.com/photos/1974596/pexels-photo-1974596.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" class="aspect-video w-full object-cover rounded-lg" alt="">
+
+            <h2 class="mt-3 text-text font-semibold text-xl">Real Bluestyle house</h2>
+            <p class="text-sm text-gray-400 -mt-1">San Diego, California USA</p>
+
+            <p class="text-primary font-semibold mt-1 text-xl">N3,000,000 <small class="text-gray-500 font-normal">/yearly</small></p>
+          </div>
+
+
+          <div class="swiper-slide border border-gray-100 p-4 rounded-lg  bg-white">
+            <img src="https://images.pexels.com/photos/1022936/pexels-photo-1022936.jpeg?auto=compress&cs=tinysrgb&w=600" class="aspect-video w-full object-cover rounded-lg" alt="">
 
             <h2 class="mt-3 text-text font-semibold text-xl">Real Bluestyle house</h2>
             <p class="text-sm text-gray-400 -mt-1">San Diego, California USA</p>
@@ -211,7 +211,7 @@ $document_root = 'C:\wamp64\www\findhousequick';
           </div>
 
           <div class="swiper-slide border border-gray-100 p-4 rounded-lg  bg-white">
-            <img src="https://images.pexels.com/photos/2128329/pexels-photo-2128329.jpeg?auto=compress&cs=tinysrgb&w=600" class="aspect-square object-cover rounded-lg" alt="">
+            <img src="https://images.pexels.com/photos/2128329/pexels-photo-2128329.jpeg?auto=compress&cs=tinysrgb&w=600" class="aspect-video w-full object-cover rounded-lg" alt="">
 
             <h2 class="mt-3 text-text font-semibold text-xl">Real Bluestyle house</h2>
             <p class="text-sm text-gray-400 -mt-1">San Diego, California USA</p>
@@ -220,7 +220,7 @@ $document_root = 'C:\wamp64\www\findhousequick';
           </div>
 
           <div class="swiper-slide border border-gray-100 p-4 rounded-lg  bg-white">
-            <img src="https://images.pexels.com/photos/323780/pexels-photo-323780.jpeg?auto=compress&cs=tinysrgb&w=600" class="aspect-square object-cover rounded-lg" alt="">
+            <img src="https://images.pexels.com/photos/323780/pexels-photo-323780.jpeg?auto=compress&cs=tinysrgb&w=600" class="aspect-video w-full object-cover rounded-lg" alt="">
 
             <h2 class="mt-3 text-text font-semibold text-xl">Real Bluestyle house</h2>
             <p class="text-sm text-gray-400 -mt-1">San Diego, California USA</p>
