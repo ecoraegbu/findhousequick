@@ -116,6 +116,7 @@ if(!$user->isloggedin()){
 
                 $json_object = json_encode($path);
                 $details = [
+                    "property_id" => $property_id,
                     "address" => $address,
                     "city" => $city,
                     "state" => $state,
@@ -131,7 +132,7 @@ if(!$user->isloggedin()){
                     "images" => $json_object,
                     "is_available" => $is_available,
                     $field_name => $user_id,
-                    "property_id" => $property_id
+                    
                 ];
                 $property->new_property($details);
 

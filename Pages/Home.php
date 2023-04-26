@@ -21,15 +21,15 @@ $properties = $property->get_all_property();
     <div class="bg-primary md:bg-gradient-to-r md:from-primary md:via-primary md:to-primary-light overflow-hidden h-auto bg-cover">
       <div class="relative h-full flex items-end justify-between">
         <div class="px-10 py-8 md:px-11 flex items-center h-full">
-          <div class="relative z-10">
+          <div class="relative z-10 py-10">
             <h1 class="text-5xl font-bold text-white ">
-              Let's Find Your Dream Home. </h1>
-            <p class="max-w-lg mt-4 mb-8 text-white ">
+              Find Your Dream Home. </h1>
+            <!-- <p class="max-w-lg mt-4 mb-8 text-white ">
               We are a real estate agency that will help you find the best residence you dream of, let's
               discuss for your dream house!
-            </p>
+            </p> -->
 
-            <div class="relative flex items-center max-w-md">
+            <div class="relative flex items-center max-w-md mt-10">
               <input type="text" class="bg-white  p-5 w-full outline-none rounded-lg shadow-md" placeholder="Search for listings">
               <button class="inline-block bg-primary p-2 text-white rounded-md absolute right-4">
                 <i icon-name="search" class="h-4 w-4"></i>
@@ -53,7 +53,7 @@ $properties = $property->get_all_property();
 
   <!-- Listings Section -->
   <section class="px-10 sm:px-20 md:px-10 my-5">
-    <div class="max-w-7xl mx-auto">
+    <div class="max-w-7xl mx">
       <!-- <span class="text-primary font-light text-lg">Our featured properties.</span>
       <h1 class="text-5xl font-bold text-text before:block before:bg-gray-100 before:h-48 before:w-36 before:absolute before:left-0 before:-mt-16 before:rounded-lg before:-z-10">Our Listings.</h1>
  -->
@@ -61,15 +61,47 @@ $properties = $property->get_all_property();
       <div class="flex gap-12">
 
         <div class="basis-60 hidden lg:block">
-          <div class="sticky top-0 z-10 py-4 shadow-md bg-gray-50">
-            <p class="text-xl text-slate-700 font-medium px-4">Categories</p>
+          <div class="sticky top-0 z-10 py-4 shadow-md bg-gray-50 w-1">
+            <p class="text-xl text-slate-700 font-medium px-10">Categories</p>
             <ul>
+            <li class="group px-4">
+                <div class="border-b group-hover border-b-gray-200 py-2 flex justify-between items-center">
+                  <div class="">
+
+                    <p class="text-slate-400 -mb-1 p-5">Lands</p>
+                    <span class="text-slate-600"></span>
+
+                  </div>
+                  <div class="">
+                    <i icon-name="chevron-right" class="h-4 w-4"></i>
+                  </div>
+                </div>
+
+                <div class="absolute hidden shadow-lg bg-white group-hover:block top-0 left-full h-auto w-60">
+                  <div class="group-hover px-4 py-2">
+                    <p class="text-slate-400 -mb-1">Cars</p>
+                    <span class="text-slate-600">24,000 ads</span>
+                  </div>
+                  <div class="group-hover px-4 py-2">
+                    <p class="text-slate-400 -mb-1">Cars</p>
+                    <span class="text-slate-600">24,000 ads</span>
+                  </div>
+                  <div class="group-hover px-4 py-2">
+                    <p class="text-slate-400 -mb-1">Cars</p>
+                    <span class="text-slate-600">24,000 ads</span>
+                  </div>
+                  <div class="group-hover px-4 py-2">
+                    <p class="text-slate-400 -mb-1">Cars</p>
+                    <span class="text-slate-600">24,000 ads</span>
+                  </div>
+                </div>
+              </li>
               <li class="group px-4">
                 <div class="border-b group-hover border-b-gray-200 py-2 flex justify-between items-center">
                   <div class="">
 
-                    <p class="text-slate-400 -mb-1">Cars</p>
-                    <span class="text-slate-600">24,000 ads</span>
+                    <p class="text-slate-400 -mb-1 p-5">Hotels</p>
+                    <span class="text-slate-600"></span>
 
                   </div>
                   <div class="">
@@ -101,8 +133,8 @@ $properties = $property->get_all_property();
                 <div class="border-b group-hover border-b-gray-200 py-2 flex justify-between items-center">
                   <div class="">
 
-                    <p class="text-slate-400 -mb-1">Mansions</p>
-                    <span class="text-slate-600">24,000 ads</span>
+                    <p class="text-slate-400 -mb-1 p-5">Homes on Sale</p>
+                    <span class="text-slate-600"></span>
 
                   </div>
                   <div class="">
@@ -112,27 +144,91 @@ $properties = $property->get_all_property();
 
                 <div class="absolute hidden shadow-lg bg-white group-hover:block top-0 left-full h-auto w-60">
                   <div class="group-hover px-4 py-2">
-                    <p class="text-slate-400 -mb-1">Mansions 1</p>
+                    <p class="text-slate-400 -mb-1">Cars</p>
                     <span class="text-slate-600">24,000 ads</span>
                   </div>
                   <div class="group-hover px-4 py-2">
-                    <p class="text-slate-400 -mb-1">Mansions 2</p>
+                    <p class="text-slate-400 -mb-1">Cars</p>
                     <span class="text-slate-600">24,000 ads</span>
                   </div>
                   <div class="group-hover px-4 py-2">
-                    <p class="text-slate-400 -mb-1">Mansions 3</p>
+                    <p class="text-slate-400 -mb-1">Cars</p>
                     <span class="text-slate-600">24,000 ads</span>
                   </div>
                   <div class="group-hover px-4 py-2">
-                    <p class="text-slate-400 -mb-1">Mansions 4</p>
-                    <span class="text-slate-600">24,000 ads</span>
-                  </div>
-                  <div class="group-hover px-4 py-2">
-                    <p class="text-slate-400 -mb-1">Mansions 5</p>
+                    <p class="text-slate-400 -mb-1">Cars</p>
                     <span class="text-slate-600">24,000 ads</span>
                   </div>
                 </div>
               </li>
+              <li class="group px-4">
+                <div class="border-b group-hover border-b-gray-200 py-2 flex justify-between items-center">
+                  <div class="">
+
+                    <p class="text-slate-400 -mb-1 p-5">Homes For Rent</p>
+                    <span class="text-slate-600"></span>
+
+                  </div>
+                  <div class="">
+                    <i icon-name="chevron-right" class="h-4 w-4"></i>
+                  </div>
+                </div>
+
+                <div class="absolute hidden shadow-lg bg-white group-hover:block top-0 left-full h-auto w-60">
+                  <div class="group-hover px-4 py-2">
+                    <p class="text-slate-400 -mb-1">Cars</p>
+                    <span class="text-slate-600">24,000 ads</span>
+                  </div>
+                  <div class="group-hover px-4 py-2">
+                    <p class="text-slate-400 -mb-1">Cars</p>
+                    <span class="text-slate-600">24,000 ads</span>
+                  </div>
+                  <div class="group-hover px-4 py-2">
+                    <p class="text-slate-400 -mb-1">Cars</p>
+                    <span class="text-slate-600">24,000 ads</span>
+                  </div>
+                  <div class="group-hover px-4 py-2">
+                    <p class="text-slate-400 -mb-1">Cars</p>
+                    <span class="text-slate-600">24,000 ads</span>
+                  </div>
+                </div>
+              </li>
+                            <li class="group px-4">
+                <div class="border-b group-hover border-b-gray-200 py-2 flex justify-between items-center">
+                  <div class="">
+
+                    <p class="text-slate-400 -mb-1 p-5">Shorlet Apartments</p>
+                    <span class="text-slate-600"></span>
+
+                  </div>
+                  <div class="">
+                    <i icon-name="chevron-right" class="h-4 w-4"></i>
+                  </div>
+                </div>
+
+                <div class="absolute hidden shadow-lg bg-white group-hover:block top-0 left-full h-auto w-60">
+                  <div class="group-hover px-4 py-2">
+                    <p class="text-slate-400 -mb-1">Cars</p>
+                    <span class="text-slate-600">24,000 ads</span>
+                  </div>
+                  <div class="group-hover px-4 py-2">
+                    <p class="text-slate-400 -mb-1">Cars</p>
+                    <span class="text-slate-600">24,000 ads</span>
+                  </div>
+                  <div class="group-hover px-4 py-2">
+                    <p class="text-slate-400 -mb-1">Cars</p>
+                    <span class="text-slate-600">24,000 ads</span>
+                  </div>
+                  <div class="group-hover px-4 py-2">
+                    <p class="text-slate-400 -mb-1">Cars</p>
+                    <span class="text-slate-600">24,000 ads</span>
+                  </div>
+                </div>
+              </li>
+              
+
+
+              
             </ul>
           </div>
         </div>
