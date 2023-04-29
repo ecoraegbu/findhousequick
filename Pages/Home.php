@@ -78,18 +78,7 @@ $properties = $property->get_all_property();
                 </div>
 
                 <div class="absolute hidden shadow-lg bg-white group-hover:block top-0 left-full h-auto w-60">
-                  <div class="group-hover px-4 py-2">
-                    <p class="text-slate-400 -mb-1">Cars</p>
-                    <span class="text-slate-600">24,000 ads</span>
-                  </div>
-                  <div class="group-hover px-4 py-2">
-                    <p class="text-slate-400 -mb-1">Cars</p>
-                    <span class="text-slate-600">24,000 ads</span>
-                  </div>
-                  <div class="group-hover px-4 py-2">
-                    <p class="text-slate-400 -mb-1">Cars</p>
-                    <span class="text-slate-600">24,000 ads</span>
-                  </div>
+                  
                   <div class="group-hover px-4 py-2">
                     <p class="text-slate-400 -mb-1">Cars</p>
                     <span class="text-slate-600">24,000 ads</span>
@@ -111,19 +100,19 @@ $properties = $property->get_all_property();
 
                 <div class="absolute hidden shadow-lg bg-white group-hover:block top-0 left-full h-auto w-60">
                   <div class="group-hover px-4 py-2">
-                    <p class="text-slate-400 -mb-1">Cars</p>
+                    <p class="text-slate-400 -mb-1">5 star Hotels</p>
                     <span class="text-slate-600">24,000 ads</span>
                   </div>
                   <div class="group-hover px-4 py-2">
-                    <p class="text-slate-400 -mb-1">Cars</p>
+                    <p class="text-slate-400 -mb-1">4 star Hotels</p>
                     <span class="text-slate-600">24,000 ads</span>
                   </div>
                   <div class="group-hover px-4 py-2">
-                    <p class="text-slate-400 -mb-1">Cars</p>
+                    <p class="text-slate-400 -mb-1">3 star Hotels</p>
                     <span class="text-slate-600">24,000 ads</span>
                   </div>
                   <div class="group-hover px-4 py-2">
-                    <p class="text-slate-400 -mb-1">Cars</p>
+                    <p class="text-slate-400 -mb-1">Motels</p>
                     <span class="text-slate-600">24,000 ads</span>
                   </div>
                 </div>
@@ -294,7 +283,7 @@ $properties = $property->get_all_property();
                 <a href="preview.php?property= <?= $property->id ?>" class="block mt-3 text-text hover:text-opacity-80 font-semibold text-xl truncate" title="<?= $property->type . ', ' . $property->city; ?>"><?= $property->type . ', ' . $property->city; ?>.</a>
                 <p class="text-sm text-gray-400 -mt-1"><?= $property->city . ', ' . $property->state; ?></p>
 
-                <p class="text-primary font-semibold mt-1 text-xl">N<?= number_format($property->price, 2) ?><small class="text-gray-500 font-normal">/yearly</small>
+                <p class="text-primary font-semibold mt-1 text-xl">&#x20A6;<?= number_format($property->price, 2) ?><small class="text-gray-500 font-normal"></small>
                 </p>
               </div>
 
