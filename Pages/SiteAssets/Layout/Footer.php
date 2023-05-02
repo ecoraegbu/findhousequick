@@ -45,7 +45,10 @@
 
 
     <div class="max-w-7xl mx-auto flex justify-between border-t border-gray-100 mt-4 pt-4">
-      <div class="text-gray-400">2020 FindHouseQuick. All Rights Reserved</div>
+      <div class="text-gray-400"><?php
+echo date("Y");
+?>
+ FindHouseQuick. All Rights Reserved</div>
       <div class="">
         <span class="bg-primary text-white inline-block p-2 rounded-lg scrollTop">
           <i icon-name="chevron-up" class="h-5 w-5"></i>

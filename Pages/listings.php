@@ -15,12 +15,12 @@
     <div class="flex gap-10 max-w-6xl mx-auto flex-col md:flex-row">
       <div class="basis-0 md:basis-60 text-text" x-data="{open: false}">
         <!-- Basic Search -->
-        <p class="text-xl font-bold">Quick Search</p>
+        <!-- <p class="text-xl font-bold">Quick Search</p>
 
         <div class="mt-3">
           <label for="search">Search</label>
           <input type="text" id="search" placeholder="Search by name etc." class="p-2 border border-gray-200 rounded-md w-full">
-        </div>
+        </div> -->
 
         <hr class="border-t border-gray-200 my-4">
 
@@ -104,7 +104,7 @@
 
       <div class="flex-1">
 
-        <h1 class="text-5xl text-text font-bold mt-4">Nomaden Omah Sekut</h1>
+        <h1 class="text-5xl text-text font-bold mt-4">FindHouseQuick</h1>
         <p class="text-gray-500 text-lg">3,000 search results</p>
 
 

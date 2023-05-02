@@ -65,25 +65,30 @@ $properties = $property->get_all_property();
             <p class="text-xl text-slate-700 font-medium px-10">Categories</p>
             <ul>
             <li class="group px-4">
+            <a href="">
                 <div class="border-b group-hover border-b-gray-200 py-2 flex justify-between items-center">
+                  
                   <div class="">
 
                     <p class="text-slate-400 -mb-1 p-5">Lands</p>
                     <span class="text-slate-600"></span>
 
                   </div>
+                  
+
                   <div class="">
                     <i icon-name="chevron-right" class="h-4 w-4"></i>
                   </div>
+                 
                 </div>
-
-                <div class="absolute hidden shadow-lg bg-white group-hover:block top-0 left-full h-auto w-60">
+            </a>
+                <!-- <div class="absolute hidden shadow-lg bg-white group-hover:block top-0 left-full h-auto w-60">
                   
                   <div class="group-hover px-4 py-2">
                     <p class="text-slate-400 -mb-1">Cars</p>
                     <span class="text-slate-600">24,000 ads</span>
                   </div>
-                </div>
+                </div> -->
               </li>
               <li class="group px-4">
                 <div class="border-b group-hover border-b-gray-200 py-2 flex justify-between items-center">
@@ -133,19 +138,35 @@ $properties = $property->get_all_property();
 
                 <div class="absolute hidden shadow-lg bg-white group-hover:block top-0 left-full h-auto w-60">
                   <div class="group-hover px-4 py-2">
-                    <p class="text-slate-400 -mb-1">Cars</p>
+                    <p class="text-slate-400 -mb-1">3 Bedrooms</p>
                     <span class="text-slate-600">24,000 ads</span>
                   </div>
                   <div class="group-hover px-4 py-2">
-                    <p class="text-slate-400 -mb-1">Cars</p>
+                    <p class="text-slate-400 -mb-1">4 Bedrooms</p>
                     <span class="text-slate-600">24,000 ads</span>
                   </div>
                   <div class="group-hover px-4 py-2">
-                    <p class="text-slate-400 -mb-1">Cars</p>
+                    <p class="text-slate-400 -mb-1">Duplex</p>
                     <span class="text-slate-600">24,000 ads</span>
                   </div>
                   <div class="group-hover px-4 py-2">
-                    <p class="text-slate-400 -mb-1">Cars</p>
+                    <p class="text-slate-400 -mb-1">Semi-detached</p>
+                    <span class="text-slate-600">24,000 ads</span>
+                  </div>
+                  <div class="group-hover px-4 py-2">
+                    <p class="text-slate-400 -mb-1">3 Bedrooms</p>
+                    <span class="text-slate-600">24,000 ads</span>
+                  </div>
+                  <div class="group-hover px-4 py-2">
+                    <p class="text-slate-400 -mb-1">4 Bedrooms</p>
+                    <span class="text-slate-600">24,000 ads</span>
+                  </div>
+                  <div class="group-hover px-4 py-2">
+                    <p class="text-slate-400 -mb-1">Duplex</p>
+                    <span class="text-slate-600">24,000 ads</span>
+                  </div>
+                  <div class="group-hover px-4 py-2">
+                    <p class="text-slate-400 -mb-1">Semi-detached</p>
                     <span class="text-slate-600">24,000 ads</span>
                   </div>
                 </div>
@@ -229,13 +250,13 @@ $properties = $property->get_all_property();
             <div class="splide__track">
               <ul class="splide__list">
                 <li class="splide__slide h-60 w-full">
-                  <img src="https://images.pexels.com/photos/2581922/pexels-photo-2581922.jpeg?auto=compress&cs=tinysrgb&w=600" alt="" class="w-full h-full object-cover">
+                  <img src="../assets/g.jpg" alt="" class="w-full h-full object-cover">
                 </li>
                 <li class="splide__slide h-60 w-full">
-                  <img src="https://images.pexels.com/photos/7193708/pexels-photo-7193708.jpeg?auto=compress&cs=tinysrgb&w=600" alt="" class="w-full h-full object-cover">
+                  <img src="../assets/g.jpg" alt="" class="w-full h-full object-cover">
                 </li>
                 <li class="splide__slide h-60 w-full">
-                  <img src="https://images.pexels.com/photos/16082425/pexels-photo-16082425.jpeg?auto=compress&cs=tinysrgb&w=600" alt="" class="w-full h-full object-cover">
+                  <img src="../assets/g.jpg" alt="" class="w-full h-full object-cover">
 
                 </li>
               </ul>
@@ -294,7 +315,7 @@ $properties = $property->get_all_property();
           </div>
 
           <div class="text-center mt-16">
-            <a href="" class="px-6 py-3 text-white bg-primary inline-block rounded-lg hover:bg-blue-600">View More</a>
+            <a href="listings.php" class="px-6 py-3 text-white bg-primary inline-block rounded-lg hover:bg-blue-600">View More</a>
           </div>
         </div>
       </div>
