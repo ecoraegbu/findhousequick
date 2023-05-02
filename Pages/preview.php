@@ -42,6 +42,16 @@ $document_root = 'C:\wamp64\www\findhousequick';
               <img src="<?php echo $pictures['profile-pic']; ?>" class="w-full h-[460px] object-cover rounded-2xl" alt="">
             </div>
             <div class="swiper-slide">
+              <img src="<?php echo $pictures['profile-pic']; ?>" class="w-full h-[460px] object-cover rounded-2xl" alt="">
+            </div>
+            <div class="swiper-slide">
+              <img src="<?php echo $pictures['profile-pic']; ?>" class="w-full h-[460px] object-cover rounded-2xl" alt="">
+            </div>
+            <div class="swiper-slide">
+              <img src="<?php echo $pictures['profile-pic']; ?>" class="w-full h-[460px] object-cover rounded-2xl" alt="">
+            </div>
+
+            <div class="swiper-slide">
               <img src="<?php echo $pictures['bedroom-pic']; ?>" class="w-full h-[460px] object-cover rounded-2xl" alt="">
             </div>
             <div class="swiper-slide">
@@ -53,6 +63,15 @@ $document_root = 'C:\wamp64\www\findhousequick';
         <!-- Thumbnail use php to programmatically create the slide. for the number of pictures in the picture array/ the size of the array. -->
         <div thumbsSlider="" class="swiper swiper-thumb flex flex-wrap gap-4 mt-4">
           <div class="swiper-wrapper">
+            <div class="swiper-slide">
+              <img src="<?php echo $pictures['profile-pic']; ?>" class="aspect-square w-24  object-cover rounded-md" alt="">
+            </div>
+            <div class="swiper-slide">
+              <img src="<?php echo $pictures['profile-pic']; ?>" class="aspect-square w-24  object-cover rounded-md" alt="">
+            </div>
+            <div class="swiper-slide">
+              <img src="<?php echo $pictures['profile-pic']; ?>" class="aspect-square w-24  object-cover rounded-md" alt="">
+            </div>
             <div class="swiper-slide">
               <img src="<?php echo $pictures['profile-pic']; ?>" class="aspect-square w-24  object-cover rounded-md" alt="">
             </div>

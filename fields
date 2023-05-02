@@ -55,12 +55,18 @@ THE UI FOR THE ADMIN SHOULD BE DIVIDED INTO THE FOLLOWING CATEGORIES.
 - Can view history of tickets (past tickets) with the view closed tickets button.
 please note that the closed tickets view and the open tickets view are the same
 
+fields would include, name of client, text input form where the admin can write notes about steps taken to resolve issue or other important notes
+name of admin who opened the ticket, ticket title or subject matter, buttons for closing tickets and editing tickets
+
 * Messages: 
 - read messages
 - send messages
 - write messages
 - delete messages.
 
+*   Complaints:
+-   Users can send messages complaining about stuff to the admin. this would take higher priority than normal messages
+- fields should include, subject, message and file attachment. the possibility to attach multiple files should be given just in case the user has more than one file to submit.
 
 4. Transaction Management:
 

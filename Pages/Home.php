@@ -138,11 +138,11 @@ $properties = $property->get_all_property();
 
                 <div class="absolute hidden shadow-lg bg-white group-hover:block top-0 left-full h-auto w-60">
                   <div class="group-hover px-4 py-2">
-                    <p class="text-slate-400 -mb-1">3 Bedrooms</p>
+                    <p class="text-slate-400 -mb-1">Single Rooms</p>
                     <span class="text-slate-600">24,000 ads</span>
                   </div>
                   <div class="group-hover px-4 py-2">
-                    <p class="text-slate-400 -mb-1">4 Bedrooms</p>
+                    <p class="text-slate-400 -mb-1">Self </p>
                     <span class="text-slate-600">24,000 ads</span>
                   </div>
                   <div class="group-hover px-4 py-2">
