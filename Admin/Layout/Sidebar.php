@@ -44,8 +44,8 @@
 
           <ul class="bg-primary bg-opacity-25 rounded-md" x-cloak x-show="open" @click.outside="open=false">
             <li class="">
-              <a href="Alerts.php" class="flex items-center gap-4 py-2.5 px-5 text-sm text-gray-300 hover:text-white">
-                <i icon-name="chevron-right" class="h-4 w-4"></i> <span>Banners</span>
+              <a href="#AddProperty" class="flex items-center gap-4 py-2.5 px-5 text-sm text-gray-300 hover:text-white">
+                <i icon-name="chevron-right" class="h-4 w-4"></i> <span>Add Property</span>
               </a>
             </li>
             <li class="">
@@ -86,27 +86,20 @@
 
           <ul class="bg-primary bg-opacity-25 rounded-md" x-cloak x-show="open" @click.outside="open=false">
             <li class="">
-              <a href="" class="flex items-center gap-4 py-2.5 px-5 text-sm text-gray-300 hover:text-white">
+              <a href="#NewMessage" class="flex items-center gap-4 py-2.5 px-5 text-sm text-gray-300 hover:text-white">
                 <i icon-name="chevron-right" class="h-4 w-4"></i> <span>Messages</span>
               </a>
             </li>
             <li class="">
-              <a href="" class="flex items-center gap-4 py-2.5 px-5 text-sm text-gray-300 hover:text-white">
+              <a href="#Tickets" class="flex items-center gap-4 py-2.5 px-5 text-sm text-gray-300 hover:text-white">
                 <i icon-name="chevron-right" class="h-4 w-4"></i> <span>Tickets</span>
               </a>
             </li>
             <li class="">
-              <a href="" class="flex items-center gap-4 py-2.5 px-5 text-sm text-gray-300 hover:text-white">
+              <a href="#NewComplaint" class="flex items-center gap-4 py-2.5 px-5 text-sm text-gray-300 hover:text-white">
                 <i icon-name="chevron-right" class="h-4 w-4"></i> <span>Complaints</span>
               </a>
             </li>
-
-
-
-
-
-
-
           </ul>
         </div>
       </li>
