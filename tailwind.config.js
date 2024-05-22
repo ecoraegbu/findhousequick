@@ -22,7 +22,7 @@ module.exports = {
       },
       boxShadow: {
         side: "0px 4px 30px rgba(0 0 0 /.1)",
-        card: "0px 4px 50px rgba(0 0 0 /.1)",
+        card: "0px 4px 10px rgba(0 0 0 /.1)",
       },
       minWidth: {
         table: "768px",

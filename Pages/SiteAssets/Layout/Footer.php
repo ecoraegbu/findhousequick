@@ -1,4 +1,4 @@
-  <footer class="p-4 border-t border-gray-100">
+  <footer class="p-4 border-t border-gray-200">
     <div class="max-w-7xl mx-auto">
       <nav class="">
 
@@ -44,7 +44,7 @@
     </div>
 
 
-    <div class="max-w-7xl mx-auto flex justify-between border-t border-gray-100 mt-4 pt-4">
+    <div class="max-w-7xl mx-auto flex justify-between border-t border-gray-300 mt-4 pt-4">
       <div class="text-gray-400"><?php
 echo date("Y");
 ?>

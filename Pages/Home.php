@@ -10,7 +10,7 @@ $properties = $property->get_all_property();
 <title>Home | FindHouseQuick</title>
 </head>
 
-<body class="">
+<body class="bg-slate-100">
 
   <header class="">
     <?php include('SiteAssets/Layout/Navbar.php') ?>
@@ -21,6 +21,7 @@ $properties = $property->get_all_property();
     <div class="bg-primary md:bg-gradient-to-r md:from-primary md:via-primary md:to-primary-light overflow-hidden h-auto bg-cover">
       <div class="relative h-full flex items-end justify-between">
         <div class="px-10 py-8 md:px-11 flex items-center h-full">
+
           <div class="relative z-10 py-10">
             <h1 class="text-5xl font-bold text-white ">
               Find Your Dream Home. </h1>
@@ -52,219 +53,293 @@ $properties = $property->get_all_property();
 
 
   <!-- Listings Section -->
-  <section class="px-10 sm:px-20 md:px-10 my-5">
-    <div class="max-w-7xl mx">
+  <section class="px-5 md:px-10 my-5">
+    <div class="max-w-7xl mx-auto">
       <!-- <span class="text-primary font-light text-lg">Our featured properties.</span>
       <h1 class="text-5xl font-bold text-text before:block before:bg-gray-100 before:h-48 before:w-36 before:absolute before:left-0 before:-mt-16 before:rounded-lg before:-z-10">Our Listings.</h1>
  -->
 
-      <div class="flex gap-12">
+      <div class="flex flex-col lg:flex-row gap-12">
+        <!-- For Desktop -->
+        <div class="basis-80 hidden lg:block">
 
-        <div class="basis-60 hidden lg:block">
-          <div class="sticky top-0 z-10 py-4 shadow-md bg-gray-50 w-1">
-            <p class="text-xl text-slate-700 font-medium px-10">Categories</p>
+          <div class="sticky top-4 border z-50 border-gray-50 py-6 bg-gray-50 rounded-xl">
+            <p class="text-xl text-slate-700 font-bold px-4">Categories</p>
+            <hr class="my-4 border-t border-gray-200">
             <ul>
-            <li class="group px-4">
-            <a href="">
-                <div class="border-b group-hover border-b-gray-200 py-2 flex justify-between items-center">
-                  
-                  <div class="">
-
-                    <p class="text-slate-400 -mb-1 p-5">Lands</p>
-                    <span class="text-slate-600"></span>
-
-                  </div>
-                  
-
-                  <div class="">
-                    <i icon-name="chevron-right" class="h-4 w-4"></i>
-                  </div>
-                 
+              <li class="border-b border-b-gray-100 py-2 flex gap-2.5 px-4 justify-between items-center group">
+                <img src="https://cdn-icons-png.freepik.com/256/15419/15419543.png?ga=GA1.1.1100886180.1716379876&semt=ais_hybrid" class="aspect-square w-8" alt="">
+                <div class="mr-auto">
+                  <p class="text-slate-600 -mb-2">Lands</p>
+                  <span class="text-slate-400 text-xs">24,000</span>
                 </div>
-            </a>
-                <!-- <div class="absolute hidden shadow-lg bg-white group-hover:block top-0 left-full h-auto w-60">
-                  
-                  <div class="group-hover px-4 py-2">
-                    <p class="text-slate-400 -mb-1">Cars</p>
-                    <span class="text-slate-600">24,000 ads</span>
-                  </div>
-                </div> -->
-              </li>
-              <li class="group px-4">
-                <div class="border-b group-hover border-b-gray-200 py-2 flex justify-between items-center">
-                  <div class="">
-
-                    <p class="text-slate-400 -mb-1 p-5">Hotels</p>
-                    <span class="text-slate-600"></span>
-
-                  </div>
-                  <div class="">
-                    <i icon-name="chevron-right" class="h-4 w-4"></i>
-                  </div>
-                </div>
-
-                <div class="absolute hidden shadow-lg bg-white group-hover:block top-0 left-full h-auto w-60">
-                  <div class="group-hover px-4 py-2">
-                    <p class="text-slate-400 -mb-1">5 star Hotels</p>
-                    <span class="text-slate-600">24,000 ads</span>
-                  </div>
-                  <div class="group-hover px-4 py-2">
-                    <p class="text-slate-400 -mb-1">4 star Hotels</p>
-                    <span class="text-slate-600">24,000 ads</span>
-                  </div>
-                  <div class="group-hover px-4 py-2">
-                    <p class="text-slate-400 -mb-1">3 star Hotels</p>
-                    <span class="text-slate-600">24,000 ads</span>
-                  </div>
-                  <div class="group-hover px-4 py-2">
-                    <p class="text-slate-400 -mb-1">Motels</p>
-                    <span class="text-slate-600">24,000 ads</span>
-                  </div>
+                <i icon-name="chevron-right" class="h-4 w-4"></i>
+                <div class="absolute top-0 left-full h-full group-hover:block hidden">
+                  <ul class="bg-white w-80 h-full shadow-md rounded-xl p-4 divide-y overflow-auto">
+                    <li class="flex gap-x-0.5 items-center">
+                      <img src="https://cdn-icons-png.freepik.com/256/15419/15419543.png?ga=GA1.1.1100886180.1716379876&semt=ais_hybrid" class="aspect-square w-8" alt="">
+                      <a href="" class="block p-2">
+                        <p class="text-slate-600 -mb-2">500 x 100 plot of land</p>
+                        <span class="text-slate-400 font-semibold text-xs">24,000</span>
+                      </a>
+                    </li>
+                    <li class="flex gap-x-0.5 items-center">
+                      <img src="https://cdn-icons-png.freepik.com/256/15419/15419543.png?ga=GA1.1.1100886180.1716379876&semt=ais_hybrid" class="aspect-square w-8" alt="">
+                      <a href="" class="block p-2">
+                        <p class="text-slate-600 -mb-2">100 x 100 plot of land</p>
+                        <span class="text-slate-400 font-semibold text-xs">24,101</span>
+                      </a>
+                    </li>
+                    <li class="flex gap-x-0.5 items-center">
+                      <img src="https://cdn-icons-png.freepik.com/256/15419/15419543.png?ga=GA1.1.1100886180.1716379876&semt=ais_hybrid" class="aspect-square w-8" alt="">
+                      <a href="" class="block p-2">
+                        <p class="text-slate-600 -mb-2">100 x 100 plot of land</p>
+                        <span class="text-slate-400 font-semibold text-xs">24,101</span>
+                      </a>
+                    </li>
+                    <li class="flex gap-x-0.5 items-center">
+                      <img src="https://cdn-icons-png.freepik.com/256/15419/15419543.png?ga=GA1.1.1100886180.1716379876&semt=ais_hybrid" class="aspect-square w-8" alt="">
+                      <a href="" class="block p-2">
+                        <p class="text-slate-600 -mb-2">100 x 100 plot of land</p>
+                        <span class="text-slate-400 font-semibold text-xs">24,101</span>
+                      </a>
+                    </li>
+                  </ul>
                 </div>
               </li>
 
-              <li class="group px-4">
-                <div class="border-b group-hover border-b-gray-200 py-2 flex justify-between items-center">
-                  <div class="">
-
-                    <p class="text-slate-400 -mb-1 p-5">Homes on Sale</p>
-                    <span class="text-slate-600"></span>
-
-                  </div>
-                  <div class="">
-                    <i icon-name="chevron-right" class="h-4 w-4"></i>
-                  </div>
+              <li class="border-b border-b-gray-100 py-2 flex gap-2.5 px-4 justify-between items-center group">
+                <img src="https://cdn-icons-png.freepik.com/256/15419/15419543.png?ga=GA1.1.1100886180.1716379876&semt=ais_hybrid" class="aspect-square w-8" alt="">
+                <div class="mr-auto">
+                  <p class="text-slate-600 -mb-2">Hostels</p>
+                  <span class="text-slate-400 text-xs">24,000</span>
                 </div>
-
-                <div class="absolute hidden shadow-lg bg-white group-hover:block top-0 left-full h-auto w-60">
-                  <div class="group-hover px-4 py-2">
-                    <p class="text-slate-400 -mb-1">Single Rooms</p>
-                    <span class="text-slate-600">24,000 ads</span>
-                  </div>
-                  <div class="group-hover px-4 py-2">
-                    <p class="text-slate-400 -mb-1">Self </p>
-                    <span class="text-slate-600">24,000 ads</span>
-                  </div>
-                  <div class="group-hover px-4 py-2">
-                    <p class="text-slate-400 -mb-1">Duplex</p>
-                    <span class="text-slate-600">24,000 ads</span>
-                  </div>
-                  <div class="group-hover px-4 py-2">
-                    <p class="text-slate-400 -mb-1">Semi-detached</p>
-                    <span class="text-slate-600">24,000 ads</span>
-                  </div>
-                  <div class="group-hover px-4 py-2">
-                    <p class="text-slate-400 -mb-1">3 Bedrooms</p>
-                    <span class="text-slate-600">24,000 ads</span>
-                  </div>
-                  <div class="group-hover px-4 py-2">
-                    <p class="text-slate-400 -mb-1">4 Bedrooms</p>
-                    <span class="text-slate-600">24,000 ads</span>
-                  </div>
-                  <div class="group-hover px-4 py-2">
-                    <p class="text-slate-400 -mb-1">Duplex</p>
-                    <span class="text-slate-600">24,000 ads</span>
-                  </div>
-                  <div class="group-hover px-4 py-2">
-                    <p class="text-slate-400 -mb-1">Semi-detached</p>
-                    <span class="text-slate-600">24,000 ads</span>
-                  </div>
+                <i icon-name="chevron-right" class="h-4 w-4"></i>
+                <div class="absolute top-0 left-full h-full group-hover:block hidden">
+                  <ul class="bg-white w-80 h-full shadow-md rounded-xl p-4 divide-y overflow-auto">
+                    <li class="flex gap-x-0.5 items-center">
+                      <img src="https://cdn-icons-png.freepik.com/256/15419/15419543.png?ga=GA1.1.1100886180.1716379876&semt=ais_hybrid" class="aspect-square w-8" alt="">
+                      <a href="" class="block p-2">
+                        <p class="text-slate-600 -mb-2">50 x 100 plot of land</p>
+                        <span class="text-slate-400 font-semibold text-xs">24,000</span>
+                      </a>
+                    </li>
+                    <li class="flex gap-x-0.5 items-center">
+                      <img src="https://cdn-icons-png.freepik.com/256/15419/15419543.png?ga=GA1.1.1100886180.1716379876&semt=ais_hybrid" class="aspect-square w-8" alt="">
+                      <a href="" class="block p-2">
+                        <p class="text-slate-600 -mb-2">100 x 100 plot of land</p>
+                        <span class="text-slate-400 font-semibold text-xs">24,101</span>
+                      </a>
+                    </li>
+                    <li class="flex gap-x-0.5 items-center">
+                      <img src="https://cdn-icons-png.freepik.com/256/15419/15419543.png?ga=GA1.1.1100886180.1716379876&semt=ais_hybrid" class="aspect-square w-8" alt="">
+                      <a href="" class="block p-2">
+                        <p class="text-slate-600 -mb-2">100 x 100 plot of land</p>
+                        <span class="text-slate-400 font-semibold text-xs">24,101</span>
+                      </a>
+                    </li>
+                    <li class="flex gap-x-0.5 items-center">
+                      <img src="https://cdn-icons-png.freepik.com/256/15419/15419543.png?ga=GA1.1.1100886180.1716379876&semt=ais_hybrid" class="aspect-square w-8" alt="">
+                      <a href="" class="block p-2">
+                        <p class="text-slate-600 -mb-2">100 x 100 plot of land</p>
+                        <span class="text-slate-400 font-semibold text-xs">24,101</span>
+                      </a>
+                    </li>
+                  </ul>
                 </div>
               </li>
-              <li class="group px-4">
-                <div class="border-b group-hover border-b-gray-200 py-2 flex justify-between items-center">
-                  <div class="">
 
-                    <p class="text-slate-400 -mb-1 p-5">Homes For Rent</p>
-                    <span class="text-slate-600"></span>
-
-                  </div>
-                  <div class="">
-                    <i icon-name="chevron-right" class="h-4 w-4"></i>
-                  </div>
+              <li class="border-b border-b-gray-100 py-2 flex gap-2.5 px-4 justify-between items-center group">
+                <img src="https://cdn-icons-png.freepik.com/256/15419/15419543.png?ga=ga1.1.1100886180.1716379876&semt=ais_hybrid" class="aspect-square w-8" alt="">
+                <div class="mr-auto">
+                  <p class="text-slate-600 -mb-2">homes on sale</p>
+                  <span class="text-slate-400 text-xs">24,000</span>
                 </div>
-
-                <div class="absolute hidden shadow-lg bg-white group-hover:block top-0 left-full h-auto w-60">
-                  <div class="group-hover px-4 py-2">
-                    <p class="text-slate-400 -mb-1">Cars</p>
-                    <span class="text-slate-600">24,000 ads</span>
-                  </div>
-                  <div class="group-hover px-4 py-2">
-                    <p class="text-slate-400 -mb-1">Cars</p>
-                    <span class="text-slate-600">24,000 ads</span>
-                  </div>
-                  <div class="group-hover px-4 py-2">
-                    <p class="text-slate-400 -mb-1">Cars</p>
-                    <span class="text-slate-600">24,000 ads</span>
-                  </div>
-                  <div class="group-hover px-4 py-2">
-                    <p class="text-slate-400 -mb-1">Cars</p>
-                    <span class="text-slate-600">24,000 ads</span>
-                  </div>
-                </div>
-              </li>
-                            <li class="group px-4">
-                <div class="border-b group-hover border-b-gray-200 py-2 flex justify-between items-center">
-                  <div class="">
-
-                    <p class="text-slate-400 -mb-1 p-5">Shorlet Apartments</p>
-                    <span class="text-slate-600"></span>
-
-                  </div>
-                  <div class="">
-                    <i icon-name="chevron-right" class="h-4 w-4"></i>
-                  </div>
-                </div>
-
-                <div class="absolute hidden shadow-lg bg-white group-hover:block top-0 left-full h-auto w-60">
-                  <div class="group-hover px-4 py-2">
-                    <p class="text-slate-400 -mb-1">Cars</p>
-                    <span class="text-slate-600">24,000 ads</span>
-                  </div>
-                  <div class="group-hover px-4 py-2">
-                    <p class="text-slate-400 -mb-1">Cars</p>
-                    <span class="text-slate-600">24,000 ads</span>
-                  </div>
-                  <div class="group-hover px-4 py-2">
-                    <p class="text-slate-400 -mb-1">Cars</p>
-                    <span class="text-slate-600">24,000 ads</span>
-                  </div>
-                  <div class="group-hover px-4 py-2">
-                    <p class="text-slate-400 -mb-1">Cars</p>
-                    <span class="text-slate-600">24,000 ads</span>
-                  </div>
+                <i icon-name="chevron-right" class="h-4 w-4"></i>
+                <div class="absolute top-0 left-full h-full group-hover:block hidden">
+                  <ul class="bg-white w-80 h-full shadow-md rounded-xl p-4 divide-y overflow-auto">
+                    <li class="flex gap-x-0.5 items-center">
+                      <img src="https://cdn-icons-png.freepik.com/256/15419/15419543.png?ga=ga1.1.1100886180.1716379876&semt=ais_hybrid" class="aspect-square w-8" alt="">
+                      <a href="" class="block p-2">
+                        <p class="text-slate-600 -mb-2">50 x 100 plot of land</p>
+                        <span class="text-slate-400 font-semibold text-xs">24,000</span>
+                      </a>
+                    </li>
+                    <li class="flex gap-x-0.5 items-center">
+                      <img src="https://cdn-icons-png.freepik.com/256/15419/15419543.png?ga=ga1.1.1100886180.1716379876&semt=ais_hybrid" class="aspect-square w-8" alt="">
+                      <a href="" class="block p-2">
+                        <p class="text-slate-600 -mb-2">100 x 100 plot of land</p>
+                        <span class="text-slate-400 font-semibold text-xs">24,101</span>
+                      </a>
+                    </li>
+                    <li class="flex gap-x-0.5 items-center">
+                      <img src="https://cdn-icons-png.freepik.com/256/15419/15419543.png?ga=GA1.1.1100886180.1716379876&semt=ais_hybrid" class="aspect-square w-8" alt="">
+                      <a href="" class="block p-2">
+                        <p class="text-slate-600 -mb-2">100 x 100 plot of land</p>
+                        <span class="text-slate-400 font-semibold text-xs">24,101</span>
+                      </a>
+                    </li>
+                    <li class="flex gap-x-0.5 items-center">
+                      <img src="https://cdn-icons-png.freepik.com/256/15419/15419543.png?ga=GA1.1.1100886180.1716379876&semt=ais_hybrid" class="aspect-square w-8" alt="">
+                      <a href="" class="block p-2">
+                        <p class="text-slate-600 -mb-2">100 x 100 plot of land</p>
+                        <span class="text-slate-400 font-semibold text-xs">24,101</span>
+                      </a>
+                    </li>
+                  </ul>
                 </div>
               </li>
-              
 
+              <li class="border-b border-b-gray-100 py-2 flex gap-2.5 px-4 justify-between items-center group">
+                <img src="https://cdn-icons-png.freepik.com/256/15419/15419543.png?ga=GA1.1.1100886180.1716379876&semt=ais_hybrid" class="aspect-square w-8" alt="">
+                <div class="mr-auto">
+                  <p class="text-slate-600 -mb-2">Homes for Rent</p>
+                  <span class="text-slate-400 text-xs">24,000</span>
+                </div>
+                <i icon-name="chevron-right" class="h-4 w-4"></i>
+                <div class="absolute top-0 left-full h-full group-hover:block hidden">
+                  <ul class="bg-white w-80 h-full shadow-md rounded-xl p-4 divide-y overflow-auto">
+                    <li class="flex gap-x-0.5 items-center">
+                      <img src="https://cdn-icons-png.freepik.com/256/15419/15419543.png?ga=GA1.1.1100886180.1716379876&semt=ais_hybrid" class="aspect-square w-8" alt="">
+                      <a href="" class="block p-2">
+                        <p class="text-slate-600 -mb-2">50 x 100 plot of land</p>
+                        <span class="text-slate-400 font-semibold text-xs">24,000</span>
+                      </a>
+                    </li>
+                    <li class="flex gap-x-0.5 items-center">
+                      <img src="https://cdn-icons-png.freepik.com/256/15419/15419543.png?ga=GA1.1.1100886180.1716379876&semt=ais_hybrid" class="aspect-square w-8" alt="">
+                      <a href="" class="block p-2">
+                        <p class="text-slate-600 -mb-2">100 x 100 plot of land</p>
+                        <span class="text-slate-400 font-semibold text-xs">24,101</span>
+                      </a>
+                    </li>
+                    <li class="flex gap-x-0.5 items-center">
+                      <img src="https://cdn-icons-png.freepik.com/256/15419/15419543.png?ga=GA1.1.1100886180.1716379876&semt=ais_hybrid" class="aspect-square w-8" alt="">
+                      <a href="" class="block p-2">
+                        <p class="text-slate-600 -mb-2">100 x 100 plot of land</p>
+                        <span class="text-slate-400 font-semibold text-xs">24,101</span>
+                      </a>
+                    </li>
+                    <li class="flex gap-x-0.5 items-center">
+                      <img src="https://cdn-icons-png.freepik.com/256/15419/15419543.png?ga=GA1.1.1100886180.1716379876&semt=ais_hybrid" class="aspect-square w-8" alt="">
+                      <a href="" class="block p-2">
+                        <p class="text-slate-600 -mb-2">100 x 100 plot of land</p>
+                        <span class="text-slate-400 font-semibold text-xs">24,101</span>
+                      </a>
+                    </li>
+                  </ul>
+                </div>
+              </li>
 
-              
+              <li class="border-b border-b-gray-100 py-2 flex gap-2.5 px-4 justify-between items-center group">
+                <img src="https://cdn-icons-png.freepik.com/256/15419/15419543.png?ga=GA1.1.1100886180.1716379876&semt=ais_hybrid" class="aspect-square w-8" alt="">
+                <div class="mr-auto">
+                  <p class="text-slate-600 -mb-2">Shorlet Apartments</p>
+                  <span class="text-slate-400 text-xs">24,000</span>
+                </div>
+                <i icon-name="chevron-right" class="h-4 w-4"></i>
+                <div class="absolute top-0 left-full h-full group-hover:block hidden">
+                  <ul class="bg-white w-80 h-full shadow-md rounded-xl p-4 divide-y overflow-auto">
+                    <li class="flex gap-x-0.5 items-center">
+                      <img src="https://cdn-icons-png.freepik.com/256/15419/15419543.png?ga=GA1.1.1100886180.1716379876&semt=ais_hybrid" class="aspect-square w-8" alt="">
+                      <a href="" class="block p-2">
+                        <p class="text-slate-600 -mb-2">50 x 100 plot of land</p>
+                        <span class="text-slate-400 font-semibold text-xs">24,000</span>
+                      </a>
+                    </li>
+                    <li class="flex gap-x-0.5 items-center">
+                      <img src="https://cdn-icons-png.freepik.com/256/15419/15419543.png?ga=GA1.1.1100886180.1716379876&semt=ais_hybrid" class="aspect-square w-8" alt="">
+                      <a href="" class="block p-2">
+                        <p class="text-slate-600 -mb-2">100 x 100 plot of land</p>
+                        <span class="text-slate-400 font-semibold text-xs">24,101</span>
+                      </a>
+                    </li>
+                    <li class="flex gap-x-0.5 items-center">
+                      <img src="https://cdn-icons-png.freepik.com/256/15419/15419543.png?ga=GA1.1.1100886180.1716379876&semt=ais_hybrid" class="aspect-square w-8" alt="">
+                      <a href="" class="block p-2">
+                        <p class="text-slate-600 -mb-2">100 x 100 plot of land</p>
+                        <span class="text-slate-400 font-semibold text-xs">24,101</span>
+                      </a>
+                    </li>
+                    <li class="flex gap-x-0.5 items-center">
+                      <img src="https://cdn-icons-png.freepik.com/256/15419/15419543.png?ga=GA1.1.1100886180.1716379876&semt=ais_hybrid" class="aspect-square w-8" alt="">
+                      <a href="" class="block p-2">
+                        <p class="text-slate-600 -mb-2">100 x 100 plot of land</p>
+                        <span class="text-slate-400 font-semibold text-xs">24,101</span>
+                      </a>
+                    </li>
+                  </ul>
+                </div>
+              </li>
+
             </ul>
           </div>
         </div>
 
+        <!-- End of Desktop -->
 
-        <div class="flex-1">
+        <!-- For Mobile -->
+        <div class="block lg:hidden mt-12">
+          <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5">
 
-          <div class="splide" data-splide='{"type":"loop"}' aria-label="Splide Basic HTML Example">
-            <div class="splide__track">
-              <ul class="splide__list">
-                <li class="splide__slide h-60 w-full">
-                  <img src="../assets/g.jpg" alt="" class="w-full h-full object-cover">
-                </li>
-                <li class="splide__slide h-60 w-full">
-                  <img src="../assets/g.jpg" alt="" class="w-full h-full object-cover">
-                </li>
-                <li class="splide__slide h-60 w-full">
-                  <img src="../assets/g.jpg" alt="" class="w-full h-full object-cover">
-
-                </li>
-              </ul>
+            <div class="bg-slate-100 py-8 px-10 border border-primary-light flex-1">
+              <img src="https://cdn-icons-png.freepik.com/256/992/992651.png?ga=GA1.1.1100886180.1716379876&semt=ais_hybrid" class="aspect-square w-8 mx-auto" alt="">
+              <p class="font-semibold text-xs text-center mt-2 whitespace-nowrap">Post Ads</p>
+            </div>
+            <div class="bg-slate-100 py-8 px-10 border border-primary-light flex-1">
+              <img src="https://cdn-icons-png.freepik.com/256/15419/15419543.png?ga=GA1.1.1100886180.1716379876&semt=ais_hybrid" class="aspect-square w-8 mx-auto" alt="">
+              <p class="font-semibold text-xs text-center mt-2">Lands</p>
+            </div>
+            <div class="bg-slate-100 py-8 px-10 border border-primary-light flex-1">
+              <img src="https://cdn-icons-png.freepik.com/256/15419/15419543.png?ga=GA1.1.1100886180.1716379876&semt=ais_hybrid" class="aspect-square w-8 mx-auto" alt="">
+              <p class="font-semibold text-xs text-center mt-2">Hostels</p>
+            </div>
+            <div class="bg-slate-100 py-8 px-10 border border-primary-light flex-1">
+              <img src="https://cdn-icons-png.freepik.com/256/15419/15419543.png?ga=GA1.1.1100886180.1716379876&semt=ais_hybrid" class="aspect-square w-8 mx-auto" alt="">
+              <p class="font-semibold text-xs text-center mt-2">Homes for Sale</p>
+            </div>
+            <div class="bg-slate-100 py-8 px-10 border border-primary-light flex-1">
+              <img src="https://cdn-icons-png.freepik.com/256/15419/15419543.png?ga=GA1.1.1100886180.1716379876&semt=ais_hybrid" class="aspect-square w-8 mx-auto" alt="">
+              <p class="font-semibold text-xs text-center mt-2">Homes for Rent</p>
+            </div>
+            <div class="bg-slate-100 py-8 px-10 border border-primary-light flex-1">
+              <img src="https://cdn-icons-png.freepik.com/256/15419/15419543.png?ga=GA1.1.1100886180.1716379876&semt=ais_hybrid" class="aspect-square w-8 mx-auto" alt="">
+              <p class="font-semibold text-xs text-center mt-2">Shorlet Apartments</p>
             </div>
           </div>
+        </div>
+
+        <!-- End of Mobile -->
+
+        <div class="flex-1">
+          <div class="gap-4 flex-col md:flex-row hidden lg:flex">
+
+            <div class="splide flex-1" data-splide='{"type":"loop"}' aria-label="Splide Basic HTML Example">
+              <div class="splide__track">
+                <ul class="splide__list">
+                  <li class="splide__slide h-60 w-full">
+                    <img src="https://images.unsplash.com/photo-1572120360610-d971b9d7767c?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTV8fGhvdXNlfGVufDB8fDB8fHww" alt="" class="w-full h-full object-cover">
+                  </li>
+                  <li class="splide__slide h-60 w-full">
+                    <img src="https://images.unsplash.com/photo-1554995207-c18c203602cb?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nnx8aG91c2V8ZW58MHx8MHx8fDA%3D" alt="" class="w-full h-full object-cover">
+                  </li>
+                  <li class="splide__slide h-60 w-full">
+                    <img src="https://plus.unsplash.com/premium_photo-1674518276501-d960d87424a0?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NXx8aG91c2V8ZW58MHx8MHx8fDA%3D" alt="" class="w-full h-full object-cover">
+                  </li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="basis-60">
+              <a href="" class="block w-full h-full">
+                <img src="https://images.unsplash.com/photo-1628260412297-a3377e45006f?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTl8fGljb24lMjBpbWFnZXN8ZW58MHx8MHx8fDA%3D" class="bg-purple-400 h-full w-full object-cover rounded-2xl" alt="Drop your image icon here">
+              </a>
+            </div>
 
 
-          <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-10 mt-10">
+          </div>
+
+          <div class="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 gap-6 md:gap-10 mt-10">
             <?php
             foreach ($properties as $property) : ?>
               <?php $urls = json_decode($property->images);
@@ -288,7 +363,7 @@ $properties = $property->get_all_property();
 
               ?>
 
-              <div class="shadow-card p-4 rounded-lg bg-white group transition-all">
+              <div class=" p-3 rounded-lg bg-white group transition-all">
                 <div class="relative">
                   <img src="<?= $relative_path ?>" class="aspect-video object-cover w-full rounded-lg" alt="">
                   <div class="w-full h-full bg-black bg-opacity-50 opacity-0  group-hover:opacity-100 absolute inset-0 rounded-lg p-2 transition-all">

@@ -1,4 +1,4 @@
-<nav class="px-4 py-3">
+<nav class="px-4 py-3 bg-white">
 
   <div class="flex justify-between items-center max-w-7xl mx-auto">
     <!-- Logo -->
