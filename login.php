@@ -1,5 +1,5 @@
 <?php
-require_once 'core/init.php';
+require_once 'Core/Init.php';
 
 Config::get('remember/cookie_name') ;
 if (Input::exists()){
@@ -52,7 +52,7 @@ if (Input::exists()){
 
 <body>
   <div class="grid grid-cols-1 md:grid-cols-none h-screen">
-    <section class="bg-login hover:grayscale grayscale-0 transition-all hidden md:block bg-blend-multiply bg-primary bg-opacity-50 col-start-1 col-end-10">
+    <section class="bg-login bg-no-repeat hover:grayscale grayscale-0 transition-all hidden md:block bg-blend-multiply bg-primary bg-opacity-50 col-start-1 col-end-10">
       <h1 class="text-white text-2xl font-bold py-6 px-12">FindHouseQuick</h1>
       <p></p>
     </section>

@@ -7,7 +7,8 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "pnpm tailwindcss -i ./Pages/Styles/input.css -o ./Pages/Dist/output.css --watch",
     "site": "pnpm tailwindcss -i ./Pages/SiteAssets/Styles/input.css -o ./Pages/SiteAssets/Dist/output.css --watch",
-    "admin": "pnpm tailwindcss -i ./Admin/Styles/input.css -o ./Admin/Dist/output.css --watch"
+    "admin": "pnpm tailwindcss -i ./Admin/Styles/input.css -o ./Admin/Dist/output.css --watch",
+    "agent": "pnpm tailwindcss -i ./Agent/Styles/input.css -o ./Agent/Dist/output.css --watch"
   },
   "keywords": [],
   "author": "",

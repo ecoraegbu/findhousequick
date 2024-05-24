@@ -5,58 +5,57 @@
 
     <ul class="mt-10">
       <li class="px-10 relative before:absolute before:left-0 before:bg-white before:h-full before:w-1 before:rounded-full">
-        <a href="#" class="transition-all py-3 px-5 flex items-center gap-4 shadow-side bg-white text-primary rounded-lg">
+        <a href="#dashboard" class="transition-all py-3 px-5 flex items-center gap-4 shadow-side bg-white text-primary rounded-lg">
           <i icon-name="layout-dashboard" class="h-5 w-5"></i> <span>Dashboard</span>
         </a>
       </li>
       <li class="px-10 relative hover:before:absolute hover:before:left-0 hover:before:bg-primary hover:before:bg-opacity-25 hover:before:h-full hover:before:w-1 hover:before:rounded-full">
-        <a href="" class="transition-all py-3 px-5 flex items-center gap-4 hover:bg-primary hover:bg-opacity-25 rounded-lg">
+        <a href="#profile" class="transition-all py-3 px-5 flex items-center gap-4 hover:bg-primary hover:bg-opacity-25 rounded-lg">
           <i icon-name="user" class="h-5 w-5"></i> <span>Profile</span>
         </a>
       </li>
       <li class="px-10 relative hover:before:absolute hover:before:left-0 hover:before:bg-primary hover:before:bg-opacity-25 hover:before:h-full hover:before:w-1 hover:before:rounded-full">
-        <a href="" class="transition-all py-3 px-5 flex items-center gap-4 hover:bg-primary hover:bg-opacity-25 rounded-lg">
+        <a href="#new_property" class="transition-all py-3 px-5 flex items-center gap-4 hover:bg-primary hover:bg-opacity-25 rounded-lg">
           <i icon-name="landmark" class="h-5 w-5"></i> <span>New Property</span>
         </a>
       </li>
 
       <li class="px-10 relative hover:before:absolute hover:before:left-0 hover:before:bg-primary hover:before:bg-opacity-25 hover:before:h-full hover:before:w-1 hover:before:rounded-full">
-        <a href="" class="transition-all py-3 px-5 flex items-center gap-4 hover:bg-primary hover:bg-opacity-25 rounded-lg">
+        <a href="#view_tenants" class="transition-all py-3 px-5 flex items-center gap-4 hover:bg-primary hover:bg-opacity-25 rounded-lg">
           <i icon-name="users" class="h-5 w-5"></i> <span>View Tenants</span>
         </a>
       </li>
 
-
       <li class="px-10 relative hover:before:absolute hover:before:left-0 hover:before:bg-primary hover:before:bg-opacity-25 hover:before:h-full hover:before:w-1 hover:before:rounded-full">
-        <a href="" class="transition-all py-3 px-5 flex items-center gap-4 hover:bg-primary hover:bg-opacity-25 rounded-lg">
+        <a href="#view_listings" class="transition-all py-3 px-5 flex items-center gap-4 hover:bg-primary hover:bg-opacity-25 rounded-lg">
           <i icon-name="list" class="h-5 w-5"></i> <span>View Listings</span>
         </a>
       </li>
 
-      <li class="px-10 relative hover:before:absolute hover:before:left-0 hover:before:bg-primary hover:before:bg-opacity-25 hover:before:h-full hover:before:w-1 hover:before:rounded-full">
-        <a href="" class="transition-all py-3 px-5 flex items-center gap-4 hover:bg-primary hover:bg-opacity-25 rounded-lg">
-          <i icon-name="scroll" class="h-5 w-5"></i> <span>Documents</span>
-        </a>
-      </li>
+      <!-- <li class="px-10 relative hover:before:absolute hover:before:left-0 hover:before:bg-primary hover:before:bg-opacity-25 hover:before:h-full hover:before:w-1 hover:before:rounded-full"> -->
+      <!--   <a href="" class="transition-all py-3 px-5 flex items-center gap-4 hover:bg-primary hover:bg-opacity-25 rounded-lg"> -->
+      <!--     <i icon-name="scroll" class="h-5 w-5"></i> <span>Documents</span> -->
+      <!--   </a> -->
+      <!-- </li> -->
 
       <li class="px-10 relative hover:before:absolute hover:before:left-0 hover:before:bg-primary hover:before:bg-opacity-25 hover:before:h-full hover:before:w-1 hover:before:rounded-full">
-        <a href="" class="transition-all py-3 px-5 flex items-center gap-4 hover:bg-primary hover:bg-opacity-25 rounded-lg">
+        <a href="#messages" class="transition-all py-3 px-5 flex items-center gap-4 hover:bg-primary hover:bg-opacity-25 rounded-lg">
           <i icon-name="mails" class="h-5 w-5"></i> <span>Messages</span>
         </a>
       </li>
 
       <li class="px-10 relative hover:before:absolute hover:before:left-0 hover:before:bg-primary hover:before:bg-opacity-25 hover:before:h-full hover:before:w-1 hover:before:rounded-full">
-        <a href="" class="transition-all py-3 px-5 flex items-center gap-4 hover:bg-primary hover:bg-opacity-25 rounded-lg">
+        <a href="#view_complaints" class="transition-all py-3 px-5 flex items-center gap-4 hover:bg-primary hover:bg-opacity-25 rounded-lg">
           <i icon-name="fingerprint" class="h-5 w-5"></i> <span>View Complaints</span>
         </a>
       </li>
       <li class="px-10 relative hover:before:absolute hover:before:left-0 hover:before:bg-primary hover:before:bg-opacity-25 hover:before:h-full hover:before:w-1 hover:before:rounded-full">
-        <a href="" class="transition-all py-3 px-5 flex items-center gap-4 hover:bg-primary hover:bg-opacity-25 rounded-lg">
+        <a href="#issue_notices" class="transition-all py-3 px-5 flex items-center gap-4 hover:bg-primary hover:bg-opacity-25 rounded-lg">
           <i icon-name="sticky-note" class="h-5 w-5"></i> <span>Issue Notices</span>
         </a>
       </li>
       <li class="px-10 relative hover:before:absolute hover:before:left-0 hover:before:bg-primary hover:before:bg-opacity-25 hover:before:h-full hover:before:w-1 hover:before:rounded-full">
-        <a href="" class="transition-all py-3 px-5 flex items-center gap-4 hover:bg-primary hover:bg-opacity-25 rounded-lg">
+        <a href="#payments" class="transition-all py-3 px-5 flex items-center gap-4 hover:bg-primary hover:bg-opacity-25 rounded-lg">
           <i icon-name="banknote" class="h-5 w-5"></i> <span>Payments</span>
         </a>
       </li>
@@ -70,3 +69,4 @@
     </ul>
   </div>
 </aside>
+

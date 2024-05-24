@@ -6,7 +6,7 @@
 
     <ul class="mt-10">
       <li class="px-10 relative before:absolute before:left-0 before:bg-white before:h-full before:w-1 before:rounded-full">
-        <a href="#" class="transition-all py-3 px-5 flex items-center gap-4 shadow-side bg-white text-primary rounded-lg">
+        <a href="#Dashboard" class="transition-all py-3 px-5 flex items-center gap-4 shadow-side bg-white text-primary rounded-lg">
           <i icon-name="layout-dashboard" class="h-5 w-5"></i> <span>Dashboard</span>
         </a>
       </li>

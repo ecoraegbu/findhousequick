@@ -282,27 +282,27 @@ $properties = $property->get_all_property();
         <div class="block lg:hidden mt-12">
           <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5">
 
-            <div class="bg-slate-100 py-8 px-10 border border-primary-light flex-1">
+            <div class="bg-white py-8 px-10 border border-primary-light flex-1">
               <img src="https://cdn-icons-png.freepik.com/256/992/992651.png?ga=GA1.1.1100886180.1716379876&semt=ais_hybrid" class="aspect-square w-8 mx-auto" alt="">
               <p class="font-semibold text-xs text-center mt-2 whitespace-nowrap">Post Ads</p>
             </div>
-            <div class="bg-slate-100 py-8 px-10 border border-primary-light flex-1">
+            <div class="bg-white py-8 px-10 border border-primary-light flex-1">
               <img src="https://cdn-icons-png.freepik.com/256/15419/15419543.png?ga=GA1.1.1100886180.1716379876&semt=ais_hybrid" class="aspect-square w-8 mx-auto" alt="">
               <p class="font-semibold text-xs text-center mt-2">Lands</p>
             </div>
-            <div class="bg-slate-100 py-8 px-10 border border-primary-light flex-1">
+            <div class="bg-white py-8 px-10 border border-primary-light flex-1">
               <img src="https://cdn-icons-png.freepik.com/256/15419/15419543.png?ga=GA1.1.1100886180.1716379876&semt=ais_hybrid" class="aspect-square w-8 mx-auto" alt="">
               <p class="font-semibold text-xs text-center mt-2">Hostels</p>
             </div>
-            <div class="bg-slate-100 py-8 px-10 border border-primary-light flex-1">
+            <div class="bg-white py-8 px-10 border border-primary-light flex-1">
               <img src="https://cdn-icons-png.freepik.com/256/15419/15419543.png?ga=GA1.1.1100886180.1716379876&semt=ais_hybrid" class="aspect-square w-8 mx-auto" alt="">
               <p class="font-semibold text-xs text-center mt-2">Homes for Sale</p>
             </div>
-            <div class="bg-slate-100 py-8 px-10 border border-primary-light flex-1">
+            <div class="bg-white py-8 px-10 border border-primary-light flex-1">
               <img src="https://cdn-icons-png.freepik.com/256/15419/15419543.png?ga=GA1.1.1100886180.1716379876&semt=ais_hybrid" class="aspect-square w-8 mx-auto" alt="">
               <p class="font-semibold text-xs text-center mt-2">Homes for Rent</p>
             </div>
-            <div class="bg-slate-100 py-8 px-10 border border-primary-light flex-1">
+            <div class="bg-white py-8 px-10 border border-primary-light flex-1">
               <img src="https://cdn-icons-png.freepik.com/256/15419/15419543.png?ga=GA1.1.1100886180.1716379876&semt=ais_hybrid" class="aspect-square w-8 mx-auto" alt="">
               <p class="font-semibold text-xs text-center mt-2">Shorlet Apartments</p>
             </div>
@@ -339,7 +339,7 @@ $properties = $property->get_all_property();
 
           </div>
 
-          <div class="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 gap-6 md:gap-10 mt-10">
+          <div class="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-4 gap-4 md:gap-8 mt-10">
             <?php
             foreach ($properties as $property) : ?>
               <?php $urls = json_decode($property->images);
