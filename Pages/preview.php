@@ -1,23 +1,23 @@
-<?php 
+<?php
 include('SiteAssets/Layout/Head.php');
-require_once(dirname(__FILE__,2).'/Core/Init.php');
-if(Input::exists()){
+require_once(dirname(__FILE__, 2) . '/Core/Init.php');
+if (Input::exists()) {
   $property_id = Input::get('property');
   $property = new Property();
   $house = $property->get_property_details($property_id);
   $images = json_decode($house->images);
   $pictures = [];
   // Define the document root of your web server
-$document_root = 'C:\wamp64\www\findhousequick';
-    foreach ($images as $name => $value){
-      // Define the file path to be converted
-      $file_path = $images->{$name};
-      // Remove the document root from the beginning of the file path
-      $file_path = str_replace($document_root, '', $file_path);
-      // Prepend '../' to the file path
-      $relative_path = '..' . $file_path;
-      $pictures[$name] = $relative_path;
-    }
+  $document_root = 'C:\wamp64\www\findhousequick';
+  foreach ($images as $name => $value) {
+    // Define the file path to be converted
+    $file_path = $images->{$name};
+    // Remove the document root from the beginning of the file path
+    $file_path = str_replace($document_root, '', $file_path);
+    // Prepend '../' to the file path
+    $relative_path = '..' . $file_path;
+    $pictures[$name] = $relative_path;
+  }
 }
 ?>
 
@@ -28,7 +28,7 @@ $document_root = 'C:\wamp64\www\findhousequick';
 <body class="">
 
   <header class="">
-    <?php #include('SiteAssets/Layout/Navbar.php') ?>
+    <?php include('SiteAssets/Layout/Navbar.php') ?>
   </header>
 
   <!-- Preview Section -->
@@ -89,30 +89,30 @@ $document_root = 'C:\wamp64\www\findhousequick';
         <!-- Status Card -->
         <div class="">
           <!-- Available -->
-          <span class="bg-success-light text-success px-2 py-1.5 text-sm rounded-md"><?php echo $house->status;?></span>
+          <span class="bg-success-light text-success px-2 py-1.5 text-sm rounded-md"><?php echo $house->status; ?></span>
           <!-- For Sale -->
-          <span class="bg-primary-light text-primary px-2 py-1.5 text-sm rounded-md ml-2"><?php echo $house->purpose;?></span>
+          <span class="bg-primary-light text-primary px-2 py-1.5 text-sm rounded-md ml-2"><?php echo $house->purpose; ?></span>
           <!-- For Rent -->
           <!-- <span class="bg-purple-100 text-purple-700 px-2 py-1.5 text-sm rounded-md ml-2">For Rent</span> -->
           <!-- Not Available -->
           <!-- <span class="bg-error-light text-error px-2 py-1.5 text-sm rounded-md ml-2">Not Available</span> -->
         </div>
 
-        <h1 class="text-5xl text-text font-bold mt-4 mb-5"><?php echo $house->type . ', '. $house->city?></h1>
-        <p class="text-gray-600 font-light text-lg"><?php echo $house->description?>.</p>
+        <h1 class="text-5xl text-text font-bold mt-4 mb-5"><?php echo $house->type . ', ' . $house->city ?></h1>
+        <p class="text-gray-600 font-light text-lg"><?php echo $house->description ?>.</p>
 
 
         <div class="flex flex-wrap gap-4 mt-10">
           <div class="flex items-center gap-2 font-semibold border border-gray-200 px-2 py-2 rounded-lg">
-            <span class="bg-primary text-white px-1.5 py-0.5 rounded-lg inline-block text-xl"><?php echo $house->toilets;?></span>
+            <span class="bg-primary text-white px-1.5 py-0.5 rounded-lg inline-block text-xl"><?php echo $house->toilets; ?></span>
             <span class="text-gray-600">Toilets</span>
           </div>
           <div class="flex items-center gap-2 font-semibold border border-gray-200 px-2 py-2 rounded-lg">
-            <span class="bg-primary text-white px-1.5 py-0.5 rounded-lg inline-block text-xl"><?php echo $house->bathrooms;?></span>
+            <span class="bg-primary text-white px-1.5 py-0.5 rounded-lg inline-block text-xl"><?php echo $house->bathrooms; ?></span>
             <span class="text-gray-600">Bathrooms</span>
           </div>
           <div class="flex items-center gap-2 font-semibold border border-gray-200 px-2 py-2 rounded-lg">
-            <span class="bg-primary text-white px-1.5 py-0.5 rounded-lg inline-block text-xl"><?php echo $house->bedrooms;?></span>
+            <span class="bg-primary text-white px-1.5 py-0.5 rounded-lg inline-block text-xl"><?php echo $house->bedrooms; ?></span>
             <span class="text-gray-600">Rooms</span>
           </div>
           <div class="flex items-center gap-2 font-semibold border border-gray-200 px-2 py-2 rounded-lg">
@@ -128,12 +128,12 @@ $document_root = 'C:\wamp64\www\findhousequick';
 
 
         <div class="mt-10">
-          <p class="text-primary text-2xl font-bold"><?php echo $house->price;?> <small class="text-gray-500 font-normal">/ Per year</small></p>
+          <p class="text-primary text-2xl font-bold"><?php echo $house->price; ?> <small class="text-gray-500 font-normal">/ Per year</small></p>
         </div>
 
         <div class="mt-2">
-          <a href="" class="bg-primary text-white px-6 py-3 inline-block rounded-lg hover:bg-blue-600">Rent Now</a>
-          <a href="" class="bg-gray-100 text-primary px-6 py-3 inline-block rounded-lg ml-2 hover:bg-gray-200">Call Us</a>
+          <a href="terms_and_condition.php" class="bg-primary text-white px-6 py-3 inline-block rounded-lg hover:bg-blue-600">Rent Now</a>
+          <a href="book_inspection.php" class="bg-gray-100 text-primary px-6 py-3 inline-block rounded-lg ml-2 hover:bg-gray-200">Book Inspection</a>
         </div>
 
       </div>

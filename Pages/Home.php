@@ -23,8 +23,7 @@ $properties = $property->get_all_property();
         <div class="px-10 py-8 md:px-11 flex items-center h-full">
 
           <div class="relative z-10 py-10">
-            <h1 class="text-5xl font-bold text-white ">
-              Find Your Dream Home. </h1>
+            <h1 class="text-5xl font-bold text-white">Find Your Dream Home. </h1>
             <!-- <p class="max-w-lg mt-4 mb-8 text-white ">
               We are a real estate agency that will help you find the best residence you dream of, let's
               discuss for your dream house!
@@ -49,8 +48,6 @@ $properties = $property->get_all_property();
     </div>
   </section>
   <!-- Hero End -->
-
-
 
   <!-- Listings Section -->
   <section class="px-5 md:px-10 my-5">

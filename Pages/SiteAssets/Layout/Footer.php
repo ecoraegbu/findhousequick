@@ -1,11 +1,10 @@
-  <footer class="p-4 border-t border-gray-200">
+  <footer class="p-4 border-t border-gray-200 mt-10">
     <div class="max-w-7xl mx-auto">
       <nav class="">
 
         <div class="md:flex text-center md:text-left justify-between items-start md:items-center">
           <!-- Logo -->
           <div class="text-2xl text-primary font-semibold">FindHouseQuick</div>
-
 
           <!-- Navbar -->
           <ul class="items-center gap-6 block md:flex my-10 md:my-0">
@@ -38,7 +37,6 @@
 
           </div>
 
-
         </div>
       </nav>
     </div>
@@ -46,9 +44,9 @@
 
     <div class="max-w-7xl mx-auto flex justify-between border-t border-gray-300 mt-4 pt-4">
       <div class="text-gray-400"><?php
-echo date("Y");
-?>
- FindHouseQuick. All Rights Reserved</div>
+                                  echo date("Y");
+                                  ?>
+        FindHouseQuick. All Rights Reserved</div>
       <div class="">
         <span class="bg-primary text-white inline-block p-2 rounded-lg scrollTop">
           <i icon-name="chevron-up" class="h-5 w-5"></i>

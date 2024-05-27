@@ -24,9 +24,7 @@
     </div>
 
     <div class="flex flex-wrap flex-col md:flex-row gap-4">
-
       <div class="flex-1">
-
         <div class="mt-4">
           <h2 class="text-sm text-gray-400 font-bold mb-2">Notice Informations</h2>
             
@@ -56,8 +54,6 @@
         <div class="flex justify-between">
           <button class="px-6 py-3 mt-4 text-primary text-sm rounded-lg bg-gray-200 font-medium hover:bg-gray-300">Cancel</button>
         </div>
-
-
 
       </div>
     </div>
