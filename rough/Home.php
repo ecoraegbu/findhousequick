@@ -1,5 +1,5 @@
 <?php
-require_once(dirname(__FILE__,2).'/Core/Init.php');
+require_once(dirname(__FILE__, 2) . '/Core/Init.php');
 
 ?>
 <?php include('SiteAssets/Layout/Head.php') ?>
@@ -82,26 +82,26 @@ require_once(dirname(__FILE__,2).'/Core/Init.php');
         <!--testing clickable div-->
 
 
-  <div class="shadow-card p-4 rounded-lg bg-white group transition-all">
-  <div class="relative">
-    <img src="https://images.pexels.com/photos/1974596/pexels-photo-1974596.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" class="aspect-square object-cover rounded-lg" alt="">
-    <div class="w-full h-full absolute inset-0 rounded-lg p-2">
-      <span class="bg-primary text-white px-2 py-1.5 text-sm rounded-md absolute top-0 left-0 z-10">For Rent</span>
-      <span class="bg-success text-white px-2 py-1.5 text-sm rounded-md absolute top-0 right-0 z-10">Available</span>
-      <div class="w-full h-full bg-black bg-opacity-50 opacity-0 group-hover:opacity-100 absolute inset-0 rounded-lg p-2 transition-all">
+        <div class="shadow-card p-4 rounded-lg bg-white group transition-all">
+          <div class="relative">
+            <img src="https://images.pexels.com/photos/1974596/pexels-photo-1974596.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" class="aspect-square object-cover rounded-lg" alt="">
+            <div class="w-full h-full absolute inset-0 rounded-lg p-2">
+              <span class="bg-primary text-white px-2 py-1.5 text-sm rounded-md absolute top-0 left-0 z-10">For Rent</span>
+              <span class="bg-success text-white px-2 py-1.5 text-sm rounded-md absolute top-0 right-0 z-10">Available</span>
+              <div class="w-full h-full bg-black bg-opacity-50 opacity-0 group-hover:opacity-100 absolute inset-0 rounded-lg p-2 transition-all">
 
-      </div>
-    </div>
-  </div>
+              </div>
+            </div>
+          </div>
 
-  <a href="" class="block mt-3 text-text hover:text-opacity-80 font-semibold text-xl truncate" title="Real Bluestyle house Working on">Real Bluestyle house Working on</a>
-  <p class="text-sm text-gray-400 -mt-1">San Diego, California USA</p>
+          <a href="" class="block mt-3 text-text hover:text-opacity-80 font-semibold text-xl truncate" title="Real Bluestyle house Working on">Real Bluestyle house Working on</a>
+          <p class="text-sm text-gray-400 -mt-1">San Diego, California USA</p>
 
-  <p class="text-primary font-semibold mt-1 text-xl">N3,000,000 <small class="text-gray-500 font-normal">/yearly</small>
-  </p>
-</div>
+          <p class="text-primary font-semibold mt-1 text-xl">N3,000,000 <small class="text-gray-500 font-normal">/yearly</small>
+          </p>
+        </div>
 
-       
+
 
         <!--end of testing -->
 
