@@ -35,21 +35,21 @@
 
         </div>
         <!-- Account buttons -->
-        <div class="relative" x-data="{ open: false }">
+        <div id='profilePic' class="relative" x-data="{ open: false }">
           <span @click="open = !open">
             <img class="size-12 object-cover rounded-full" src="https://images.unsplash.com/photo-1599566150163-29194dcaad36?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8YXZhdGFyfGVufDB8fDB8fHww" />
           </span>
 
           <ul class="absolute top-full mt-2 right-0 py-2 rounded-lg bg-white shadow-card w-52" x-cloak x-show="open" @click.outside="open = false">
             <li class="">
-              <a href="#" class="flex items-center gap-2 px-4 py-3 border-b border-gray-100 text-gray-400 hover:text-gray-700">
+              <a id="dashboardlink" href="" class="flex items-center gap-2 px-4 py-3 border-b border-gray-100 text-gray-400 hover:text-gray-700">
                 <i icon-name="grid" class="h-4 w-4"></i>
                 <span>Dashboard</span>
               </a>
             </li>
 
             <li class="">
-              <a href="#" class="flex items-center gap-2 px-4 py-3 text-gray-400 hover:text-gray-700">
+              <a id="logout" href="#" class="flex items-center gap-2 px-4 py-3 text-gray-400 hover:text-gray-700">
                 <i icon-name="log-out" class="h-4 w-4"></i>
                 <span>Logout</span>
               </a>

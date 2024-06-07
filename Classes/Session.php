@@ -24,4 +24,7 @@ class session{
             self::put($name, $string);
         }
     }
+    public static function session(){
+        return $_SESSION;
+    }
 }

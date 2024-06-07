@@ -1,50 +1,6 @@
 <?php
 require_once 'Core/Init.php';
-
-Config::get('remember/cookie_name') ;
-if (Input::exists()){
-    
-    if(Token::check(Input::get('token'))){
-        
-        $data =[];
-        $email = Input::get('email');
-        $password = Input::get('password');
-        $data['email'] = $email;
-        $data['password'] = $password;
-        $rules = [
-            'email' => 'required|email|max:255',
-            'password' => 'required|string|min:8|max:255',];
-
-        $validate = new Validator($data);
-        $result = $validate->validate($rules);
-        if ($validate->passes()){
-            
-            $user = new User();
-            
-            $remember = (Input::get('remember') === 'on') ? true : false;
-        
-           $login = $user->login( Input::get('email'), Input::get('password'), $remember);
-           
-            if($login){
-              
-                Redirect::to('findhousequick/index.php');
-            }  else{
-                foreach($user->errors() as $error){
-                  
-                }
-            }
-        
-        } else {
-                foreach($validate->errors() as $error){
-                  
-                }
-            }
-
-    }
-  }
-
-?>
-<?php include('./Templates/Auth/Header.php') ?>
+include('./Templates/Auth/Header.php') ?>
 
 <!-- Page Title -->
 <title>Sign In | FindHouseQuick</title>
@@ -72,13 +28,13 @@ if (Input::exists()){
           <i icon-name="x" class="h-4 w-4"></i>
         </div> -->
 
-        <form action="login.php" method="post" class="mt-10">
+        <form id="loginForm" class="mt-10">
 
           <div class="relative bg-main flex items-center pl-2 rounded-lg">
             <span class="inline-block bg-white p-2 text-primary rounded-lg">
               <i icon-name="mail" class="h-4 w-4"></i>
             </span>
-            <input type="text" name="email" autocomplete="nope" placeholder="you@example.com" class="text-sm px-2 py-4 bg-main text-gray-700 rounded-lg w-full outline-none">
+            <input type="text" name="email" id="email" autocomplete="nope" placeholder="you@example.com" class="text-sm px-2 py-4 bg-main text-gray-700 rounded-lg w-full outline-none">
           </div>
           <!-- <small class="text-red-500">Email field is required</small> -->
 
@@ -86,13 +42,11 @@ if (Input::exists()){
             <span class="inline-block bg-white p-2 text-primary rounded-lg">
               <i icon-name="lock" class="h-4 w-4"></i>
             </span>
-            <input type="password" name="password" autocomplete="nope" placeholder="Your Password" class="text-sm px-2 py-4 bg-main text-gray-700 rounded-lg w-full outline-none">
+            <input type="password" name="password" id="password" autocomplete="nope" placeholder="Your Password" class="text-sm px-2 py-4 bg-main text-gray-700 rounded-lg w-full outline-none">
           </div>
-          <!-- <small class="text-red-500">Password field is required</small> -->
+          <small class="text-red-500" id="error"></small> 
 
-          <?php if (isset($error)) : ?>
-            <small class="text-red-500"><?php echo $error; ?></small>
-          <?php endif; ?>
+          
 
           <div class="grid gap-x-4 gap-y-2 grid-cols-1 sm:grid-cols-2 mt-2">
 
@@ -108,7 +62,7 @@ if (Input::exists()){
 
 
           <!-- Token generation -->
-          <input type="hidden" name="token" value="<?php echo Token::generate(); ?>">
+          <input id="token" type="hidden" name="token" value="">
 
           <button type="submit" class="mt-6 w-full px-6 py-3 text-white text-sm rounded-lg bg-primary font-medium hover:bg-blue-600">Sign In</button>
 
@@ -134,3 +88,5 @@ if (Input::exists()){
   </div>
   <?php include('./Templates/Auth/Footer.php') ?>
 </body>
+<script src="javascript/login.js" defer></script>
+</html>

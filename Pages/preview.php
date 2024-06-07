@@ -326,3 +326,5 @@ if (Input::exists()) {
   </script>
 
 </body>
+<script src="../javascript/navbar.js" defer></script>
+</html>

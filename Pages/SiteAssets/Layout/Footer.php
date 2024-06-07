@@ -74,3 +74,4 @@
       })
     })
   </script>
+<script src="../javascript/navbar.js" defer></script>

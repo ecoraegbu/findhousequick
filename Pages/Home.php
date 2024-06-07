@@ -423,3 +423,5 @@ $properties = $property->get_all_property();
     // });
   </script>
 </body>
+<script src="../javascript/navbar.js" defer></script>
+</html>

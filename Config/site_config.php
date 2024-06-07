@@ -7,7 +7,8 @@ $GLOBALS['config'] = array(
     'session' => array(
         'session_name' => 'user',
         'session_authentication' => 'user_role',
-        'token_name' => 'token'
+        'token_name' => 'token',
+        'attempts' => 'login_attempts'
     )
 ); 
 
@@ -19,7 +20,7 @@ $GLOBALS['config'] = array(
 define('DB_HOST', 'localhost');
 define('DB_NAME', 'findhousequick');
 define('DB_USER', 'root');
-define('DB_PASSWORD', 'piano');
+define('DB_PASSWORD', '');
 
 // website settings
 define('ROOT_DIRECTORY', $_SERVER['DOCUMENT_ROOT']);
@@ -37,12 +38,14 @@ define('EMAIL_TEMPLATES_DIR', __DIR__ . '/../templates/emails/');
 define('ITEMS_PER_PAGE', 10);
 
 // email settings
-define('MAIL_HOST', 'smtp.example.com');
-define('MAIL_PORT', '587');
-define('MAIL_USERNAME', 'your_email_username');
-define('MAIL_PASSWORD', 'your_email_password');
+// email settings
+define('MAIL_HOST', 'premium105.web-hosting.com');
+define('MAIL_PORT', '465');
+define('MAIL_USERNAME', 'noreply@findhousequick.com');
+define('MAIL_PASSWORD', 'Chukwuka123@');
 define('MAIL_FROM_NAME', 'FindHouseQuick Support');
-define('MAIL_FROM_EMAIL', 'support@findhousequick.com');
+define('MAIL_FROM_EMAIL', 'noreply@findhousequick.com');
+define('MAIL_SECURE', 'SSL');
 
 // contact settings
 define('EMAIL_ADDRESS', 'support@findhousequick.com');
