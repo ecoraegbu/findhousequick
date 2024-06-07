@@ -1,7 +1,7 @@
 <header>
   <div class="flex gap-8 py-4 px-8 justify-between">
-    <div class="lg:hidden flex items-center gap-2 text-gray-400 text-sm">
-      <i icon-name="menu" class="h-5 w-5" id="menu"></i>
+    <div id="menu" class="lg:hidden flex items-center gap-2 text-gray-400 text-sm">
+      <i icon-name="menu" class="h-5 w-5"></i>
     </div>
 
     <div class="flex items-center gap-2 text-gray-400 text-sm">

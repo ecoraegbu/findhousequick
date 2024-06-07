@@ -12,6 +12,6 @@
 
   <script>
     if (window.location.hash == "" || window.location.hash == "#") {
-      window.location.href = 'Dashboard.php#Dashboard'
+      window.location.href = 'Dashboard.php#dashboard'
     }
   </script>

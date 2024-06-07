@@ -6,7 +6,7 @@
 
     <ul class="mt-10">
       <li class="px-10 relative before:absolute before:left-0 before:bg-white before:h-full before:w-1 before:rounded-full">
-        <a href="#Dashboard" class="transition-all py-3 px-5 flex items-center gap-4 shadow-side bg-white text-primary rounded-lg">
+        <a href="#dashboard" class="transition-all py-3 px-5 flex items-center gap-4 shadow-side bg-white text-primary rounded-lg">
           <i icon-name="layout-dashboard" class="h-5 w-5"></i> <span>Dashboard</span>
         </a>
       </li>
@@ -20,13 +20,13 @@
 
           <ul class="bg-primary bg-opacity-25 rounded-md" x-cloak x-show="open" @click.outside="open=false">
             <li class="">
-              <a href="#NewUser" class="flex items-center gap-4 py-2.5 px-5 text-sm text-gray-300 hover:text-white">
+              <a href="#new_user" class="flex items-center gap-4 py-2.5 px-5 text-sm text-gray-300 hover:text-white">
                 <i icon-name="chevron-right" class="h-4 w-4"></i> <span>Create New User</span>
               </a>
             </li>
 
             <li class="">
-              <a href="Buttons.php" class="flex items-center gap-4 py-2.5 px-5 text-sm text-gray-300 hover:text-white">
+              <a href="#users" class="flex items-center gap-4 py-2.5 px-5 text-sm text-gray-300 hover:text-white">
                 <i icon-name="chevron-right" class="h-4 w-4"></i> <span>View Users</span>
               </a>
             </li>
@@ -34,6 +34,27 @@
         </div>
       </li>
       <!-- Dropdown End -->
+
+      <li class="px-10 relative hover:before:absolute hover:before:left-0 hover:before:bg-primary hover:before:bg-opacity-25 hover:before:h-full hover:before:w-1 hover:before:rounded-full">
+        <div class="group" x-data="{open: false}">
+          <a href="#" @click="open=!open" class="group transition-all py-3 px-5 flex items-center gap-4 group-hover:bg-primary group-hover:bg-opacity-25 rounded-lg">
+            <i icon-name="component" class="h-5 w-5"></i> <span>Account</span>
+          </a>
+
+          <ul class="bg-primary bg-opacity-25 rounded-md" x-cloak x-show="open" @click.outside="open=false">
+            <li class="">
+              <a href="#change_password" class="flex items-center gap-4 py-2.5 px-5 text-sm text-gray-300 hover:text-white">
+                <i icon-name="chevron-right" class="h-4 w-4"></i> <span>Change Password</span>
+              </a>
+            </li>
+            <li class="">
+              <a href="#update_profile" class="flex items-center gap-4 py-2.5 px-5 text-sm text-gray-300 hover:text-white">
+                <i icon-name="chevron-right" class="h-4 w-4"></i> <span>Update Profile</span>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </li>
 
       <!-- Dropdown -->
       <li class="px-10 relative hover:before:absolute hover:before:left-0 hover:before:bg-primary hover:before:bg-opacity-25 hover:before:h-full hover:before:w-1 hover:before:rounded-full">
@@ -86,25 +107,20 @@
 
           <ul class="bg-primary bg-opacity-25 rounded-md" x-cloak x-show="open" @click.outside="open=false">
             <li class="">
-              <a href="" class="flex items-center gap-4 py-2.5 px-5 text-sm text-gray-300 hover:text-white">
+              <a href="#messages" class="flex items-center gap-4 py-2.5 px-5 text-sm text-gray-300 hover:text-white">
                 <i icon-name="chevron-right" class="h-4 w-4"></i> <span>Messages</span>
               </a>
             </li>
             <li class="">
-              <a href="" class="flex items-center gap-4 py-2.5 px-5 text-sm text-gray-300 hover:text-white">
+              <a href="#tickets" class="flex items-center gap-4 py-2.5 px-5 text-sm text-gray-300 hover:text-white">
                 <i icon-name="chevron-right" class="h-4 w-4"></i> <span>Tickets</span>
               </a>
             </li>
             <li class="">
-              <a href="" class="flex items-center gap-4 py-2.5 px-5 text-sm text-gray-300 hover:text-white">
+              <a href="#view_complaints" class="flex items-center gap-4 py-2.5 px-5 text-sm text-gray-300 hover:text-white">
                 <i icon-name="chevron-right" class="h-4 w-4"></i> <span>Complaints</span>
               </a>
             </li>
-
-
-
-
-
 
 
           </ul>
@@ -121,7 +137,7 @@
 
           <ul class="bg-primary bg-opacity-25 rounded-md" x-cloak x-show="open" @click.outside="open=false">
             <li class="">
-              <a href="Alerts.php" class="flex items-center gap-4 py-2.5 px-5 text-sm text-gray-300 hover:text-white">
+              <a href="#payments" class="flex items-center gap-4 py-2.5 px-5 text-sm text-gray-300 hover:text-white">
                 <i icon-name="chevron-right" class="h-4 w-4"></i> <span>View Payments</span>
               </a>
             </li>
