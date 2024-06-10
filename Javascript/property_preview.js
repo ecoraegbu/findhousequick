@@ -42,7 +42,6 @@ document.addEventListener('DOMContentLoaded', function() {
       window.location.href = url.toString();
     });
   }
-  
   function fetchProperties(page, pageSize, type, propertyId) {
     const url = new URL('findhousequick/engine/property_server.php', window.location.origin);
     url.searchParams.append('page', page);
