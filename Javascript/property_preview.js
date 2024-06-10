@@ -5,7 +5,18 @@ document.addEventListener('DOMContentLoaded', function() {
   
     if (propertyId) {
       fetchPropertyDetails(propertyId);
-      fetchSimilarProperties(propertyId);
+      fetchProperties('similar', propertyId);
+      const viewMoreButton = document.getElementById('view_more');
+      viewMoreButton.addEventListener('click', function(event) {
+        event.preventDefault(); // Prevent the default action
+
+        const url = new URL('listings.php', window.location.href);
+        
+        url.searchParams.append('type', 'similar');
+        url.searchParams.append('propertyId', propertyId);
+        window.location.href = url.toString();
+    });
+
     }
   });
   
@@ -18,31 +29,63 @@ document.addEventListener('DOMContentLoaded', function() {
       .then(response => response.json())
       .then(data => {
         // Handle the fetched property details data
-        //renderPropertyDetails(data);
-        console.log(data);
+        const documentRoot = 'C:\\wamp64\\www\\findhousequick';
+        const propertySliderElement = document.getElementById('property_slider');
+        const propertySliderThumbnail = document.getElementById('property_slider_wrapper');
+        const houseStatus = document.getElementById('house_status');
+        const purpose = document.getElementById('purpose');
+        const houseTypeCity = document.getElementById('house_type_city');
+        const houseDecription = document.getElementById('house_decription');
+        const toilets = document.getElementById('toilets');
+        const bathrooms = document.getElementById('bathrooms');
+        const bedrooms = document.getElementById('bedrooms');
+        const housePrice = document.getElementById('price');
+        const images = JSON.parse(data.images); 
+
+        let propertySliderHTML = '';
+        let propertySliderThumbnailHTML = '';
+
+        // Check if images is an object
+        if (typeof images === 'object' && images !== null) {
+          // Iterate over the object's values
+          Object.values(images).forEach(imagePath => {
+            let filePath = imagePath.replace(documentRoot, '');
+            // Replace backslashes with forward slashes
+            filePath = filePath.replace(/\\/g, '/');
+            // Prepend '../' to the file path
+            const relativePath = '..' + filePath;
+
+            propertySliderHTML += `
+              <div class="swiper-slide">
+                <img src="${relativePath}" class="w-full h-[460px] object-cover rounded-2xl" alt="">
+              </div>
+            `;
+            propertySliderThumbnailHTML += `
+              <div class="swiper-slide">
+                <img src="${relativePath}" class="aspect-square w-24 object-cover rounded-md" alt="">
+              </div>
+            `;
+          });
+        } else {
+          console.error('Error: images data is not an object');
+        }
+
+        propertySliderElement.innerHTML = propertySliderHTML;
+        propertySliderThumbnail.innerHTML = propertySliderThumbnailHTML;
+        houseStatus.innerHTML = data.status;
+        purpose.innerHTML = data.purpose;
+        houseTypeCity.innerHTML = data.type + " " + data.city;
+        houseDecription.innerHTML = data.description;
+        housePrice.innerHTML = data.price + `<small class="text-gray-500 font-normal">/ Per year</small>`;
+        toilets.innerHTML = '';
+        bathrooms.innerHTML = '';
+        bedrooms.innerHTML = '';
       })
       .catch(error => console.error('Error fetching property details:', error));
   }
-  
-  function fetchSimilarProperties(propertyId) {
-    // the issue here is that the view more button is called within a function. it has to have access to the parameters from
-    // property to be able to redirect properly to the listings.php page.
-    // what we should do would be to add an event listener that would listen for click on the button and call a function 
-    // which would fetch the property id and cause the redirect appropriately.
-    let currentPage = 1;
-    const pageSize = 5; // Number of similar properties to fetch per page
-  
-    fetchProperties(currentPage, pageSize, 'similar', propertyId);
-  
-    const viewMoreButton = document.getElementById('view_more');
-    viewMoreButton.addEventListener('click', () => {
-      const url = new URL('listings.php', window.location.origin);
-      url.searchParams.append('type', 'similar');
-      url.searchParams.append('propertyId', propertyId);
-      window.location.href = url.toString();
-    });
-  }
-  function fetchProperties(page, pageSize, type, propertyId) {
+  function fetchProperties(type, propertyId) {
+    let page = 1;
+    const pageSize = 5; 
     const url = new URL('findhousequick/engine/property_server.php', window.location.origin);
     url.searchParams.append('page', page);
     url.searchParams.append('pageSize', pageSize);
@@ -52,9 +95,44 @@ document.addEventListener('DOMContentLoaded', function() {
     fetch(url)
       .then(response => response.json())
       .then(data => {
-        const propertyContainer = document.getElementById('property_display');
-        //renderProperties(data, propertyContainer, type === 'similar');
-        console.log(data)
+        const propertyContainer = document.getElementById('listing');
+        renderProperties(data, propertyContainer);
       })
       .catch(error => console.error('Error fetching property data:', error));
   }
+  function renderProperties(data, container) {
+    container.innerHTML = ''; // Clear the container
+  
+    let html = '';
+  
+    data.forEach((property, index) => {
+      const isFirstSlide = index === 0;
+      const groupClass = isFirstSlide ? ' group' : '';
+      const images = JSON.parse(property.images);
+  
+      // Remove the document root from the beginning of the file path
+      const getRelativePath = (filePath) => filePath.replace(/^.*?(\/?uploads)/, '$1');
+  
+      html += `
+        <div class="swiper-slide border border-gray-100 p-4 rounded-lg bg-white${groupClass}">
+          <div class="relative">
+            <img src="../${getRelativePath(images['profile-pic'])}" class="aspect-video w-full object-cover rounded-lg" alt="${property.type}">
+            <div class="w-full h-full bg-black bg-opacity-50 opacity-0${groupClass ? ' group-hover:opacity-100' : ''} absolute inset-0 rounded-lg p-2 transition-all">
+              <div class="flex flex-wrap gap-1">
+                <span class="bg-primary text-white px-2 py-1.5 text-sm rounded-md">${property.status}</span>
+                <span class="bg-success text-white px-2 py-1.5 text-sm rounded-md">${property.purpose}</span>
+              </div>
+            </div>
+          </div>
+  
+          <a href="preview.php?property=${property.id}" class="block mt-3 text-text hover:text-opacity-80 font-semibold text-xl truncate" title="${property.type}">${property.type}</a>
+          <p class="text-sm text-gray-400 -mt-1">${property.city}, ${property.state}</p>
+  
+          <p class="text-primary font-semibold mt-1 text-xl">${property.price} <small class="text-gray-500 font-normal">/yearly</small></p>
+        </div>
+      `;
+    });
+  
+    container.innerHTML = html;
+  }
+  

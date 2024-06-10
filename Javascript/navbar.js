@@ -30,7 +30,7 @@ window.addEventListener('DOMContentLoaded', () => {
   
     //fetchProperties();
   });
-  function communicateWithRedirect(user_role, user_id) {
+  /* function communicateWithRedirect(user_role, user_id) {
     // Build the URL with user_role and user parameters
     const url = `../engine/redirect.php?user_role=${user_role}&user=${user_id}`;
   
@@ -42,7 +42,7 @@ window.addEventListener('DOMContentLoaded', () => {
         // Handle the response data as needed
       })
       .catch(error => console.error('Error communicating with redirect.php:', error));
-  }
+  } */
   /* function fetchProperties(requestType = 'all') {
     fetch(`../engine/home_server.php?request=${requestType}`)
       .then(response => response.json())
@@ -67,7 +67,6 @@ window.addEventListener('DOMContentLoaded', () => {
     return fetch('../engine/session.php')
       .then(response => response.json())
       .then(sessionData => {
-        console.log('Session Data:', sessionData);
         return sessionData;
       });
   }

@@ -1,0 +1,76 @@
+ <!-- Preview Section -->
+  <section class="px-4 pt-8">
+    <div class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-x-16 gap-y-8">
+      <!-- Slider with thumbnail -->
+      <div id="property_slider_element" class="">
+        <div class="swiper swiper-preview">
+            <div id="property_slider" class="swiper-wrapper">
+                <div class="swiper-slide">
+                <img src="<?php echo $pictures['profile-pic']; ?>" class="w-full h-[460px] object-cover rounded-2xl" alt="">
+                </div>
+            </div>
+        </div>
+        <!-- Thumbnail use php to programmatically create the slide. for the number of pictures in the picture array/ the size of the array. -->
+        <div thumbsSlider="" id="property_slider_thumbnail" class="swiper swiper-thumb flex flex-wrap gap-4 mt-4">
+          <div id="property_slider_wrapper" class="swiper-wrapper">
+                <div class="swiper-slide">
+                <img src="<?php echo $pictures['profile-pic']; ?>" class="aspect-square w-24  object-cover rounded-md" alt="">
+                </div>
+          </div>
+        </div>
+      </div>
+      <div id="property_detail_element" class="">
+
+        <!-- Status Card -->
+        <div class="">
+          <!-- Available -->
+          <span class="bg-success-light text-success px-2 py-1.5 text-sm rounded-md"><?php echo $house->status; ?></span>
+          <!-- For Sale -->
+          <span class="bg-primary-light text-primary px-2 py-1.5 text-sm rounded-md ml-2"><?php echo $house->purpose; ?></span>
+          <!-- For Rent -->
+          <!-- <span class="bg-purple-100 text-purple-700 px-2 py-1.5 text-sm rounded-md ml-2">For Rent</span> -->
+          <!-- Not Available -->
+          <!-- <span class="bg-error-light text-error px-2 py-1.5 text-sm rounded-md ml-2">Not Available</span> -->
+        </div>
+
+        <h1 id="house_type_city" class="text-5xl text-text font-bold mt-4 mb-5"><?php echo $house->type . ', ' . $house->city ?></h1>
+        <p id="house_decription" class="text-gray-600 font-light text-lg"><?php echo $house->description ?>.</p>
+
+        <div class="flex flex-wrap gap-4 mt-10">
+          <div class="flex items-center gap-2 font-semibold border border-gray-200 px-2 py-2 rounded-lg">
+            <span id="toilets" class="bg-primary text-white px-1.5 py-0.5 rounded-lg inline-block text-xl"><?php echo $house->toilets; ?></span>
+            <span class="text-gray-600">Toilets</span>
+          </div>
+          <div class="flex items-center gap-2 font-semibold border border-gray-200 px-2 py-2 rounded-lg">
+            <span id="bathrooms" class="bg-primary text-white px-1.5 py-0.5 rounded-lg inline-block text-xl"><?php echo $house->bathrooms; ?></span>
+            <span class="text-gray-600">Bathrooms</span>
+          </div>
+          <div class="flex items-center gap-2 font-semibold border border-gray-200 px-2 py-2 rounded-lg">
+            <span id="bedrooms" class="bg-primary text-white px-1.5 py-0.5 rounded-lg inline-block text-xl"><?php echo $house->bedrooms; ?></span>
+            <span class="text-gray-600">Rooms</span>
+          </div>
+          <div class="flex items-center gap-2 font-semibold border border-gray-200 px-2 py-2 rounded-lg">
+            <span class="bg-primary text-white px-1.5 py-0.5 rounded-lg inline-block text-xl">08</span>
+            <span class="text-gray-600">Parkings</span>
+          </div>
+          <div class="flex items-center gap-2 font-semibold border border-gray-200 px-2 py-2 rounded-lg">
+            <span class="bg-primary text-white px-1.5 py-0.5 rounded-lg inline-block text-xl">03</span>
+            <span class="text-gray-600">Sitting room</span>
+          </div>
+
+        </div>
+
+
+        <div class="mt-10">
+          <p class="text-primary text-2xl font-bold"><?php echo $house->price; ?> <small class="text-gray-500 font-normal">/ Per year</small></p>
+        </div>
+
+        <div class="mt-2">
+          <a href="terms_and_condition.php" class="bg-primary text-white px-6 py-3 inline-block rounded-lg hover:bg-blue-600">Rent Now</a>
+          <a href="book_inspection.php" class="bg-gray-100 text-primary px-6 py-3 inline-block rounded-lg ml-2 hover:bg-gray-200">Book Inspection</a>
+        </div>
+
+      </div>
+    </div>
+  </section>
+  <!-- Preview End -->
