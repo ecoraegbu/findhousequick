@@ -48,6 +48,39 @@ class Property {
             return $result->results();
         }
     }
+    public function get_similar($propertyId, $offset, $pageSize){
+        $property = $this->get_property_details($propertyId);
+        $offset = (int) $offset;
+        $pageSize = (int) $pageSize;
+        $sql = "SELECT * FROM property
+        WHERE type = '$property->type'
+        AND city = '$property->city'
+        AND state = '$property->state'
+        AND lga = '$property->lga'
+        AND bedrooms = $property->bedrooms
+        AND bathrooms = $property->bathrooms
+        AND id <> $propertyId
+        LIMIT $offset, $pageSize";
 
-
+        $result = $this->connection->query($sql);
+        if (!$result->error()) {
+        return $result->results();
+        } else {
+            return [];
+        }
+    }
+    public function get_paged($table, $offset, $pageSize) {
+        $offset = (int) $offset;
+        $pageSize = (int) $pageSize;
+        $sql = "SELECT * FROM $table LIMIT $offset, $pageSize";
+        
+        $result = $this->connection->query($sql);
+        if (!$result->error()) {
+            return $result->results();
+        } else {
+            return [];
+        }
+    }
+    
+    
 }

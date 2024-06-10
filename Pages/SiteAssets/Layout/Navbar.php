@@ -30,8 +30,8 @@
 
         <!-- Authentication buttons -->
         <div class="mt-4 md:mt-0 flex gap-4">
-          <a href="../login.php" class="border border-primary text-primary font-medium px-4 py-2 rounded-md hover:bg-primary hover:text-white">Login</a>
-          <a href="../register.php" class="bg-primary text-white font-medium px-4 py-2 rounded-md hover:bg-blue-600">Register</a>
+          <a href="login.php" class="border border-primary text-primary font-medium px-4 py-2 rounded-md hover:bg-primary hover:text-white">Login</a>
+          <a href="register.php" class="bg-primary text-white font-medium px-4 py-2 rounded-md hover:bg-blue-600">Register</a>
 
         </div>
         <!-- Account buttons -->

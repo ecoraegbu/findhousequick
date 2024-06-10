@@ -40,12 +40,12 @@ define('ITEMS_PER_PAGE', 10);
 // email settings
 // email settings
 define('MAIL_HOST', 'premium105.web-hosting.com');
-define('MAIL_PORT', '465');
+define('MAIL_PORT', 465);
 define('MAIL_USERNAME', 'noreply@findhousequick.com');
 define('MAIL_PASSWORD', 'Chukwuka123@');
 define('MAIL_FROM_NAME', 'FindHouseQuick Support');
 define('MAIL_FROM_EMAIL', 'noreply@findhousequick.com');
-define('MAIL_SECURE', 'SSL');
+define('MAIL_SECURE', 'ssl');
 
 // contact settings
 define('EMAIL_ADDRESS', 'support@findhousequick.com');
@@ -54,8 +54,8 @@ define('PHONE', '+2348100253033');
 define('BUSINESS_NAME', 'FINDHOUSEQUICK');
 
 // geolocation
-define('GOOGLE_GEO_API_URL', 'https://www.googleapis.com/geolocation/v1/geolocate');
-define('GOOGLE_GEO_API_KEY', 'your-api-key');
+define('GOOGLE_GEO_API_URL', 'https://www.googleapis.com/geolocation/v1/');
+define('GOOGLE_GEO_API_KEY', 'AIzaSyDpKzaLDH-Uvq3akmmeQmqU9Md3lTr-QTk');
 define('GOOGLE_GEO_API_TIMEOUT', 30); // seconds
 
 // user roles

@@ -81,7 +81,7 @@
       </li>
 
       <li class="px-10 relative hover:before:absolute hover:before:left-0 hover:before:bg-primary hover:before:bg-opacity-25 hover:before:h-full hover:before:w-1 hover:before:rounded-full">
-        <a href="../logout.php" class="transition-all py-3 px-5 flex items-center gap-4 hover:bg-primary hover:bg-opacity-25 rounded-lg">
+        <a href="../pages/logout.php" class="transition-all py-3 px-5 flex items-center gap-4 hover:bg-primary hover:bg-opacity-25 rounded-lg">
           <i icon-name="log-out" class="h-5 w-5"></i> <span>Sign Out</span>
         </a>
       </li>

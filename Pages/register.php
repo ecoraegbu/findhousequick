@@ -6,6 +6,18 @@
 </head>
 
 <body>
+  <!-- Prompt messaging -->
+  <div id="prompt" class="notificationprompt">
+  <div class="prompt-content">
+    <span class="close-btn">&times;</span>
+    <div class="prompt-message">
+      <span class="icon"></span>
+      <p class="message-text"></p>
+    </div>
+  </div>
+</div>
+  <!-- End of Prompt messaging -->
+
   <div class="grid grid-cols-1 md:grid-cols-none h-screen">
     <section class="bg-register hover:grayscale grayscale-0 transition-all hidden md:block bg-blend-multiply bg-primary bg-opacity-50 col-start-1 col-end-10">
       <h1 class="text-white text-2xl font-bold py-6 px-12">FindHouseQuick</h1>
@@ -35,7 +47,7 @@
             <span class="inline-block bg-white p-2 text-primary rounded-lg">
               <i icon-name="lock" class="h-4 w-4"></i>
             </span>
-            <input type="password" name="password" id="password" placeholder="Your Password" class="text-sm px-2 py-4 bg-main text-gray-700 rounded-lg w-full outline-none">
+            <input type="password" autocomplete="" name="password" id="password" placeholder="Your Password" class="text-sm px-2 py-4 bg-main text-gray-700 rounded-lg w-full outline-none">
           </div>
           <!-- <small class="text-red-500">Password field is required</small> -->
 
@@ -43,7 +55,7 @@
             <span class="inline-block bg-white p-2 text-primary rounded-lg">
               <i icon-name="lock" class="h-4 w-4"></i>
             </span>
-            <input type="password" name="confirm_password" id="confirm_password" placeholder="Comfirm Your Password" class="text-sm px-2 py-4 bg-main text-gray-700 rounded-lg w-full outline-none">
+            <input type="password" autocomplete="" name="confirm_password" id="confirm_password" placeholder="Comfirm Your Password" class="text-sm px-2 py-4 bg-main text-gray-700 rounded-lg w-full outline-none">
           </div>
           <input id="token" type ="hidden" name="token" value ="">
           
@@ -78,5 +90,7 @@
   </div>
   <?php include('./Templates/Auth/Footer.php') ?>
 </body>
-<script src="javascript/register.js" defer></script>
+<script src="../javascript/prompt.js" defer></script>
+<script src="../javascript/register.js" defer></script>
+
 </html>

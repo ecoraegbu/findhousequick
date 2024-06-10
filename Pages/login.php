@@ -1,5 +1,5 @@
 <?php
-require_once 'Core/Init.php';
+require_once '../Core/Init.php';
 include('./Templates/Auth/Header.php') ?>
 
 <!-- Page Title -->
@@ -88,5 +88,5 @@ include('./Templates/Auth/Header.php') ?>
   </div>
   <?php include('./Templates/Auth/Footer.php') ?>
 </body>
-<script src="javascript/login.js" defer></script>
+<script src="../javascript/login.js" defer></script>
 </html>

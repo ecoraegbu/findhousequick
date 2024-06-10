@@ -30,39 +30,48 @@ if(Input::exists()){
             $salt = Hash::salt(32);
             $activationtoken = Token::generate();
             try {
+                $salt = Hash::salt(32);
+                $activationtoken = Token::generate();
+            
                 $user->create('users', array(
-                    'email' =>Input::get('email'),
+                    'email' => Input::get('email'),
                     'password' => Hash::make(Input::get('password'), $salt),
                     'salt' => $salt,
-                    'joined' =>date('Y-m-d H:i:s'),
+                    'joined' => date('Y-m-d H:i:s'),
                     'role' => USER_ROLE_ORDINARY,
                     'activation_token' => $activationtoken,
-                    ));
-                    
-                    //Session::flash()
-                    // at this point, an email confirmation message should be sent to the user as well.
-                            // Construct the activation link
-                            $activationLink = BASE_URL."/activate.php?email=". Input::get('email')."&token=" . urlencode($activationtoken);
-                            
-                            $account_activation_message = str_replace('{{activation_link}}', $activationLink, $account_activation_message);
-
-                            // Send an activation email
-                            $email = new Email(Input::get('email'), 'Account Activation', $account_activation_message,'noreply@findhousequick.com','noreply@findhousequick.com', true);
-                        
-                            if ($email->send()) {
-                                $response['status'] = 'success';
-                                $response['message'] = 'Registration successful';
-                            //echo '<div class="alert" style="position: fixed; top: 0; left: 0; width: 100%; background-color: #1877F2; color: white; text-align: center; padding: 10px;">' . Session::flash('account created', 'Your account has been successfully created. Please verify your account by clicking on the message sent to your email address.') . '</div>';
-                            } else {
-                                // Handle email sending failure
-                                die('failed to send');
-                            }
+                ));
+            
+                // Construct the activation link
+                $activationLink = BASE_URL . "/activate.php?email=" . Input::get('email') . "&token=" . urlencode($activationtoken);
+                $account_activation_message = str_replace('{{activation_link}}', $activationLink, $account_activation_message);
+            
+                try {
+                    // Send an activation email
+                    $email = new Email(Input::get('email'), 'Account Activation', $account_activation_message, 'noreply@findhousequick.com', 'noreply@findhousequick.com', true);
+            
+                    if ($email->send()) {
+                        $response['status'] = 'success';
+                        $response['message'] = 'Registration successful';
+                    } else {
+                        $response['status'] = 'error';
+                        $response['message'] = 'Registration successful, but email could not be sent';
+                        //logError('Email could not be sent to ' . Input::get('email'), 'Email');
+                    }
+                } catch (Exception $e) {
+                    $response['status'] = 'error';
+                    $response['message'] = 'Registration successful, but email could not be sent';
+                    //logError('Email could not be sent to ' . Input::get('email') . ': ' . $e->getMessage(), 'Email');
                 }
-                catch(Exception $e) {
-                    //instead of dying the error message here, store it as the message element of the response array.
-                    // $response['status'] would be equal to 'error'
-                    die($e->getMessage());
-                }
+            } catch (PDOException $e) {
+                $response['status'] = 'error';
+                $response['message'] = 'Database error: ' . $e->getMessage();
+                //logError('Database error: ' . $e->getMessage(), 'Database');
+            } catch (Exception $e) {
+                $response['status'] = 'error';
+                $response['message'] = 'Unexpected error: ' . $e->getMessage();
+                //logError('Unexpected error: ' . $e->getMessage(), 'General');
+            }
             }else {
                 $response['status'] = 'error';
                 $response['message'] = implode(', ', $validation->errors());

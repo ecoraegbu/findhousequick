@@ -1,4 +1,4 @@
-First, you need to create a PHP script that will return the next set of items when called via AJAX. This script should accept a parameter that specifies the starting point of the next set of items, as well as any other parameters that may be required to filter or sort the data. For example:
+//First, you need to create a PHP script that will return the next set of items when called via AJAX. This script should accept a parameter that specifies the starting point of the next set of items, as well as any other parameters that may be required to filter or sort the data. For example:
 
 <?php
 // Retrieve the starting point for the next set of items from the request
@@ -17,7 +17,7 @@ while ($row = mysqli_fetch_assoc($result)) {
 echo json_encode($data);
 ?>
 
-Next, you need to add some JavaScript code to your page that will detect when the user has scrolled to the bottom of the content area and make an AJAX call to the PHP script to retrieve the next set of items. Here's an example:
+//Next, you need to add some JavaScript code to your page that will detect when the user has scrolled to the bottom of the content area and make an AJAX call to the PHP script to retrieve the next set of items. Here's an example:
 
 $(window).scroll(function() {
     if($(window).scrollTop() + $(window).height() == $(document).height()) {

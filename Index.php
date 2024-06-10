@@ -1,6 +1,6 @@
 <?php
 require_once 'Core/Init.php';
-
+// Get the requested URI
 // HTTPS enforcement
 if (!isset($_SERVER['HTTPS']) || $_SERVER['HTTPS'] !== 'on') {
     header('Location: https://' . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI']);
@@ -10,6 +10,7 @@ if (!isset($_SERVER['HTTPS']) || $_SERVER['HTTPS'] !== 'on') {
 // Function to get client IP address
 $client_ip = Ip::getClientIP(); 
 
+// get location of the user using google geolocation service or leaflet.js
 // IP logging and blocking
 $blocked_ips = ['192.168.1.1', '10.0.0.1']; // Example list of blocked IPs, you can fetch from a database or file
 

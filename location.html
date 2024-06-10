@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Geolocation Test</title>
+</head>
+<body>
+    <h1>Geolocation Test</h1>
+    <button onclick="getLocation()">Get Location</button>
+    <div id="output"></div>
+
+    <script>
+        function getLocation() {
+            if (navigator.geolocation) {
+                navigator.geolocation.getCurrentPosition(
+                    function(position) {
+                        // Send the geolocation data to the server
+                        var coords = {
+                            latitude: position.coords.latitude,
+                            longitude: position.coords.longitude,
+                            accuracy: position.coords.accuracy
+                        };
+
+                        var xhr = new XMLHttpRequest();
+                        xhr.open('POST', '/path/to/your/script.php', true);
+                        xhr.setRequestHeader('X-Requested-With', 'XMLHttpRequest');
+                        xhr.setRequestHeader('Content-Type', 'application/json');
+                        xhr.onreadystatechange = function() {
+                            if (xhr.readyState === XMLHttpRequest.DONE && xhr.status === 200) {
+                                // Handle the server response here
+                                document.getElementById('output').innerHTML = xhr.responseText;
+                            }
+                        };
+                        xhr.send(JSON.stringify({ coords: coords }));
+                    },
+                    function(error) {
+                        console.error('Error getting location:', error);
+                        document.getElementById('output').innerHTML = 'Error: ' + error.message;
+                    }
+                );
+            } else {
+                document.getElementById('output').innerHTML = 'Geolocation is not supported by this browser.';
+            }
+        }
+    </script>
+</body>
+</html>

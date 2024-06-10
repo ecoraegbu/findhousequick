@@ -24,7 +24,7 @@
 
     <div class="relative" x-data="{ open: false }">
       <div class="flex items-center gap-3 text-sm">
-        <img src="./../Assets/login.jpg" class="object-cover h-8 w-8 bg-primary rounded-full" alt="">
+        <img src="https://images.unsplash.com/photo-1599566150163-29194dcaad36?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8YXZhdGFyfGVufDB8fDB8fHww" class="object-cover h-8 w-8 bg-primary rounded-full" alt="">
         <div class="cursor-pointer" @click="open = !open">
           <p class="font-semibold -mb-1">Sarah Reichert</p>
           <small class="text-gray-400">Estate developer</small>
@@ -33,14 +33,14 @@
 
         <ul class="absolute top-full mt-2 right-0 py-2 rounded-lg bg-white shadow-sm w-52" x-cloak x-show="open" @click.outside="open = false">
           <li class="">
-            <a href="#" class="flex gap-2 px-4 py-3 border-b border-gray-100 text-gray-400 hover:text-gray-700">
+            <a href="#profile" class="flex gap-2 px-4 py-3 border-b border-gray-100 text-gray-400 hover:text-gray-700">
               <i icon-name="user" class="h-4 w-4"></i>
               <span>Profile</span>
             </a>
           </li>
 
           <li class="">
-            <a href="#" class="flex gap-2 px-4 py-3 text-gray-400 hover:text-gray-700">
+            <a href="../pages/logout.php" class="flex gap-2 px-4 py-3 text-gray-400 hover:text-gray-700">
               <i icon-name="log-out" class="h-4 w-4"></i>
               <span>Logout</span>
             </a>

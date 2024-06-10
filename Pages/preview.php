@@ -1,24 +1,6 @@
 <?php
 include('SiteAssets/Layout/Head.php');
 require_once(dirname(__FILE__, 2) . '/Core/Init.php');
-if (Input::exists()) {
-  $property_id = Input::get('property');
-  $property = new Property();
-  $house = $property->get_property_details($property_id);
-  $images = json_decode($house->images);
-  $pictures = [];
-  // Define the document root of your web server
-  $document_root = 'C:\wamp64\www\findhousequick';
-  foreach ($images as $name => $value) {
-    // Define the file path to be converted
-    $file_path = $images->{$name};
-    // Remove the document root from the beginning of the file path
-    $file_path = str_replace($document_root, '', $file_path);
-    // Prepend '../' to the file path
-    $relative_path = '..' . $file_path;
-    $pictures[$name] = $relative_path;
-  }
-}
 ?>
 
 
@@ -32,87 +14,87 @@ if (Input::exists()) {
   </header>
 
   <!-- Preview Section -->
-  <section class="px-4 pt-8">
+  <section id="property_details_preview" class="px-4 pt-8">
     <div class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-x-16 gap-y-8">
       <!-- Slider with thumbnail -->
-      <div class="">
-        <div class="swiper swiper-preview">
-          <div class="swiper-wrapper">
+      <div id="property_images_display" class="">
+        <div id="property_swiper_preview" class="swiper swiper-preview">
+          <div id="property_slides" class="swiper-wrapper">
             <div class="swiper-slide">
-              <img src="<?php echo $pictures['profile-pic']; ?>" class="w-full h-[460px] object-cover rounded-2xl" alt="">
+              <img src="" class="w-full h-[460px] object-cover rounded-2xl" alt="">
             </div>
             <div class="swiper-slide">
-              <img src="<?php echo $pictures['profile-pic']; ?>" class="w-full h-[460px] object-cover rounded-2xl" alt="">
+              <img src="" class="w-full h-[460px] object-cover rounded-2xl" alt="">
             </div>
             <div class="swiper-slide">
-              <img src="<?php echo $pictures['profile-pic']; ?>" class="w-full h-[460px] object-cover rounded-2xl" alt="">
+              <img src="" class="w-full h-[460px] object-cover rounded-2xl" alt="">
             </div>
             <div class="swiper-slide">
-              <img src="<?php echo $pictures['profile-pic']; ?>" class="w-full h-[460px] object-cover rounded-2xl" alt="">
+              <img src="" class="w-full h-[460px] object-cover rounded-2xl" alt="">
             </div>
 
             <div class="swiper-slide">
-              <img src="<?php echo $pictures['bedroom-pic']; ?>" class="w-full h-[460px] object-cover rounded-2xl" alt="">
+              <img src="" class="w-full h-[460px] object-cover rounded-2xl" alt="">
             </div>
             <div class="swiper-slide">
-              <img src="<?php echo $pictures['parlor-pic']; ?>" class="w-full h-[460px] object-cover rounded-2xl" alt="">
+              <img src="" class="w-full h-[460px] object-cover rounded-2xl" alt="">
             </div>
           </div>
         </div>
 
         <!-- Thumbnail use php to programmatically create the slide. for the number of pictures in the picture array/ the size of the array. -->
-        <div thumbsSlider="" class="swiper swiper-thumb flex flex-wrap gap-4 mt-4">
+        <div id="property_thumbslider" thumbsSlider="" class="swiper swiper-thumb flex flex-wrap gap-4 mt-4">
           <div class="swiper-wrapper">
             <div class="swiper-slide">
-              <img src="<?php echo $pictures['profile-pic']; ?>" class="aspect-square w-24  object-cover rounded-md" alt="">
+              <img src="" class="aspect-square w-24  object-cover rounded-md" alt="">
             </div>
             <div class="swiper-slide">
-              <img src="<?php echo $pictures['profile-pic']; ?>" class="aspect-square w-24  object-cover rounded-md" alt="">
+              <img src="" class="aspect-square w-24  object-cover rounded-md" alt="">
             </div>
             <div class="swiper-slide">
-              <img src="<?php echo $pictures['profile-pic']; ?>" class="aspect-square w-24  object-cover rounded-md" alt="">
+              <img src="" class="aspect-square w-24  object-cover rounded-md" alt="">
             </div>
             <div class="swiper-slide">
-              <img src="<?php echo $pictures['profile-pic']; ?>" class="aspect-square w-24  object-cover rounded-md" alt="">
+              <img src="" class="aspect-square w-24  object-cover rounded-md" alt="">
             </div>
             <div class="swiper-slide">
-              <img src="<?php echo $pictures['bedroom-pic']; ?>" class="aspect-square w-24 object-cover rounded-md" alt="">
+              <img src="" class="aspect-square w-24 object-cover rounded-md" alt="">
             </div>
             <div class="swiper-slide">
-              <img src="<?php echo $pictures['parlor-pic']; ?>" class="aspect-square w-24 object-cover rounded-md" alt="">
+              <img src="" class="aspect-square w-24 object-cover rounded-md" alt="">
             </div>
           </div>
         </div>
       </div>
-      <div class="">
+      <div id="property_details_display" class="">
 
         <!-- Status Card -->
         <div class="">
           <!-- Available -->
-          <span class="bg-success-light text-success px-2 py-1.5 text-sm rounded-md"><?php echo $house->status; ?></span>
+          <span class="bg-success-light text-success px-2 py-1.5 text-sm rounded-md"></span>
           <!-- For Sale -->
-          <span class="bg-primary-light text-primary px-2 py-1.5 text-sm rounded-md ml-2"><?php echo $house->purpose; ?></span>
+          <span class="bg-primary-light text-primary px-2 py-1.5 text-sm rounded-md ml-2"></span>
           <!-- For Rent -->
           <!-- <span class="bg-purple-100 text-purple-700 px-2 py-1.5 text-sm rounded-md ml-2">For Rent</span> -->
           <!-- Not Available -->
           <!-- <span class="bg-error-light text-error px-2 py-1.5 text-sm rounded-md ml-2">Not Available</span> -->
         </div>
 
-        <h1 class="text-5xl text-text font-bold mt-4 mb-5"><?php echo $house->type . ', ' . $house->city ?></h1>
-        <p class="text-gray-600 font-light text-lg"><?php echo $house->description ?>.</p>
+        <h1 class="text-5xl text-text font-bold mt-4 mb-5"></h1>
+        <p class="text-gray-600 font-light text-lg">.</p>
 
 
         <div class="flex flex-wrap gap-4 mt-10">
           <div class="flex items-center gap-2 font-semibold border border-gray-200 px-2 py-2 rounded-lg">
-            <span class="bg-primary text-white px-1.5 py-0.5 rounded-lg inline-block text-xl"><?php echo $house->toilets; ?></span>
+            <span class="bg-primary text-white px-1.5 py-0.5 rounded-lg inline-block text-xl"></span>
             <span class="text-gray-600">Toilets</span>
           </div>
           <div class="flex items-center gap-2 font-semibold border border-gray-200 px-2 py-2 rounded-lg">
-            <span class="bg-primary text-white px-1.5 py-0.5 rounded-lg inline-block text-xl"><?php echo $house->bathrooms; ?></span>
+            <span class="bg-primary text-white px-1.5 py-0.5 rounded-lg inline-block text-xl"></span>
             <span class="text-gray-600">Bathrooms</span>
           </div>
           <div class="flex items-center gap-2 font-semibold border border-gray-200 px-2 py-2 rounded-lg">
-            <span class="bg-primary text-white px-1.5 py-0.5 rounded-lg inline-block text-xl"><?php echo $house->bedrooms; ?></span>
+            <span class="bg-primary text-white px-1.5 py-0.5 rounded-lg inline-block text-xl"></span>
             <span class="text-gray-600">Rooms</span>
           </div>
           <div class="flex items-center gap-2 font-semibold border border-gray-200 px-2 py-2 rounded-lg">
@@ -128,7 +110,7 @@ if (Input::exists()) {
 
 
         <div class="mt-10">
-          <p class="text-primary text-2xl font-bold"><?php echo $house->price; ?> <small class="text-gray-500 font-normal">/ Per year</small></p>
+          <p class="text-primary text-2xl font-bold"> <small class="text-gray-500 font-normal">/ Per year</small></p>
         </div>
 
         <div class="mt-2">
@@ -155,7 +137,7 @@ if (Input::exists()) {
       <!-- Slider main container -->
       <div class="swiper swiper-similar mt-10">
         <!-- Additional required wrapper -->
-        <div class="swiper-wrapper">
+        <div id="property_display" class="swiper-wrapper">
 
           <!-- Slides -->
 
@@ -259,7 +241,7 @@ if (Input::exists()) {
       </div>
 
       <div class="text-center mt-16">
-        <a href="" class="px-6 py-3 text-white bg-primary inline-block rounded-lg hover:bg-blue-600">View More</a>
+        <a href="" id="view_more" class="px-6 py-3 text-white bg-primary inline-block rounded-lg hover:bg-blue-600">View More</a>
       </div>
 
     </div>
@@ -327,4 +309,5 @@ if (Input::exists()) {
 
 </body>
 <script src="../javascript/navbar.js" defer></script>
+<Script src="../javascript/property_preview.js" ></Script>
 </html>

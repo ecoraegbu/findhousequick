@@ -336,58 +336,16 @@ $properties = $property->get_all_property();
 
           </div>
 
-          <div class="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-4 gap-4 md:gap-8 mt-10">
-            <?php
-            foreach ($properties as $property) : ?>
-              <?php $urls = json_decode($property->images);
-
-
-              // Define the document root of your web server
-              $document_root = 'C:\wamp64\www\findhousequick';
-
-              // Define the file path to be converted
-              $file_path = $urls->{'profile-pic'};
-
-              // Remove the document root from the beginning of the file path
-              $file_path = str_replace($document_root, '', $file_path);
-
-              // Replace backslashes with forward slashes
-              //$file_path = str_replace('\\', '/', $file_path);
-
-              // Prepend '../' to the file path
-              $relative_path = '..' . $file_path;
-
-
-              ?>
-
-              <div class=" p-3 rounded-lg bg-white group transition-all">
-                <div class="relative">
-                  <img src="<?= $relative_path ?>" class="aspect-video object-cover w-full rounded-lg" alt="">
-                  <div class="w-full h-full bg-black bg-opacity-50 opacity-0  group-hover:opacity-100 absolute inset-0 rounded-lg p-2 transition-all">
-                    <div class="flex flex-wrap gap-1">
-                      <span class="bg-primary text-white px-2 py-1.5 text-xs rounded-md"><?= ucfirst($property->status) ?></span>
-                      <span class="bg-success text-white px-2 py-1.5 text-xs rounded-md"><?= ucfirst($property->purpose) ?></span>
-                      <!-- <span class="bg-purple-700 text-white px-2 py-1.5 text-sm rounded-md">For Rent</span>
-                  <span class="bg-error text-white px-2 py-1.5 text-sm rounded-md">Occupied</span> -->
-                    </div>
-                  </div>
-                </div>
-
-                <a href="preview.php?property= <?= $property->id ?>" class="block mt-3 text-text hover:text-opacity-80 font-semibold text-xl truncate" title="<?= $property->type . ', ' . $property->city; ?>"><?= $property->type . ', ' . $property->city; ?>.</a>
-                <p class="text-sm text-gray-400 -mt-1"><?= $property->city . ', ' . $property->state; ?></p>
-
-                <p class="text-primary font-semibold mt-1 text-xl">&#x20A6;<?= number_format($property->price, 2) ?><small class="text-gray-500 font-normal"></small>
-                </p>
-              </div>
-
-
-            <?php endforeach; ?>
-
+          <div class="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-4 gap-4 md:gap-8 mt-10" id="property_display" >
+            <!--  -->
 
           </div>
 
+          <!-- <div class="text-center mt-16">
+            <a href="" id="view_more" class="px-6 py-3 text-white bg-primary inline-block rounded-lg hover:bg-blue-600">View More</a>
+          </div> -->
           <div class="text-center mt-16">
-            <a href="listings.php" class="px-6 py-3 text-white bg-primary inline-block rounded-lg hover:bg-blue-600">View More</a>
+              <button id="view_more" class="px-6 py-3 text-white bg-primary inline-block rounded-lg hover:bg-blue-600">View More</button>
           </div>
         </div>
       </div>
@@ -424,4 +382,5 @@ $properties = $property->get_all_property();
   </script>
 </body>
 <script src="../javascript/navbar.js" defer></script>
+<script src="../javascript/home.js" ></script>
 </html>
