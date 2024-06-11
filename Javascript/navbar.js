@@ -1,4 +1,5 @@
 window.addEventListener('DOMContentLoaded', () => {
+  
     //let's hide the profile picture on loading then make it visible when user data is verified.
     const profilePicture = document.getElementById('profilePic');
     profilePicture.style.display ='none';
@@ -25,8 +26,10 @@ window.addEventListener('DOMContentLoaded', () => {
             logoutlink.href = url;
           }
         }
+        
       })
-      .catch(error => console.error('Error fetching session data:', error));
+      .catch(error => alert('Error fetching session data: ' + error));
+
   
     //fetchProperties();
   });

@@ -1,8 +1,8 @@
 <?php
 require_once 'Core/Init.php';
-//var_dump (Session::session());
+var_dump (Session::session());
 // Usage example
-$location = Geolocation::getLocationByIP();
+/* $location = Geolocation::getLocationByIP();
 
 if ($location) {
     $latitude = $location['location']['lat'];
@@ -32,7 +32,7 @@ if ($geocodedLocation) {
     echo "Geocoded Longitude: " . $geocodedLocation['lng'] . "\n";
 } else {
     echo "Unable to geocode the address.\n";
-} 
+}  */
 
 //$db = database::getInstance();
 //$db->execute_sql_script('findhousequick', 'sql/location.sql');

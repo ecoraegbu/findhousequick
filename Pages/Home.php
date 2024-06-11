@@ -327,10 +327,10 @@ $properties = $property->get_all_property();
               </div>
             </div>
 
-            <div class="basis-60">
-              <a href="" class="block w-full h-full">
+            <div id="map" class="basis-60">
+<!--               <a href="" class="block w-full h-full">
                 <img src="https://images.unsplash.com/photo-1628260412297-a3377e45006f?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTl8fGljb24lMjBpbWFnZXN8ZW58MHx8MHx8fDA%3D" class="bg-purple-400 h-full w-full object-cover rounded-2xl" alt="Drop your image icon here">
-              </a>
+              </a> -->
             </div>
 
 
@@ -380,7 +380,28 @@ $properties = $property->get_all_property();
 
     // });
   </script>
+  <script>
+    (g => {
+      var h, a, k, p = "The Google Maps JavaScript API", c = "google", l = "importLibrary", q = "__ib__", m = document, b = window;
+      b = b[c] || (b[c] = {});
+      var d = b.maps || (b.maps = {}), r = new Set, e = new URLSearchParams, u = () => h || (h = new Promise(async (f, n) => {
+        await (a = m.createElement("script"));
+        e.set("libraries", [...r] + "");
+        for (k in g) e.set(k.replace(/[A-Z]/g, t => "_" + t[0].toLowerCase()), g[k]);
+        e.set("callback", c + ".maps." + q);
+        a.src = `https://maps.${c}apis.com/maps/api/js?` + e;
+        d[q] = f; a.onerror = () => h = n(Error(p + " could not load."));
+        a.nonce = m.querySelector("script[nonce]")?.nonce || "";
+        m.head.append(a)
+      }));
+      d[l] ? console.warn(p + " only loads once. Ignoring:", g) : d[l] = (f, ...n) => r.add(f) && u().then(() => d[l](f, ...n))
+    })({
+      key: "AIzaSyDpKzaLDH-Uvq3akmmeQmqU9Md3lTr-QTk",
+      v: "weekly"
+    });
+  </script>
 </body>
 <script src="../javascript/navbar.js" defer></script>
 <script src="../javascript/home.js" ></script>
+<script src="../javascript/location.js" defer></script>
 </html>

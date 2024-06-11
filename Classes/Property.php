@@ -97,4 +97,61 @@ class Property {
 
         return [];
     }
+    public function filtered_properties($filters, $offset, $pageSize) {
+        //WE CAN PROGRAMMATICALLY HANDLE THE PACKING AND UNPACKING OF THIS ARRAY, THEN CHECK IF LATITUDE AND LONGITUDE
+        //IS IN THE ARRAY BEFORE RUNNING THE QUERY
+        $userLatitude = $filters['userLatitude'] ?? null;
+        $userLongitude = $filters['userLongitude'] ?? null;
+        $maxDistance = $filters['maxDistance'] ?? null;
+        $minPrice = $filters['minPrice'] ?? null;
+        $maxPrice = $filters['maxPrice'] ?? null;
+        $propertyType = $filters['propertyType'] ?? null;
+        // Add more filter variables as needed
+
+        $conditions = [];
+        $params = [];
+
+        // Construct the SQL query dynamically based on the provided filters
+        $sql = "CALL VincentyDistance(:userLatitude, :userLongitude, property.latitude, property.longitude, @distance);";
+        $params[':userLatitude'] = $userLatitude;
+        $params[':userLongitude'] = $userLongitude;
+
+        if ($maxDistance) {
+            $conditions[] = "@distance <= :maxDistance";
+            $params[':maxDistance'] = $maxDistance;
+        }
+
+        if ($minPrice && $maxPrice) {
+            $conditions[] = "price BETWEEN :minPrice AND :maxPrice";
+            $params[':minPrice'] = $minPrice;
+            $params[':maxPrice'] = $maxPrice;
+        } elseif ($minPrice) {
+            $conditions[] = "price >= :minPrice";
+            $params[':minPrice'] = $minPrice;
+        } elseif ($maxPrice) {
+            $conditions[] = "price <= :maxPrice";
+            $params[':maxPrice'] = $maxPrice;
+        }
+
+        if ($propertyType) {
+            $conditions[] = "type = :propertyType";
+            $params[':propertyType'] = $propertyType;
+        }
+
+        // Add more conditions as needed
+
+        $conditions = implode(' AND ', $conditions);
+        $sql .= $conditions ? "SELECT * FROM property WHERE $conditions" : "SELECT * FROM property";
+        $sql .= " ORDER BY @distance ASC LIMIT :offset, :pageSize";
+        $params[':offset'] = $offset;
+        $params[':pageSize'] = $pageSize;
+
+        $stmt = $this->connection->query($sql, $params);
+
+        if (!$stmt->error()) {
+            return $stmt->results();
+        }
+
+        return [];
+    }
 }

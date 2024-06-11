@@ -1,3 +1,8 @@
+
+<?php
+require_once 'Core/Init.php';
+var_dump(Session::session());
+?>
 <!DOCTYPE html>
 <html>
 <head>

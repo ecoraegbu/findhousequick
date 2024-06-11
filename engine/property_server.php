@@ -7,6 +7,8 @@ header('Access-Control-Allow-Headers: Content-Type');
 if ($_SERVER['REQUEST_METHOD'] === 'OPTIONS') {
     exit();
 }
+
+//property_server.php?type=nearby&userLatitude=51.5072&userLongitude=-0.1276&maxDistance=10&minPrice=100000&maxPrice=500000&propertyType=Apartment&page=1&pageSize=10
 // Initialize necessary variables and classes
 $property = new Property();
 $response = [];
@@ -24,11 +26,12 @@ $type = Input::get('type') ? Input::get('type') : 'default';
 
 // Switch case to handle different types of data requests
 switch ($type) {
+    // ALL CASES SHOULD HAVE THE CAPABILITY FOR FILTRERING PROPERTIES WITH THE EXCEIPTION OF SINGLE.
     case 'all':
         $properties = $property->get_paged('property', $offset, $pageSize);
         $response = $properties;
         break;
-        
+
     case 'nearby':
         if ($userLatitude && $userLongitude && $maxDistance) {
             $nearbyProperties = $property->get_nearby_properties($userLatitude, $userLongitude, $maxDistance, $offset, $pageSize);
@@ -44,6 +47,7 @@ switch ($type) {
         $response = $property;
         break;
     case 'similar':
+        //SIMILAR PROPERTIES SHOULD HAVE LOCATION SEARCH ENABLED TOO SO USERS CAN FIND SIMILAR PROPERTIES IN OTHER PLACES
         $similarProperties = $property->get_similar($propertyId, $offset, $pageSize);
         $response = $similarProperties;
         break;

@@ -15,6 +15,8 @@ $input = file_get_contents('php://input');
 $data = json_decode($input, true);
 
 if (isset($data['latitude']) && isset($data['longitude'])) {
+    
+    Session::put('updated_coordinates', $data);
     $latitude = $data['latitude'];
     $longitude = $data['longitude'];
     $address = Geolocation::getAddress($latitude, $longitude);

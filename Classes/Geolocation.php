@@ -19,16 +19,14 @@ class Geolocation {
         curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
 
         $response = curl_exec($ch);
-
         if (curl_errno($ch)) {
-            echo 'cURL error: ' . curl_error($ch);
+            //echo 'cURL error: ' . curl_error($ch);
             return false;
         }
 
         curl_close($ch);
 
         $responseData = json_decode($response, true);
-
         if (isset($responseData['error'])) {
             echo 'Error: ' . $responseData['error']['message'];
             return false;

@@ -72,8 +72,8 @@
             </div>
 
             <div class="flex-1">
-              <label for="status">Number of Toilets</label>
-              <select name="" id="status" class="px-2 py-2.5 border border-gray-200 rounded-md w-full bg-white text-gray-600 outline-none">
+              <label for="toilet">Number of Toilets</label>
+              <select name="" id="toilet" class="px-2 py-2.5 border border-gray-200 rounded-md w-full bg-white text-gray-600 outline-none">
                 <option value="">Select</option>
               </select>
             </div>
