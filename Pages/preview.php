@@ -59,11 +59,11 @@ require_once(dirname(__FILE__, 2) . '/Core/Init.php');
             <span class="text-gray-600">Rooms</span>
           </div>
           <div class="flex items-center gap-2 font-semibold border border-gray-200 px-2 py-2 rounded-lg">
-            <span class="bg-primary text-white px-1.5 py-0.5 rounded-lg inline-block text-xl">08</span>
-            <span id="parking" class="text-gray-600">Parkings</span>
+            <span id="parking" class="bg-primary text-white px-1.5 py-0.5 rounded-lg inline-block text-xl">08</span>
+            <span id="parking_text" class="text-gray-600">Parkings</span>
           </div>
           <div class="flex items-center gap-2 font-semibold border border-gray-200 px-2 py-2 rounded-lg">
-            <span class="bg-primary text-white px-1.5 py-0.5 rounded-lg inline-block text-xl">03</span>
+            <span id="sitting_room" class="bg-primary text-white px-1.5 py-0.5 rounded-lg inline-block text-xl">03</span>
             <span class="text-gray-600">Sitting room</span>
           </div>
 
@@ -75,8 +75,8 @@ require_once(dirname(__FILE__, 2) . '/Core/Init.php');
         </div>
 
         <div class="mt-2">
-          <a href="terms_and_condition.php" class="bg-primary text-white px-6 py-3 inline-block rounded-lg hover:bg-blue-600">Rent Now</a>
-          <a href="book_inspection.php" class="bg-gray-100 text-primary px-6 py-3 inline-block rounded-lg ml-2 hover:bg-gray-200">Book Inspection</a>
+          <a id="rent_now" href="terms_and_condition.php" class="bg-primary text-white px-6 py-3 inline-block rounded-lg hover:bg-blue-600">Rent Now</a>
+          <a id="book_inspection" href="book_inspection.php" class="bg-gray-100 text-primary px-6 py-3 inline-block rounded-lg ml-2 hover:bg-gray-200">Book Inspection</a>
         </div>
 
       </div>

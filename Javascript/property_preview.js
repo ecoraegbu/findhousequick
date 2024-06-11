@@ -2,7 +2,8 @@
 document.addEventListener('DOMContentLoaded', function() {
     const urlParams = new URLSearchParams(window.location.search);
     const propertyId = urlParams.get('property');
-  
+  // you have to get the user details if they exist otherwise return false
+  const userId = urlParams.get('user');
     if (propertyId) {
       fetchPropertyDetails(propertyId);
       fetchProperties('similar', propertyId);
@@ -16,10 +17,33 @@ document.addEventListener('DOMContentLoaded', function() {
         url.searchParams.append('propertyId', propertyId);
         window.location.href = url.toString();
     });
+      if(userId){
+        const book_inspection_button = document.getElementById('book_inspection');
+        const rent_now_button = document.getElementById('rent_now');
+        book_inspection_button.addEventListener('click',function(event){
+          event.preventDefault();
+          book_inspection(propertyId, userId);
+        })
+        rent_now_button.addEventListener('click', function(event){
+          event.preventDefault();
+          rent_now(propertyId, userId);
+        })
+      }else {
+        //redirect to sign up. php but keep the property id so that after signing up the user can return to the page.
+
+      }
 
     }
   });
-  
+  function book_inspection(propertyId){
+    
+    const url = new URL('book_inspection.php', window.location.href);
+    url.searchParams.append(propertyId);
+    window.location.href = url.toString();
+  }
+  function rent_now(propertyId){
+    terms_and_condition.php
+  }
   function fetchPropertyDetails(propertyId) {
     const url = new URL('findhousequick/engine/property_server.php', window.location.origin);
     url.searchParams.append('type', 'single');
@@ -77,9 +101,9 @@ document.addEventListener('DOMContentLoaded', function() {
         houseTypeCity.innerHTML = data.type + " " + data.city;
         houseDecription.innerHTML = data.description;
         housePrice.innerHTML = data.price + `<small class="text-gray-500 font-normal">/ Per year</small>`;
-        toilets.innerHTML = '';
-        bathrooms.innerHTML = '';
-        bedrooms.innerHTML = '';
+        toilets.innerHTML = data.toilets;
+        bathrooms.innerHTML = data.bathrooms;
+        bedrooms.innerHTML = data.bedrooms;
       })
       .catch(error => console.error('Error fetching property details:', error));
   }
@@ -134,5 +158,57 @@ document.addEventListener('DOMContentLoaded', function() {
     });
   
     container.innerHTML = html;
+//INITIALIZE THE SWIPER SO THAT THE IMAGES CAN SLIDE
+
+    const swiper = new Swiper('.swiper-similar', {
+      // Optional parameters
+      direction: 'horizontal',
+      slidesPerView: 1,
+      spaceBetween: 30,
+
+      // If we need pagination
+
+      // Navigation arrows
+      navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev',
+      },
+
+      breakpoints: {
+        640: {
+          slidesPerView: 2,
+          spaceBetween: 30,
+        },
+        768: {
+          slidesPerView: 3,
+          spaceBetween: 30,
+        },
+        1024: {
+          slidesPerView: 4,
+          spaceBetween: 30,
+        },
+      },
+
+    });
+
+    const thumb = new Swiper('.swiper-thumb', {
+      // Optional parameters
+      direction: 'horizontal',
+      loop: true,
+      slidesPerView: 6,
+      spaceBetween: 16,
+    });
+
+    const preview = new Swiper('.swiper-preview', {
+      // Optional parameters
+      direction: 'horizontal',
+      spaceBetween: 16,
+
+      thumbs: {
+        swiper: thumb,
+      },
+
+
+    });
   }
   

@@ -82,5 +82,19 @@ class Property {
         }
     }
     
-    
+    public function get_nearby_properties($userLatitude, $userLongitude, $maxDistance, $offset, $pageSize) {
+        $sql = "CALL VincentyDistance(:userLatitude, :userLongitude, property.latitude, property.longitude, @distance);";
+        $stmt = $this->connection->query($sql, [':userLatitude' => $userLatitude, ':userLongitude' => $userLongitude]);
+
+        if (!$stmt->error()) {
+            $sql = "SELECT * FROM property WHERE @distance <= :maxDistance ORDER BY @distance ASC LIMIT :offset, :pageSize";
+            $stmt = $this->connection->query($sql, [':maxDistance' => $maxDistance, ':offset' => $offset, ':pageSize' => $pageSize]);
+
+            if (!$stmt->error()) {
+                return $stmt->results();
+            }
+        }
+
+        return [];
+    }
 }

@@ -7,7 +7,6 @@ header('Access-Control-Allow-Headers: Content-Type');
 if ($_SERVER['REQUEST_METHOD'] === 'OPTIONS') {
     exit();
 }
-
 // Initialize necessary variables and classes
 $property = new Property();
 $response = [];
@@ -16,6 +15,9 @@ $pageSize = Input::get('pageSize') ? intval(Input::get('pageSize')) : 10;
 $offset = ($page - 1) * $pageSize;
 $type = Input::get('type') ? Input::get('type') : 'default';
 $propertyId = Input::get('propertyId') ? Input::get('propertyId') : null;
+$userLatitude = Input::get('userLatitude') ? Input::get('userLatitude') : null;
+$userLongitude = Input::get('userLongitude') ? Input::get('userLongitude') : null;
+$maxDistance = Input::get('maxDistance') ? Input::get('maxDistance') : null;
 
 // Check if 'type' parameter is provided
 $type = Input::get('type') ? Input::get('type') : 'default';
@@ -25,6 +27,15 @@ switch ($type) {
     case 'all':
         $properties = $property->get_paged('property', $offset, $pageSize);
         $response = $properties;
+        break;
+        
+    case 'nearby':
+        if ($userLatitude && $userLongitude && $maxDistance) {
+            $nearbyProperties = $property->get_nearby_properties($userLatitude, $userLongitude, $maxDistance, $offset, $pageSize);
+            $response = $nearbyProperties;
+        } else {
+            $response = ['error' => 'Missing required parameters for nearby properties'];
+        }
         break;
 
     // Add more cases as needed for different data types
