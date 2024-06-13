@@ -25,7 +25,7 @@
 
         <!-- Advance Search -->
         <div class="flex justify-between items-center" @click="open =! open">
-          <p class="text-xl font-bold">Advance Search</p>
+          <p class="text-xl font-bold">Advanced Search</p>
           <i icon-name="chevron-down" class="h-5 w-5"></i>
         </div>
 
@@ -95,7 +95,7 @@
             </div>
           </div>
 
-          <button class="bg-primary text-white p-2 rounded-lg w-full mt-3">Apply Filter</button>
+          <button id="apply_filter" class="bg-primary text-white p-2 rounded-lg w-full mt-3">Apply Filter</button>
 
         </div>
 
@@ -103,87 +103,18 @@
 
       <div class="flex-1">
 
-        <h1 class="text-5xl text-text font-bold mt-4">3 bedroom duplex flat</h1>
+        <h1 class="text-5xl text-text font-bold mt-4">3 bedroom duplex</h1>
         <p class="text-gray-500 text-lg">3,000 search results</p>
 
 
         <!-- No search result found  -->
-        <div class="mt-10 flex flex-col justify-center bg-slate-100 p-4 rounded-lg">
-          <h1 class="text-2xl font-bold text-slate-600 tracking-tighter"><span class="text-slate-500">No result found for</span> 3 bedroom duplex flat</h1>
-          <p class="text-slate-400 text-lg">Try another search</p>
+        <div id="result_info" class="mt-10 flex flex-col justify-center bg-slate-100 p-4 rounded-lg">
+          <h1 class="text-2xl font-bold text-slate-600 tracking-tighter"><span id="result_info1" class="text-slate-500">No result found for</span> 3 bedroom duplex flat</h1>
+          <p id="result_info2" class="text-slate-400 text-lg">Try another search</p>
         </div>
         <!-- No search result found ending -->
 
-        <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-3 lg:grid-cols-4 gap-6 md:gap-10 mt-10">
-
-          <div class="shadow-card p-4 rounded-lg bg-white group hover:-translate-y-4 transition-all">
-            <div class="relative">
-              <img src="https://images.pexels.com/photos/1974596/pexels-photo-1974596.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" class="aspect-square object-cover rounded-lg" alt="">
-              <div class="w-full h-full bg-black bg-opacity-50 opacity-0  group-hover:opacity-100 absolute inset-0 rounded-lg p-2 transition-all">
-                <div class="flex flex-wrap gap-1">
-                  <span class="bg-primary text-white px-2 py-1.5 text-sm rounded-md">Available</span>
-                  <span class="bg-success text-white px-2 py-1.5 text-sm rounded-md">For Sale</span>
-                </div>
-              </div>
-            </div>
-
-            <a href="" class="block mt-3 text-text hover:text-opacity-80 font-semibold text-xl truncate" title="Real Bluestyle house Working on">Real Bluestyle house Working on</a>
-            <p class="text-sm text-gray-400 -mt-1">San Diego, California USA</p>
-
-            <p class="text-primary font-semibold mt-1 text-xl">N3,000,000 <small class="text-gray-500 font-normal">/yearly</small>
-            </p>
-          </div>
-          <div class="shadow-card p-4 rounded-lg bg-white group hover:-translate-y-4 transition-all">
-            <div class="relative">
-              <img src="https://images.pexels.com/photos/1974596/pexels-photo-1974596.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" class="aspect-square object-cover rounded-lg" alt="">
-              <div class="w-full h-full bg-black bg-opacity-50 opacity-0  group-hover:opacity-100 absolute inset-0 rounded-lg p-2 transition-all">
-                <div class="flex flex-wrap gap-1">
-                  <span class="bg-primary text-white px-2 py-1.5 text-sm rounded-md">Available</span>
-                  <span class="bg-success text-white px-2 py-1.5 text-sm rounded-md">For Sale</span>
-                </div>
-              </div>
-            </div>
-
-            <a href="" class="block mt-3 text-text hover:text-opacity-80 font-semibold text-xl truncate" title="Real Bluestyle house Working on">Real Bluestyle house Working on</a>
-            <p class="text-sm text-gray-400 -mt-1">San Diego, California USA</p>
-
-            <p class="text-primary font-semibold mt-1 text-xl">N3,000,000 <small class="text-gray-500 font-normal">/yearly</small>
-            </p>
-          </div>
-          <div class="shadow-card p-4 rounded-lg bg-white group hover:-translate-y-4 transition-all">
-            <div class="relative">
-              <img src="https://images.pexels.com/photos/1974596/pexels-photo-1974596.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" class="aspect-square object-cover rounded-lg" alt="">
-              <div class="w-full h-full bg-black bg-opacity-50 opacity-0  group-hover:opacity-100 absolute inset-0 rounded-lg p-2 transition-all">
-                <div class="flex flex-wrap gap-1">
-                  <span class="bg-primary text-white px-2 py-1.5 text-sm rounded-md">Available</span>
-                  <span class="bg-success text-white px-2 py-1.5 text-sm rounded-md">For Sale</span>
-                </div>
-              </div>
-            </div>
-
-            <a href="" class="block mt-3 text-text hover:text-opacity-80 font-semibold text-xl truncate" title="Real Bluestyle house Working on">Real Bluestyle house Working on</a>
-            <p class="text-sm text-gray-400 -mt-1">San Diego, California USA</p>
-
-            <p class="text-primary font-semibold mt-1 text-xl">N3,000,000 <small class="text-gray-500 font-normal">/yearly</small>
-            </p>
-          </div>
-          <div class="shadow-card p-4 rounded-lg bg-white group hover:-translate-y-4 transition-all">
-            <div class="relative">
-              <img src="https://images.pexels.com/photos/1974596/pexels-photo-1974596.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" class="aspect-square object-cover rounded-lg" alt="">
-              <div class="w-full h-full bg-black bg-opacity-50 opacity-0  group-hover:opacity-100 absolute inset-0 rounded-lg p-2 transition-all">
-                <div class="flex flex-wrap gap-1">
-                  <span class="bg-primary text-white px-2 py-1.5 text-sm rounded-md">Available</span>
-                  <span class="bg-success text-white px-2 py-1.5 text-sm rounded-md">For Sale</span>
-                </div>
-              </div>
-            </div>
-
-            <a href="" class="block mt-3 text-text hover:text-opacity-80 font-semibold text-xl truncate" title="Real Bluestyle house Working on">Real Bluestyle house Working on</a>
-            <p class="text-sm text-gray-400 -mt-1">San Diego, California USA</p>
-
-            <p class="text-primary font-semibold mt-1 text-xl">N3,000,000 <small class="text-gray-500 font-normal">/yearly</small>
-            </p>
-          </div>
+        <div id="listing" class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-3 lg:grid-cols-4 gap-6 md:gap-10 mt-10">
 
         </div>
 
@@ -409,3 +340,8 @@
   </script>
 
 </body>
+<script src="../javascript/navbar.js" defer></script>
+<!-- <Script src="../javascript/property_preview.js" ></Script>-->
+<Script src="../javascript/listings.js" ></Script>
+
+</html>

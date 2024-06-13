@@ -1,9 +1,10 @@
 // property_preview.js
 document.addEventListener('DOMContentLoaded', function() {
+  
     const urlParams = new URLSearchParams(window.location.search);
     const propertyId = urlParams.get('property');
-  // you have to get the user details if they exist otherwise return false
-  const userId = urlParams.get('user');
+    // you have to get the user details if they exist otherwise return false
+    const userId = urlParams.get('user');
     if (propertyId) {
       fetchPropertyDetails(propertyId);
       fetchProperties('similar', propertyId);
@@ -12,9 +13,9 @@ document.addEventListener('DOMContentLoaded', function() {
         event.preventDefault(); // Prevent the default action
 
         const url = new URL('listings.php', window.location.href);
-        
         url.searchParams.append('type', 'similar');
         url.searchParams.append('propertyId', propertyId);
+        url.searchParams.append('user', userId);
         window.location.href = url.toString();
     });
       if(userId){
@@ -34,7 +35,13 @@ document.addEventListener('DOMContentLoaded', function() {
       }
 
     }
+
+    
   });
+
+
+
+
   function book_inspection(propertyId){
     
     const url = new URL('book_inspection.php', window.location.href);
@@ -100,7 +107,7 @@ document.addEventListener('DOMContentLoaded', function() {
         purpose.innerHTML = data.purpose;
         houseTypeCity.innerHTML = data.type + " " + data.city;
         houseDecription.innerHTML = data.description;
-        housePrice.innerHTML = data.price + `<small class="text-gray-500 font-normal">/ Per year</small>`;
+        housePrice.innerHTML = `&#x20A6;` + data.price + `<small class="text-gray-500 font-normal">/ Per year</small>`;
         toilets.innerHTML = data.toilets;
         bathrooms.innerHTML = data.bathrooms;
         bedrooms.innerHTML = data.bedrooms;
@@ -152,7 +159,7 @@ document.addEventListener('DOMContentLoaded', function() {
           <a href="preview.php?property=${property.id}" class="block mt-3 text-text hover:text-opacity-80 font-semibold text-xl truncate" title="${property.type}">${property.type}</a>
           <p class="text-sm text-gray-400 -mt-1">${property.city}, ${property.state}</p>
   
-          <p class="text-primary font-semibold mt-1 text-xl">${property.price} <small class="text-gray-500 font-normal">/yearly</small></p>
+          <p class="text-primary font-semibold mt-1 text-xl">&#x20A6;${property.price} <small class="text-gray-500 font-normal">/yearly</small></p>
         </div>
       `;
     });

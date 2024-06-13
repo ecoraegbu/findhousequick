@@ -47,10 +47,21 @@ switch ($type) {
         $response = $property;
         break;
     case 'similar':
+        // we have to send the filters
         //SIMILAR PROPERTIES SHOULD HAVE LOCATION SEARCH ENABLED TOO SO USERS CAN FIND SIMILAR PROPERTIES IN OTHER PLACES
-        $similarProperties = $property->get_similar($propertyId, $offset, $pageSize);
+        $similarProperties = $property->get_similar($propertyId,  $offset, $pageSize);
         $response = $similarProperties;
         break;
+    case 'filter':
+        $filters = [];
+        foreach ($_GET as $key => $value) {
+            if (strpos($key, 'filter') !== false) {
+                $filters[$key] = $value;
+            }
+        }
+        $filteredProperties = $property->get_filtered_properties_($filters, $offset, $pageSize);
+        $response = $filteredProperties;
+    break;
     // Default case if no specific type is matched
     default:
         $response = ['error' => 'Invalid data type requested'];

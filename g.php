@@ -1,6 +1,33 @@
 <?php
 require_once 'Core/Init.php';
-var_dump (Session::session());
+
+
+
+// Create a new instance of the Property class
+$propertyInstance = new Property();
+
+// Set the user's latitude and longitude
+$userLatitude = 6.7749; // Example user latitude
+$userLongitude = 3.4194; // Example user longitude
+
+// Set the offset and page size for pagination
+$offset = 1; // Starting offset for pagination
+$pageSize = 50; // Number of results per page
+$filters = [];
+// Call the get_nearby_properties method
+$nearbyProperties = $propertyInstance->get_filtered_properties_($filters, $offset, $pageSize);
+
+// Check if there are any nearby properties
+if (count($nearbyProperties) > 0) {
+    foreach ($nearbyProperties as $property) {
+        var_dump($property);
+    }
+}
+
+ else {
+    echo "No nearby properties found.\n";
+}
+//var_dump (Session::session());
 // Usage example
 /* $location = Geolocation::getLocationByIP();
 
@@ -34,8 +61,9 @@ if ($geocodedLocation) {
     echo "Unable to geocode the address.\n";
 }  */
 
-//$db = database::getInstance();
-//$db->execute_sql_script('findhousequick', 'sql/location.sql');
+/* $db = database::getInstance();
+$db->execute_sql_script('findhousequick', 'sql/vincenty_nearby.sql');
+$db->execute_sql_script('findhousequick', 'sql/vincenty_radius.sql'); */
 // Send an activation email
 /* $email = new Email('ecoraegbu@gmail.com', 'Account Activation', 'account_activation_message','noreply@findhousequick.com','noreply@findhousequick.com', true);
                         

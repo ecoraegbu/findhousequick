@@ -1,5 +1,16 @@
 // home.js
 document.addEventListener('DOMContentLoaded', function() {
+  fetch('../engine/session.php')
+      .then(response => response.json())
+      .then(data => {
+        if (data.user){
+          userId = data.user
+        }else{
+          userId = null;
+        }
+        
+      });
+
   let currentPage = 1;
   const pageSize = 20; // Number of properties to fetch per page
   fetchProperties(currentPage, pageSize);
@@ -55,7 +66,7 @@ function renderProperties(properties, container) {
             </div>
           </div>
         </div>
-        <a href="preview.php?property=${id}" class="block mt-3 text-text hover:text-opacity-80 font-semibold text-xl truncate" title="${type}, ${city}">${type}, ${city}.</a>
+        <a href="preview.php?property=${id}&user=${userId}" class="block mt-3 text-text hover:text-opacity-80 font-semibold text-xl truncate" title="${type}, ${city}">${type}, ${city}.</a>
         <p class="text-sm text-gray-400 -mt-1">${city}, ${state}</p>
         <p class="text-primary font-semibold mt-1 text-xl">&#x20A6;${Number(price).toLocaleString()}</p>
       </div>
