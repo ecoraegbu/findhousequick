@@ -21,13 +21,23 @@ async function initMap() {
     // Add a dragend listener to the marker
     marker.addListener('dragend', function(event) {
         const latLng = event.latLng;
-        //updatePosition(latLng);
+        updatePosition(latLng);
     });
 
     // Get the user's current location and update the map and marker
     getLocation();
 }
-
+    // Function to trigger fullscreen programmatically
+    function triggerFullscreen() {
+        const mapElement = document.getElementById('map');
+        if (mapElement.requestFullscreen) {
+          mapElement.requestFullscreen();
+        } else {
+          // Handle cases where requestFullscreen is not supported
+          // You can use a fallback solution like using a modal to cover the screen
+          console.warn("Fullscreen API not supported.");
+        }
+      }
 function getLocation() {
     useGoogleGeolocationAPI();
 /*     if (!navigator.geolocation) {
@@ -54,12 +64,12 @@ function displayLocation(lat, lon) {
     marker.position = location; // Update position
 } 
 
-/* function updatePosition(latLng) {
+function updatePosition(latLng) {
     const lat = latLng.lat();
     const lon = latLng.lng();
-    const status = document.getElementById("status");
-    status.innerHTML = "Updated Latitude: " + lat + "<br>Updated Longitude: " + lon;
-} */
+    // send the lon and lat to engine/session.php to set updated_coordinates
+    sendCoordinates(lat, lon);
+}
 
 function sendCoordinates(lat, lon) {
     fetch('engine/location.php', {
@@ -71,18 +81,11 @@ function sendCoordinates(lat, lon) {
     })
     .then(response => response.json())
     .then(data => {
-        //const responseElem = document.getElementById("response");
-        //responseElem.innerHTML = data.message;
+        const responseElem = document.getElementById("response");
+        responseElem.innerHTML = data.message;
     })
     .catch(error => console.error('Error:', error));
 }
-
-function sendCurrentMarkerPosition() {
-    const latLng = marker.position; // Get the current position of the marker
-    const lat = latLng.lat;
-    const lon = latLng.lng;
-    sendCoordinates(lat, lon);
-} 
 
 function showError(error) {
     const status = document.getElementById("status");

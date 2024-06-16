@@ -48,6 +48,21 @@ $properties = $property->get_all_property();
     </div>
   </section>
   <!-- Hero End -->
+  <!-- Modal -->
+  <div id="modalOverlay" style="z-index:999;" class="hidden fixed inset-0 flex items-center justify-center  bg-black bg-opacity-50">
+    <div id="modal" class="bg-white rounded-lg shadow-lg w-full max-w-md mx-4">
+      <div class="p-4 border-b">
+        <h2 class="text-lg font-light text-gray-700">Important!</h2>
+      </div>
+      <div class="p-4">
+        <p id="modalmessage" class="text-justify text-slate-600"></p>
+      </div>
+      <div class="flex justify-end p-4 border-t">
+        <button id="yesBtn" class="px-4 py-2 font-semibold text-gray-700 rounded-md hover:bg-gray-300 mr-2">Yes</button>
+        <button id="noBtn" class="px-4 py-2 font-semibold text-gray-700  rounded-md hover:bg-gray-300 mr-2">No</button>
+      </div>
+    </div>
+  </div>
 
   <!-- Listings Section -->
   <section class="px-5 md:px-10 my-5">

@@ -111,6 +111,7 @@ class User {
         Session::delete('user_role');
         Session::delete('login_attempts');
         Cookie::delete($this->cookieName);
+        Session::destroy();
     }
 
     // FUNCTION TO ASCERTAIN WHETHER A USER IS LOGGED IN OR NOT THIS IS SET TO TRUE ON A SUCCESSFUL LOGIN AND SESSION SET

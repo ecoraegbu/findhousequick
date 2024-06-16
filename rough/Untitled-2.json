@@ -1,0 +1,849 @@
+{
+    "plus_code": {
+        "compound_code": "9HXV+C7Q Benin City, Nigeria",
+        "global_code": "6FR79HXV+C7Q"
+    },
+    "results": [
+        {
+            "address_components": [
+                {
+                    "long_name": "9HXV+3H5",
+                    "short_name": "9HXV+3H5",
+                    "types": [
+                        "plus_code"
+                    ]
+                },
+                {
+                    "long_name": "Ohonre",
+                    "short_name": "Ohonre",
+                    "types": [
+                        "route"
+                    ]
+                },
+                {
+                    "long_name": "Uselu",
+                    "short_name": "Uselu",
+                    "types": [
+                        "political",
+                        "sublocality",
+                        "sublocality_level_1"
+                    ]
+                },
+                {
+                    "long_name": "Benin City",
+                    "short_name": "Benin City",
+                    "types": [
+                        "locality",
+                        "political"
+                    ]
+                },
+                {
+                    "long_name": "Ugbowo",
+                    "short_name": "Ugbowo",
+                    "types": [
+                        "administrative_area_level_3",
+                        "political"
+                    ]
+                },
+                {
+                    "long_name": "Egor",
+                    "short_name": "Egor",
+                    "types": [
+                        "administrative_area_level_2",
+                        "political"
+                    ]
+                },
+                {
+                    "long_name": "Edo",
+                    "short_name": "ED",
+                    "types": [
+                        "administrative_area_level_1",
+                        "political"
+                    ]
+                },
+                {
+                    "long_name": "Nigeria",
+                    "short_name": "NG",
+                    "types": [
+                        "country",
+                        "political"
+                    ]
+                },
+                {
+                    "long_name": "300103",
+                    "short_name": "300103",
+                    "types": [
+                        "postal_code"
+                    ]
+                }
+            ],
+
+
+            "entrances": [],
+            "formatted_address": "9HXV+3H5, Ohonre, Uselu, Benin City 300103, Edo, Nigeria",
+            "geometry": {
+                "bounds": {
+                    "northeast": {
+                        "lat": 6.397783,
+                        "lng": 5.594218199999999
+                    },
+                    "southwest": {
+                        "lat": 6.397607799999999,
+                        "lng": 5.5939562
+                    }
+                },
+                "location": {
+                    "lat": 6.3976988,
+                    "lng": 5.5940804
+                },
+                "location_type": "ROOFTOP",
+                "viewport": {
+                    "northeast": {
+                        "lat": 6.399044380291501,
+                        "lng": 5.595436180291502
+                    },
+                    "southwest": {
+                        "lat": 6.396346419708498,
+                        "lng": 5.592738219708497
+                    }
+                }
+            },
+
+            "place_id": "ChIJT8TWuyItRxAROCmee4qBfME",
+            "types": [
+                "premise"
+            ]
+        },
+        
+        {
+            "address_components": [
+                {
+                    "long_name": "9HXV+3H5",
+                    "short_name": "9HXV+3H5",
+                    "types": [
+                        "plus_code"
+                    ]
+                },
+                {
+                    "long_name": "Ohonre",
+                    "short_name": "Ohonre",
+                    "types": [
+                        "route"
+                    ]
+                },
+                {
+                    "long_name": "Uselu",
+                    "short_name": "Uselu",
+                    "types": [
+                        "political",
+                        "sublocality",
+                        "sublocality_level_1"
+                    ]
+                },
+                {
+                    "long_name": "Benin City",
+                    "short_name": "Benin City",
+                    "types": [
+                        "locality",
+                        "political"
+                    ]
+                },
+                {
+                    "long_name": "Ugbowo",
+                    "short_name": "Ugbowo",
+                    "types": [
+                        "administrative_area_level_3",
+                        "political"
+                    ]
+                },
+                {
+                    "long_name": "Egor",
+                    "short_name": "Egor",
+                    "types": [
+                        "administrative_area_level_2",
+                        "political"
+                    ]
+                },
+                {
+                    "long_name": "Edo",
+                    "short_name": "ED",
+                    "types": [
+                        "administrative_area_level_1",
+                        "political"
+                    ]
+                },
+                {
+                    "long_name": "Nigeria",
+                    "short_name": "NG",
+                    "types": [
+                        "country",
+                        "political"
+                    ]
+                },
+                {
+                    "long_name": "300103",
+                    "short_name": "300103",
+                    "types": [
+                        "postal_code"
+                    ]
+                }
+            ],
+            "entrances": [],
+            "formatted_address": "9HXV+3H5, Ohonre, Uselu, Benin City 300103, Edo, Nigeria",
+            "geometry": {
+                "location": {
+                    "lat": 6.3976304,
+                    "lng": 5.593992900000001
+                },
+                "location_type": "GEOMETRIC_CENTER",
+                "viewport": {
+                    "northeast": {
+                        "lat": 6.398979380291502,
+                        "lng": 5.595341880291503
+                    },
+                    "southwest": {
+                        "lat": 6.396281419708498,
+                        "lng": 5.592643919708499
+                    }
+                }
+            },
+            "place_id": "ChIJ935A4eotRxARA6B-Aud-77E",
+            "types": [
+                "church",
+                "establishment",
+                "place_of_worship",
+                "point_of_interest"
+            ]
+        },
+        {
+            "address_components": [
+                {
+                    "long_name": "9HXV+C7",
+                    "short_name": "9HXV+C7",
+                    "types": [
+                        "plus_code"
+                    ]
+                },
+                {
+                    "long_name": "Benin City",
+                    "short_name": "Benin City",
+                    "types": [
+                        "locality",
+                        "political"
+                    ]
+                },
+                {
+                    "long_name": "Oredo",
+                    "short_name": "Oredo",
+                    "types": [
+                        "administrative_area_level_2",
+                        "political"
+                    ]
+                },
+                {
+                    "long_name": "Edo",
+                    "short_name": "ED",
+                    "types": [
+                        "administrative_area_level_1",
+                        "political"
+                    ]
+                },
+                {
+                    "long_name": "Nigeria",
+                    "short_name": "NG",
+                    "types": [
+                        "country",
+                        "political"
+                    ]
+                }
+            ],
+            "entrances": [],
+            "formatted_address": "9HXV+C7 Benin City, Nigeria",
+            "geometry": {
+                "bounds": {
+                    "northeast": {
+                        "lat": 6.398625,
+                        "lng": 5.593249999999999
+                    },
+                    "southwest": {
+                        "lat": 6.398499999999999,
+                        "lng": 5.593125
+                    }
+                },
+                "location": {
+                    "lat": 6.3985756,
+                    "lng": 5.5932226
+                },
+                "location_type": "GEOMETRIC_CENTER",
+                "viewport": {
+                    "northeast": {
+                        "lat": 6.399911480291501,
+                        "lng": 5.594536480291501
+                    },
+                    "southwest": {
+                        "lat": 6.397213519708497,
+                        "lng": 5.591838519708497
+                    }
+                }
+            },
+            "place_id": "GhIJL--7MySYGUARC_7IvnVfFkA",
+            "plus_code": {
+                "compound_code": "9HXV+C7 Benin City, Nigeria",
+                "global_code": "6FR79HXV+C7"
+            },
+            "types": [
+                "plus_code"
+            ]
+        },
+        {
+            "address_components": [
+                {
+                    "long_name": "Precious Palm Royal Road",
+                    "short_name": "Precious Palm Royal Rd",
+                    "types": [
+                        "route"
+                    ]
+                },
+                {
+                    "long_name": "Uselu",
+                    "short_name": "Uselu",
+                    "types": [
+                        "political",
+                        "sublocality",
+                        "sublocality_level_1"
+                    ]
+                },
+                {
+                    "long_name": "Benin City",
+                    "short_name": "Benin City",
+                    "types": [
+                        "locality",
+                        "political"
+                    ]
+                },
+                {
+                    "long_name": "Ugbowo",
+                    "short_name": "Ugbowo",
+                    "types": [
+                        "administrative_area_level_3",
+                        "political"
+                    ]
+                },
+                {
+                    "long_name": "Egor",
+                    "short_name": "Egor",
+                    "types": [
+                        "administrative_area_level_2",
+                        "political"
+                    ]
+                },
+                {
+                    "long_name": "Edo",
+                    "short_name": "ED",
+                    "types": [
+                        "administrative_area_level_1",
+                        "political"
+                    ]
+                },
+                {
+                    "long_name": "Nigeria",
+                    "short_name": "NG",
+                    "types": [
+                        "country",
+                        "political"
+                    ]
+                },
+                {
+                    "long_name": "300103",
+                    "short_name": "300103",
+                    "types": [
+                        "postal_code"
+                    ]
+                }
+            ],
+            "entrances": [],
+            "formatted_address": "Precious Palm Royal Rd, Uselu, Benin City 300103, Edo, Nigeria",
+            "geometry": {
+                "bounds": {
+                    "northeast": {
+                        "lat": 6.3980939,
+                        "lng": 5.593613500000001
+                    },
+                    "southwest": {
+                        "lat": 6.3979272,
+                        "lng": 5.5933943
+                    }
+                },
+                "location": {
+                    "lat": 6.3980104,
+                    "lng": 5.593503999999999
+                },
+                "location_type": "GEOMETRIC_CENTER",
+                "viewport": {
+                    "northeast": {
+                        "lat": 6.399359530291502,
+                        "lng": 5.594852880291503
+                    },
+                    "southwest": {
+                        "lat": 6.396661569708497,
+                        "lng": 5.592154919708499
+                    }
+                }
+            },
+            "place_id": "ChIJXYQBryItRxARSj4UKQHm4GY",
+            "types": [
+                "route"
+            ]
+        },
+        {
+            "address_components": [
+                {
+                    "long_name": "Ugbowo",
+                    "short_name": "Ugbowo",
+                    "types": [
+                        "administrative_area_level_3",
+                        "political"
+                    ]
+                },
+                {
+                    "long_name": "Egor",
+                    "short_name": "Egor",
+                    "types": [
+                        "administrative_area_level_2",
+                        "political"
+                    ]
+                },
+                {
+                    "long_name": "Edo",
+                    "short_name": "ED",
+                    "types": [
+                        "administrative_area_level_1",
+                        "political"
+                    ]
+                },
+                {
+                    "long_name": "Nigeria",
+                    "short_name": "NG",
+                    "types": [
+                        "country",
+                        "political"
+                    ]
+                },
+                {
+                    "long_name": "300103",
+                    "short_name": "300103",
+                    "types": [
+                        "postal_code"
+                    ]
+                }
+            ],
+            "entrances": [],
+            "formatted_address": "Ugbowo 300103, Edo, Nigeria",
+            "geometry": {
+                "bounds": {
+                    "northeast": {
+                        "lat": 6.414109100000001,
+                        "lng": 5.6445201
+                    },
+                    "southwest": {
+                        "lat": 6.374082899999999,
+                        "lng": 5.5744552
+                    }
+                },
+                "location": {
+                    "lat": 6.3930948,
+                    "lng": 5.6195112
+                },
+                "location_type": "APPROXIMATE",
+                "viewport": {
+                    "northeast": {
+                        "lat": 6.414109100000001,
+                        "lng": 5.6445201
+                    },
+                    "southwest": {
+                        "lat": 6.374082899999999,
+                        "lng": 5.5744552
+                    }
+                }
+            },
+            "place_id": "ChIJA5m0G9wsRxARaGaS1t-vwpI",
+            "types": [
+                "administrative_area_level_3",
+                "political"
+            ]
+        },
+        {
+            "address_components": [
+                {
+                    "long_name": "Uselu",
+                    "short_name": "Uselu",
+                    "types": [
+                        "political",
+                        "sublocality",
+                        "sublocality_level_1"
+                    ]
+                },
+                {
+                    "long_name": "Benin City",
+                    "short_name": "Benin City",
+                    "types": [
+                        "locality",
+                        "political"
+                    ]
+                },
+                {
+                    "long_name": "Oredo",
+                    "short_name": "Oredo",
+                    "types": [
+                        "administrative_area_level_2",
+                        "political"
+                    ]
+                },
+                {
+                    "long_name": "Edo",
+                    "short_name": "ED",
+                    "types": [
+                        "administrative_area_level_1",
+                        "political"
+                    ]
+                },
+                {
+                    "long_name": "Nigeria",
+                    "short_name": "NG",
+                    "types": [
+                        "country",
+                        "political"
+                    ]
+                }
+            ],
+            "entrances": [],
+            "formatted_address": "Uselu, Benin City, Edo, Nigeria",
+            "geometry": {
+                "bounds": {
+                    "northeast": {
+                        "lat": 6.4582579,
+                        "lng": 5.7316018
+                    },
+                    "southwest": {
+                        "lat": 6.3507862,
+                        "lng": 5.574445799999999
+                    }
+                },
+                "location": {
+                    "lat": 6.4090558,
+                    "lng": 5.6142558
+                },
+                "location_type": "APPROXIMATE",
+                "viewport": {
+                    "northeast": {
+                        "lat": 6.4582579,
+                        "lng": 5.7316018
+                    },
+                    "southwest": {
+                        "lat": 6.3507862,
+                        "lng": 5.574445799999999
+                    }
+                }
+            },
+            "place_id": "ChIJaRHFZ2QrRxARZyWF23fp6Bo",
+            "types": [
+                "political",
+                "sublocality",
+                "sublocality_level_1"
+            ]
+        },
+        {
+            "address_components": [
+                {
+                    "long_name": "Egor",
+                    "short_name": "Egor",
+                    "types": [
+                        "administrative_area_level_2",
+                        "political"
+                    ]
+                },
+                {
+                    "long_name": "Edo",
+                    "short_name": "ED",
+                    "types": [
+                        "administrative_area_level_1",
+                        "political"
+                    ]
+                },
+                {
+                    "long_name": "Nigeria",
+                    "short_name": "NG",
+                    "types": [
+                        "country",
+                        "political"
+                    ]
+                }
+            ],
+            "entrances": [],
+            "formatted_address": "Egor, Edo, Nigeria",
+            "geometry": {
+                "bounds": {
+                    "northeast": {
+                        "lat": 6.414607600000001,
+                        "lng": 5.6438103
+                    },
+                    "southwest": {
+                        "lat": 6.277715199999999,
+                        "lng": 5.524225299999999
+                    }
+                },
+                "location": {
+                    "lat": 6.3671083,
+                    "lng": 5.572229699999999
+                },
+                "location_type": "APPROXIMATE",
+                "viewport": {
+                    "northeast": {
+                        "lat": 6.414607600000001,
+                        "lng": 5.6438103
+                    },
+                    "southwest": {
+                        "lat": 6.277715199999999,
+                        "lng": 5.524225299999999
+                    }
+                }
+            },
+            "place_id": "ChIJOXr6Xe3SQBARopACu9ABz-s",
+            "types": [
+                "administrative_area_level_2",
+                "political"
+            ]
+        },
+        {
+            "address_components": [
+                {
+                    "long_name": "300103",
+                    "short_name": "300103",
+                    "types": [
+                        "postal_code"
+                    ]
+                },
+                {
+                    "long_name": "Edo",
+                    "short_name": "ED",
+                    "types": [
+                        "administrative_area_level_1",
+                        "political"
+                    ]
+                },
+                {
+                    "long_name": "Nigeria",
+                    "short_name": "NG",
+                    "types": [
+                        "country",
+                        "political"
+                    ]
+                }
+            ],
+            "entrances": [],
+            "formatted_address": "300103, Edo, Nigeria",
+            "geometry": {
+                "bounds": {
+                    "northeast": {
+                        "lat": 6.414154,
+                        "lng": 5.6447069
+                    },
+                    "southwest": {
+                        "lat": 6.277203999999999,
+                        "lng": 5.524981899999999
+                    }
+                },
+                "location": {
+                    "lat": 6.3671083,
+                    "lng": 5.572229699999999
+                },
+                "location_type": "APPROXIMATE",
+                "viewport": {
+                    "northeast": {
+                        "lat": 6.414154,
+                        "lng": 5.6447069
+                    },
+                    "southwest": {
+                        "lat": 6.277203999999999,
+                        "lng": 5.524981899999999
+                    }
+                }
+            },
+            "place_id": "ChIJ5_zzgvLSQBARSiluzgMMe-o",
+            "types": [
+                "postal_code"
+            ]
+        },
+        {
+            "address_components": [
+                {
+                    "long_name": "Benin City",
+                    "short_name": "Benin City",
+                    "types": [
+                        "locality",
+                        "political"
+                    ]
+                },
+                {
+                    "long_name": "Oredo",
+                    "short_name": "Oredo",
+                    "types": [
+                        "administrative_area_level_2",
+                        "political"
+                    ]
+                },
+                {
+                    "long_name": "Edo",
+                    "short_name": "ED",
+                    "types": [
+                        "administrative_area_level_1",
+                        "political"
+                    ]
+                },
+                {
+                    "long_name": "Nigeria",
+                    "short_name": "NG",
+                    "types": [
+                        "country",
+                        "political"
+                    ]
+                }
+            ],
+            "entrances": [],
+            "formatted_address": "Benin City, Edo, Nigeria",
+            "geometry": {
+                "bounds": {
+                    "northeast": {
+                        "lat": 6.51624,
+                        "lng": 5.7384229
+                    },
+                    "southwest": {
+                        "lat": 6.147938,
+                        "lng": 5.486183
+                    }
+                },
+                "location": {
+                    "lat": 6.334986,
+                    "lng": 5.6037465
+                },
+                "location_type": "APPROXIMATE",
+                "viewport": {
+                    "northeast": {
+                        "lat": 6.51624,
+                        "lng": 5.7384229
+                    },
+                    "southwest": {
+                        "lat": 6.147938,
+                        "lng": 5.486183
+                    }
+                }
+            },
+            "place_id": "ChIJ8azPeWLTQBARoN9YV8AQqoQ",
+            "types": [
+                "locality",
+                "political"
+            ]
+        },
+        {
+            "address_components": [
+                {
+                    "long_name": "Edo",
+                    "short_name": "ED",
+                    "types": [
+                        "administrative_area_level_1",
+                        "political"
+                    ]
+                },
+                {
+                    "long_name": "Nigeria",
+                    "short_name": "NG",
+                    "types": [
+                        "country",
+                        "political"
+                    ]
+                }
+            ],
+            "entrances": [],
+            "formatted_address": "Edo, Nigeria",
+            "geometry": {
+                "bounds": {
+                    "northeast": {
+                        "lat": 7.591417000000001,
+                        "lng": 6.715769
+                    },
+                    "southwest": {
+                        "lat": 5.746386999999999,
+                        "lng": 5.012897
+                    }
+                },
+                "location": {
+                    "lat": 6.6341831,
+                    "lng": 5.9304056
+                },
+                "location_type": "APPROXIMATE",
+                "viewport": {
+                    "northeast": {
+                        "lat": 7.591417000000001,
+                        "lng": 6.715769
+                    },
+                    "southwest": {
+                        "lat": 5.746386999999999,
+                        "lng": 5.012897
+                    }
+                }
+            },
+            "place_id": "ChIJ_3eM_4m1RhARahWUwfbdXrU",
+            "types": [
+                "administrative_area_level_1",
+                "political"
+            ]
+        },
+        {
+            "address_components": [
+                {
+                    "long_name": "Nigeria",
+                    "short_name": "NG",
+                    "types": [
+                        "country",
+                        "political"
+                    ]
+                }
+            ],
+            "entrances": [],
+            "formatted_address": "Nigeria",
+            "geometry": {
+                "bounds": {
+                    "northeast": {
+                        "lat": 13.8856449,
+                        "lng": 14.677982
+                    },
+                    "southwest": {
+                        "lat": 4.1821001,
+                        "lng": 2.676932
+                    }
+                },
+                "location": {
+                    "lat": 9.081999,
+                    "lng": 8.675277
+                },
+                "location_type": "APPROXIMATE",
+                "viewport": {
+                    "northeast": {
+                        "lat": 13.8856449,
+                        "lng": 14.677982
+                    },
+                    "southwest": {
+                        "lat": 4.1821001,
+                        "lng": 2.676932
+                    }
+                }
+            },
+            "place_id": "ChIJDY2kfa8LThARyAvFaEH-qJk",
+            "types": [
+                "country",
+                "political"
+            ]
+        }
+    ],
+    "status": "OK"
+}

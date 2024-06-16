@@ -16,12 +16,16 @@ $data = json_decode($input, true);
 
 if (isset($data['latitude']) && isset($data['longitude'])) {
     
-    Session::put('updated_coordinates', $data);
+    //Session::put('updated_coordinates', $data);
     $latitude = $data['latitude'];
     $longitude = $data['longitude'];
-    $address = Geolocation::getAddress($latitude, $longitude);
-    $geocoded = Geolocation::geocodeAddress($address);
-    echo json_encode(["message" => "Coordinates received. Your Adress is: $address, geocoded address is". $geocoded['lat'].""]);
+    $address = Geolocation::get_address($latitude, $longitude);
+    echo json_encode(["message" => $address]);
+    //$address = Geolocation::getAddress($latitude, $longitude);
+    //$geocoded = Geolocation::geocodeAddress($address);
+    //echo json_encode(["message" => $address]);
 } else {
-    echo json_encode(["message" => "Invalid input"]);
-}
+        echo json_encode(["message" => "Invalid input"]);
+    }
+    
+

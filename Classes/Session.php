@@ -27,4 +27,7 @@ class session{
     public static function session(){
         return $_SESSION;
     }
+    public static function destroy(){
+        return session_destroy();
+    }
 }

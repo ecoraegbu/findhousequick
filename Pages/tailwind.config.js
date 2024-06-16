@@ -2,6 +2,7 @@
 module.exports = {
   content: ["./Pages/**/*.{html,php,js}", "./Admin/**/*.{html,php,js}", "./Agent/**/*.{html,php,js}"],
   theme: {
+
     fontFamily: {
       sans: ["Manrope", "sans-serif"],
       "roboto-c": ["Roboto Condensed", "sans-serif"],

@@ -1,15 +1,17 @@
 // home.js
 document.addEventListener('DOMContentLoaded', function() {
   fetch('../engine/session.php')
-      .then(response => response.json())
-      .then(data => {
-        if (data.user){
-          userId = data.user
-        }else{
-          userId = null;
-        }
-        
-      });
+    .then(response => response.json())
+    .then(data => {
+      if (data.user) {
+        userId = data.user;
+      } else {
+        userId = null;
+      }
+      if (data.coordinates && !data.updated_coordinates) {
+        showModal(data.coordinates);
+      }
+    });
 
   let currentPage = 1;
   const pageSize = 20; // Number of properties to fetch per page
@@ -22,6 +24,69 @@ document.addEventListener('DOMContentLoaded', function() {
   });
 });
 
+const modalElement = document.getElementById('modalOverlay');
+const modalmessage = document.getElementById('modalmessage');
+const no_button = document.getElementById('noBtn');
+const yes_button = document.getElementById('yesBtn');
+
+function showModal(coordinates) {
+  fetch('../engine/location.php', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify({ latitude: coordinates['latitude'], longitude: coordinates['longitude'] })
+  })
+  .then(response => response.json())
+  .then(data => {
+    if (data.message) {
+      const message = `Your location is required to serve you with properties within your vicinity. Currently, you have your location set at ${data.message}. If this is not your correct location, Please click "No" to set it to your correct location using the Map feature on the Home page. Click "Yes" to set it to this current location.`;
+      modalmessage.textContent = message;
+      modalElement.classList.remove('hidden');
+
+      // Add event listeners to the yes and no buttons
+      no_button.addEventListener('click', handleNoButtonClick);
+      yes_button.addEventListener('click', handleYesButtonClick.bind(null, coordinates));
+    }
+  });
+}
+
+function hideModal() {
+  modalElement.classList.add('hidden');
+}
+
+function handleNoButtonClick() {
+  triggerFullscreen();
+  // make the map full screen
+  hideModal();
+}
+
+function handleYesButtonClick(coordinates) {
+  // Send a request to ../engine/session.php with the user's location coordinates
+  fetch('../engine/session.php', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify(coordinates)
+  })
+  .then(response => {
+    if (response.ok) {
+      // Handle successful response
+      console.log('Location coordinates updated successfully');
+    } else {
+      // Handle error
+      console.error('Error updating location coordinates');
+    }
+    hideModal();
+  })
+  .catch(error => {
+    console.error('Error updating location coordinates:', error);
+    hideModal();
+  });
+}
+
+// ... (Other functions, such as fetchProperties and renderProperties)
 function fetchProperties(page, pageSize) {
   const url = new URL('findhousequick/engine/property_server.php', window.location.origin);
   url.searchParams.append('page', page);
@@ -68,10 +133,13 @@ function renderProperties(properties, container) {
         </div>
         <a href="preview.php?property=${id}&user=${userId}" class="block mt-3 text-text hover:text-opacity-80 font-semibold text-xl truncate" title="${type}, ${city}">${type}, ${city}.</a>
         <p class="text-sm text-gray-400 -mt-1">${city}, ${state}</p>
-        <p class="text-primary font-semibold mt-1 text-xl">&#x20A6;${Number(price).toLocaleString()}</p>
+        <p class="text-primary font-semibold mt-1 text-xl">₦${Number(price).toLocaleString()}</p>
       </div>
     `;
 
     container.innerHTML += propertyCard;
   });
 }
+
+
+
