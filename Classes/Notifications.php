@@ -18,7 +18,8 @@ class Notifications {
 
     function sendNotification($user_id, $message) {
         $sql = "INSERT INTO notifications (user_id, messages) VALUES (?, ?)";
-        $params = array($user_id, $message);
+        $params = ['user_id' =>$user_id, 
+                    'messages' => $message];
         $this->database_connection->query($sql, $params);
     }
 

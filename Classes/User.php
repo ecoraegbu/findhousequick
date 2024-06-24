@@ -50,7 +50,15 @@ class User {
             return $this;
         }
     }
-
+    public function get_user_details($userid) {
+        $user_details = $this->database_connection->get('user_details', array('user_id', '=', $userid));
+        if ($user_details->count()) {
+            $user_details = $user_details->first();
+            return $user_details;
+        } else{
+            return 'Record not found';
+        }
+    }
     // THE FUNCTION TO CREATE A NEW USER ENTRY IN THE DATABASE
     public function create($table, $fields = array()) {
         if (!$this->database_connection->insert($table, $fields)) {

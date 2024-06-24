@@ -32,3 +32,5 @@
       }
     }
   </script>
+
+<script src="../javascript/dashboard.js" defer></script>

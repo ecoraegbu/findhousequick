@@ -13,8 +13,8 @@
       <div class="flex gap-4">
         <img class="w-40 aspect-square rounded-xl shadow-card" src="https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8YXZhdGFyfGVufDB8fDB8fHww" alt="user_profile_pic" />
         <div class="flex-1">
-          <p class="font-bold text-lg">Sarah Reichert</p>
-          <small class="text-gray-500 text-base">Estate Developer</small>
+          <p id="profile-name" class="font-bold text-lg"></p>
+          <small id="role" class="text-gray-500 text-base">Estate Developer</smal>
 
           <hr class="border-t border-slate-100 my-4" />
           <a href="#edit_profile" class="px-4 py-2 text-white text-sm rounded-lg bg-primary font-medium hover:bg-blue-600">Edit</a>
@@ -36,44 +36,49 @@
 
           <div class="grid grid-cols-2 gap-4">
             <div class="">
-              <span for="name" class="text-sm text-gray-700 font-medium">First name</span>
-              <p class="text-sm px-4 py-3 bg-gray-100 font-bold text-gray-700 rounded-lg w-full outline-none focus:border-primary">
+              <span  for="name" class="text-sm text-gray-700 font-medium">First name</span>
+              <p id="first-name" class="text-sm px-4 py-3 bg-gray-100 font-bold text-gray-700 rounded-lg w-full outline-none focus:border-primary">
                 Felix
               </p>
             </div>
 
             <div class="">
-              <span for="name" class="text-sm text-gray-700 font-medium">Last name</span>
-              <p class="text-sm px-4 py-3 bg-gray-100 font-bold text-gray-700 rounded-lg w-full outline-none focus:border-primary">
+              <span  for="name" class="text-sm text-gray-700 font-medium">Last name</span>
+              <p id="last-name" class="text-sm px-4 py-3 bg-gray-100 font-bold text-gray-700 rounded-lg w-full outline-none focus:border-primary">
                 Osamuyi
               </p>
             </div>
 
             <div class="">
-              <span for="name" class="text-sm text-gray-700 font-medium">Email</span>
-              <p class="text-sm px-4 py-3 bg-gray-100 font-bold text-gray-700 rounded-lg w-full outline-none focus:border-primary">
+              <span  for="name" class="text-sm text-gray-700 font-medium">Email</span>
+              <p id="email" class="text-sm px-4 py-3 bg-gray-100 font-bold text-gray-700 rounded-lg w-full outline-none focus:border-primary">
                 felixosamuyi@gmail.com
               </p>
             </div>
 
             <div class="">
+              <span for="name" class="text-sm text-gray-700 font-medium">Phone</span>
+              <p id="phone" class="text-sm px-4 py-3 bg-gray-100 font-bold text-gray-700 rounded-lg w-full outline-none focus:border-primary">
+                Male
+              </p>
+            </div>
+            <div class="">
               <span for="name" class="text-sm text-gray-700 font-medium">Gender</span>
-              <p class="text-sm px-4 py-3 bg-gray-100 font-bold text-gray-700 rounded-lg w-full outline-none focus:border-primary">
+              <p id="gender" class="text-sm px-4 py-3 bg-gray-100 font-bold text-gray-700 rounded-lg w-full outline-none focus:border-primary">
                 Male
               </p>
             </div>
 
             <div class="">
               <span for="name" class="text-sm text-gray-700 font-medium">Marital Status</span>
-              <p class="text-sm px-4 py-3 bg-gray-100 font-bold text-gray-700 rounded-lg w-full outline-none focus:border-primary">
-                Male
+              <p id="marital-status" class="text-sm px-4 py-3 bg-gray-100 font-bold text-gray-700 rounded-lg w-full outline-none focus:border-primary">
                 Married
               </p>
             </div>
 
             <div class="">
               <span for="name" class="text-sm text-gray-700 font-medium">Employment Status</span>
-              <p class="text-sm px-4 py-3 bg-gray-100 font-bold text-gray-700 rounded-lg w-full outline-none focus:border-primary">
+              <p id="employment-status" class="text-sm px-4 py-3 bg-gray-100 font-bold text-gray-700 rounded-lg w-full outline-none focus:border-primary">
                 Employed
               </p>
             </div>
@@ -81,21 +86,21 @@
 
             <div class="">
               <span for="name" class="text-sm text-gray-700 font-medium">State</span>
-              <p class="text-sm px-4 py-3 bg-gray-100 font-bold text-gray-700 rounded-lg w-full outline-none focus:border-primary">
+              <p id="state" class="text-sm px-4 py-3 bg-gray-100 font-bold text-gray-700 rounded-lg w-full outline-none focus:border-primary">
                 Delta
               </p>
             </div>
 
             <div class="">
               <span for="name" class="text-sm text-gray-700 font-medium">LGA</span>
-              <p class="text-sm px-4 py-3 bg-gray-100 font-bold text-gray-700 rounded-lg w-full outline-none focus:border-primary">
+              <p id="lga" class="text-sm px-4 py-3 bg-gray-100 font-bold text-gray-700 rounded-lg w-full outline-none focus:border-primary">
                 Aniocha
               </p>
             </div>
 
             <div class="">
               <span for="name" class="text-sm text-gray-700 font-medium">Religion</span>
-              <p class="text-sm px-4 py-3 bg-gray-100 font-bold text-gray-700 rounded-lg w-full outline-none focus:border-primary">
+              <p id="religion" class="text-sm px-4 py-3 bg-gray-100 font-bold text-gray-700 rounded-lg w-full outline-none focus:border-primary">
                 Muslim
               </p>
             </div>

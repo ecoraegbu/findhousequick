@@ -3,7 +3,7 @@ require_once 'Core/Init.php';
 
 
 
-// Create a new instance of the Property class
+/* // Create a new instance of the Property class
 $propertyInstance = new Property();
 
 // Set the user's latitude and longitude
@@ -13,11 +13,22 @@ $userLongitude = 3.4194; // Example user longitude
 // Set the offset and page size for pagination
 $offset = 1; // Starting offset for pagination
 $pageSize = 50; // Number of results per page
-$filters = [];
+$filters = [
+    'userLatitude' => 6.5244,
+    'userLongitude' => 3.3792,
+    'minPrice' => 200000, 
+    'maxPrice' => 1000000, 
+    'propertyType' => '3 bedroom', 
+    'city' => 'asaba', 
+    'state' => 'delta',
+    'bedrooms' => 3,
+    'bathrooms' => 4,
+    'purpose' => 'sale'
+]; */
 // Call the get_nearby_properties method
-$nearbyProperties = $propertyInstance->get_filtered_properties_($filters, $offset, $pageSize);
+//$nearbyProperties = $propertyInstance->filter_properties($filters, $offset, $pageSize);
 
-// Check if there are any nearby properties
+/* // Check if there are any nearby properties
 if (count($nearbyProperties) > 0) {
     foreach ($nearbyProperties as $property) {
         var_dump($property);
@@ -26,8 +37,9 @@ if (count($nearbyProperties) > 0) {
 
  else {
     echo "No nearby properties found.\n";
-}
-//var_dump (Session::session());
+} */ 
+//var_dump (Session::all());
+//Session::destroy();
 // Usage example
 /* $location = Geolocation::getLocationByIP();
 
@@ -61,9 +73,9 @@ if ($geocodedLocation) {
     echo "Unable to geocode the address.\n";
 }  */
 
-/* $db = database::getInstance();
-$db->execute_sql_script('findhousequick', 'sql/vincenty_nearby.sql');
-$db->execute_sql_script('findhousequick', 'sql/vincenty_radius.sql'); */
+$db = database::getInstance();
+$db->execute_sql_script('findhousequick', 'sql/notifications.sql');
+//$db->execute_sql_script('findhousequick', 'sql/vincenty_radius.sql'); 
 // Send an activation email
 /* $email = new Email('ecoraegbu@gmail.com', 'Account Activation', 'account_activation_message','noreply@findhousequick.com','noreply@findhousequick.com', true);
                         

@@ -1,106 +1,60 @@
 <?php
-require_once 'Core/Init.php';
+// Database connection parameters
+$servername = "localhost";
+$username = "root";
+$password = "";
+$dbname = "findhousequick";
 
-// HTTPS enforcement
-if (!isset($_SERVER['HTTPS']) || $_SERVER['HTTPS'] !== 'on') {
-    header('Location: https://' . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI']);
-    exit();
-}
+try {
+    // Create a new PDO connection
+    $conn = new PDO("mysql:host=$servername;dbname=$dbname", $username, $password);
+    $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
-// Function to get client IP address
-function getClientIP() {
-    $ip = '';
-    if (isset($_SERVER['HTTP_CLIENT_IP'])) {
-        $ip = $_SERVER['HTTP_CLIENT_IP'];
-    } elseif (isset($_SERVER['HTTP_X_FORWARDED_FOR'])) {
-        $ip = $_SERVER['HTTP_X_FORWARDED_FOR'];
-    } elseif (isset($_SERVER['REMOTE_ADDR'])) {
-        $ip = $_SERVER['REMOTE_ADDR'];
-    }
-    return $ip;
-}
+    // Start a transaction
+    $conn->beginTransaction();
 
-// IP logging and blocking
-$blocked_ips = ['192.168.1.1', '10.0.0.1']; // Example list of blocked IPs, you can fetch from a database or file
-$client_ip = getClientIP();
+    // Parameters for the stored procedure
+    $userLat = 12.345678;
+    $userLon = 98.765432;
 
-if (in_array($client_ip, $blocked_ips)) {
-    die('Your IP has been blocked.');
-}
+    // Call the stored procedure
+    $stmt = $conn->prepare("CALL CalculateDistance(?, ?)");
+    $stmt->bindParam(1, $userLat);
+    $stmt->bindParam(2, $userLon);
+    $stmt->execute();
 
-// Rate limiting
-if (!isset($_SESSION['login_attempts'])) {
-    $_SESSION['login_attempts'] = 0;
-}
+    // Perform actions on the temporary table created by the stored procedure
+    $selectQuery = "
+    SELECT 
+        np.id,
+        np.latitude,
+        np.longitude,
+        np.distance
+    FROM 
+        NearbyProperties np
+    ORDER BY 
+        np.distance ASC";
+    $stmt = $conn->prepare($selectQuery);
+    $stmt->execute();
+    $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
-if ($_SESSION['login_attempts'] > 5) {
-    die('Too many login attempts. Please try again later.');
-}
+    // Commit the transaction
+    $conn->commit();
 
-// CSRF protection
-if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    if (!isset($_POST['csrf_token']) || $_POST['csrf_token'] !== $_SESSION['csrf_token']) {
-        die('CSRF validation failed.');
-    }
-}
-
-if (empty($_SESSION['csrf_token'])) {
-    $_SESSION['csrf_token'] = bin2hex(random_bytes(32));
-}
-
-$user = new User();
-
-if ($user->isloggedin()) {
-    // Regenerate session ID on successful login
-    session_regenerate_id(true);
-
-    // Log user login activity
-    $user->logActivity('login', $client_ip);
-
-    // Reset login attempts on successful login
-    $_SESSION['login_attempts'] = 0;
-
- /*    // Check for unread notifications
-    $unreadNotifications = $user->getUnreadNotifications();
-    if ($unreadNotifications) {
-        // Display notifications (implementation depends on your UI)
-    }
-
-    // Check if user profile is complete
-    if (!$user->isProfileComplete()) {
-        header('Location: ' . BASE_URL . 'user/complete_profile.php');
-        exit();
-    }
- */
-    Session::put('user_role', $user->data()->role);
-
-    if (isset($_SESSION['user_role'])) {
-        switch ($_SESSION['user_role']) {
-            case USER_ROLE_ADMIN:
-                header('Location: ' . BASE_URL . 'admin/dashboard.php');
-                exit();
-            case USER_ROLE_AGENT:
-                header('Location: ' . BASE_URL . 'agent/dashboard.php');
-                exit();
-            case USER_ROLE_LANDLORD:
-                header('Location: ' . BASE_URL . 'landlord/dashboard.php');
-                exit();
-            case USER_ROLE_TENANT:
-                header('Location: ' . BASE_URL . 'tenant/dashboard.php');
-                exit();
-            case USER_ROLE_ORDINARY:
-                header('Location: ' . BASE_URL . 'pages/dashboard.php');
-                exit();
-            default:
-                header('Location: ' . BASE_URL . '');
-                exit();
+    // Output the results
+    if (count($result) > 0) {
+        foreach ($result as $row) {
+            echo "id: " . $row["id"] . " - Latitude: " . $row["latitude"] . " - Longitude: " . $row["longitude"] . " - Distance: " . $row["distance"] . " km<br>";
         }
+    } else {
+        echo "0 results";
     }
-} else {
-    // Increment login attempts on failed login
-    $_SESSION['login_attempts']++;
 
-    // Log failed login attempts
-    $user->logActivity('failed_login', $client_ip);
-    redirect::to(BASE_URL . 'pages/home.php');
+} catch (PDOException $e) {
+    // Roll back the transaction if something failed
+    $conn->rollBack();
+    echo "Error: " . $e->getMessage();
 }
+
+// Close the connection
+$conn = null;

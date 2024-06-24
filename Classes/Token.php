@@ -1,6 +1,11 @@
 <?php class Token{
     public static function generate(){
-        return Session::put(Config::get('session/token_name'), md5(uniqid()));
+        if (Session::put(Config::get('session/token_name'), md5(uniqid()))){
+            return Session::get(Config::get('session/token_name'));
+        }else{
+            
+        }
+        return false;
     }
 
     public static function check($token){

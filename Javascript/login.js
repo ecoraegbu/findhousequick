@@ -24,6 +24,7 @@ document.addEventListener("DOMContentLoaded", function() {
         
             const formData = new FormData();
             formData.append('username', document.getElementById('email').value);
+            //
             formData.append('token', document.getElementById('token').value);
             formData.append('password', document.getElementById('password').value);
             formData.append('remember', document.getElementById('remember').checked);

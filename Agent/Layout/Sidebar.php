@@ -57,12 +57,36 @@
       <!--     <i icon-name="scroll" class="h-5 w-5"></i> <span>Documents</span> -->
       <!--   </a> -->
       <!-- </li> -->
-
       <li class="px-10 relative hover:before:absolute hover:before:left-0 hover:before:bg-primary hover:before:bg-opacity-25 hover:before:h-full hover:before:w-1 hover:before:rounded-full">
+        <div class="group" x-data="{open: false}">
+          <a href="#" @click="open=!open" class="group transition-all py-3 px-5 flex items-center gap-4 group-hover:bg-primary group-hover:bg-opacity-25 rounded-lg">
+          <i icon-name="mails" class="h-5 w-5"></i> <span>Messages</span>
+          </a>
+
+          <ul class="bg-primary bg-opacity-25 rounded-md" x-cloak x-show="open" @click.outside="open=false">
+            <li class="">
+              <a href="#messages" class="flex items-center gap-4 py-2.5 px-5 text-sm text-gray-300 hover:text-white">
+                <i icon-name="chevron-right" class="h-4 w-4"></i> <span>Inbox</span>
+              </a>
+            </li>
+            <li class="">
+              <a href="#messages" class="flex items-center gap-4 py-2.5 px-5 text-sm text-gray-300 hover:text-white">
+                <i icon-name="chevron-right" class="h-4 w-4"></i> <span>Sent</span>
+              </a>
+            </li>
+            <li class="">
+              <a href="#message" class="flex items-center gap-4 py-2.5 px-5 text-sm text-gray-300 hover:text-white">
+                <i icon-name="chevron-right" class="h-4 w-4"></i> <span>Compose</span>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </li>
+     <!--  <li class="px-10 relative hover:before:absolute hover:before:left-0 hover:before:bg-primary hover:before:bg-opacity-25 hover:before:h-full hover:before:w-1 hover:before:rounded-full">
         <a href="#messages" class="transition-all py-3 px-5 flex items-center gap-4 hover:bg-primary hover:bg-opacity-25 rounded-lg">
           <i icon-name="mails" class="h-5 w-5"></i> <span>Messages</span>
         </a>
-      </li>
+      </li> -->
 
       <li class="px-10 relative hover:before:absolute hover:before:left-0 hover:before:bg-primary hover:before:bg-opacity-25 hover:before:h-full hover:before:w-1 hover:before:rounded-full">
         <a href="#view_complaints" class="transition-all py-3 px-5 flex items-center gap-4 hover:bg-primary hover:bg-opacity-25 rounded-lg">

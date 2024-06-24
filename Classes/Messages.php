@@ -25,34 +25,50 @@ class Messages{
     }
   }
   public function get_all_messages($user_id){
-    $messages = $this->database_connection->get('messages', array('recipient', '=', $user_id));
+    $messages = $this->database_connection->get('messages', array('recipient_id', '=', $user_id));
     return $messages->results();
 
   }
   public function sent_messages($user_id){
     // Retrieve all outbound message from the database.
     $sql = "SELECT * FROM messages WHERE sender_id = ?";
-    $params = array($user_id);
+    $params = array('sender_id' => $user_id);
     $messages = $this->database_connection->query($sql, $params)->results();
-    return $messages;
+    if ($messages->count()){
+      return $messages;
+    } else{
+      return null;
+    }
+    
   }
   public function inbox($user_id){
     // Retrieve all inbound message from the database.
     $sql = "SELECT * FROM messages WHERE recipient_id = ?";
-    $params = array($user_id);
+    $params = array('sender_id' => $user_id);
     $messages = $this->database_connection->query($sql, $params)->results();
-    return $messages;
-
+    if ($messages->count()){
+      return $messages;
+    } else{
+      return null;
+    }
   }
 
   public function get_message($message_id) {
     // Retrieve a message from a data store, such as a database
     $sql = "SELECT * FROM messages WHERE id = ?";
-    $params = array($message_id);
+    $params = array('id' => $message_id);
     $message = $this->database_connection->query($sql, $params);
-    return $message->results();
+    if($message->count()){
+      $result = $message->results;
+      return $result;
+    }else{
+      return null;
+    }
+    
     
   }
+
+  // RATHER THAN DELETE MESSAGES, SET IS_DELETED TO 1
 
 /*   public function delete($message_id) {
     // Delete a message or messages from the database
@@ -87,4 +103,3 @@ class Messages{
 
 }
 
-?>

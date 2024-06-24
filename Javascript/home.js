@@ -1,22 +1,15 @@
-// home.js
-document.addEventListener('DOMContentLoaded', function() {
-  fetch('../engine/session.php')
-    .then(response => response.json())
-    .then(data => {
-      if (data.user) {
-        userId = data.user;
-      } else {
-        userId = null;
-      }
-      if (data.coordinates && !data.updated_coordinates) {
-        showModal(data.coordinates);
-      }
-    });
+document.addEventListener('DOMContentLoaded', () => {
+  // Fetch session data
+  fetchSessionData();
 
+  // Initialize pagination variables
   let currentPage = 1;
-  const pageSize = 20; // Number of properties to fetch per page
+  const pageSize = 20;
+
+  // Fetch properties for the initial page
   fetchProperties(currentPage, pageSize);
 
+  // Add event listener for view more button
   const viewMoreButton = document.getElementById('view_more');
   viewMoreButton.addEventListener('click', () => {
     currentPage++;
@@ -24,86 +17,118 @@ document.addEventListener('DOMContentLoaded', function() {
   });
 });
 
+// Modal elements
 const modalElement = document.getElementById('modalOverlay');
-const modalmessage = document.getElementById('modalmessage');
-const no_button = document.getElementById('noBtn');
-const yes_button = document.getElementById('yesBtn');
+const modalMessage = document.getElementById('modalmessage');
+const noButton = document.getElementById('noBtn');
+const yesButton = document.getElementById('yesBtn');
 
-function showModal(coordinates) {
-  fetch('../engine/location.php', {
-    method: 'POST',
-    headers: {
-      'Content-Type': 'application/json'
-    },
-    body: JSON.stringify({ latitude: coordinates['latitude'], longitude: coordinates['longitude'] })
-  })
-  .then(response => response.json())
-  .then(data => {
-    if (data.message) {
-      const message = `Your location is required to serve you with properties within your vicinity. Currently, you have your location set at ${data.message}. If this is not your correct location, Please click "No" to set it to your correct location using the Map feature on the Home page. Click "Yes" to set it to this current location.`;
-      modalmessage.textContent = message;
-      modalElement.classList.remove('hidden');
+// Global userId variable
+let userId = null;
 
-      // Add event listeners to the yes and no buttons
-      no_button.addEventListener('click', handleNoButtonClick);
-      yes_button.addEventListener('click', handleYesButtonClick.bind(null, coordinates));
+// Fetch session data and handle location modal
+async function fetchSessionData() {
+  try {
+    const response = await fetch('../engine/session.php');
+    const data = await response.json();
+
+    // Set userId if available
+    if (data.user) {
+      userId = data.user;
     }
-  });
+
+    // Show location modal if coordinates are present and not updated
+    if (data.coordinates && !data.updated_coordinates) {
+      showModal(data.coordinates);
+    }
+  } catch (error) {
+    console.error('Error fetching session data:', error);
+  }
 }
 
+// Show the location modal
+async function showModal(coordinates) {
+  try {
+    const response = await fetch('../engine/location.php', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({ latitude: coordinates.latitude, longitude: coordinates.longitude }),
+    });
+    const data = await response.json();
+
+    if (data.message) {
+      const message = `Your location is required to serve you with properties within your vicinity. Currently, you have your location set at ${data.message}. If this is not your correct location, Please click "No" to set it to your correct location using the Map feature on the Home page. Click "Yes" to set it to this current location.`;
+      modalMessage.textContent = message;
+      modalElement.classList.remove('hidden');
+
+      // Add event listeners to the buttons
+      noButton.addEventListener('click', handleNoButtonClick);
+      yesButton.addEventListener('click', handleYesButtonClick.bind(null, coordinates, 'put', 'updated_coordinates')); // Added specifier
+    }
+  } catch (error) {
+    console.error('Error fetching location data:', error);
+  }
+}
+
+// Hide the location modal
 function hideModal() {
   modalElement.classList.add('hidden');
 }
 
+// Handle 'No' button click
 function handleNoButtonClick() {
-  triggerFullscreen();
-  // make the map full screen
+  triggerFullscreen(); // Make the map full screen
   hideModal();
 }
 
-function handleYesButtonClick(coordinates) {
-  // Send a request to ../engine/session.php with the user's location coordinates
-  fetch('../engine/session.php', {
-    method: 'POST',
-    headers: {
-      'Content-Type': 'application/json'
-    },
-    body: JSON.stringify(coordinates)
-  })
-  .then(response => {
+// Handle 'Yes' button click
+async function handleYesButtonClick(coordinates, action, specifier) {
+  try {
+    const response = await fetch('../engine/session.php', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({ coordinates, action, specifier }), // Added specifier
+    });
+
     if (response.ok) {
-      // Handle successful response
       console.log('Location coordinates updated successfully');
     } else {
-      // Handle error
       console.error('Error updating location coordinates');
     }
     hideModal();
-  })
-  .catch(error => {
+  } catch (error) {
     console.error('Error updating location coordinates:', error);
     hideModal();
-  });
+  }
 }
 
-// ... (Other functions, such as fetchProperties and renderProperties)
-function fetchProperties(page, pageSize) {
-  const url = new URL('findhousequick/engine/property_server.php', window.location.origin);
-  url.searchParams.append('page', page);
-  url.searchParams.append('pageSize', pageSize);
-  url.searchParams.append('type', 'all'); // Include the type parameter
+// Fetch properties based on page and page size
+async function fetchProperties(page, pageSize) {
+  try {
+    const url = new URL('findhousequick/engine/property_server.php', window.location.origin);
+    url.searchParams.append('page', page);
+    url.searchParams.append('pageSize', pageSize);
+    url.searchParams.append('type', 'all'); // Include the type parameter
 
-  fetch(url)
-    .then(response => response.json())
-    .then(data => {
-      const propertyContainer = document.getElementById('property_display');
-      renderProperties(data, propertyContainer);
-    })
-    .catch(error => console.error('Error fetching property data:', error));
+    const response = await fetch(url);
+    const properties = await response.json();
+
+    const propertyContainer = document.getElementById('property_display');
+    renderProperties(properties, propertyContainer);
+  } catch (error) {
+    console.error('Error fetching property data:', error);
+  }
 }
 
+// Render properties in the container
 function renderProperties(properties, container) {
-  properties.forEach(property => {
+  container.innerHTML = ''; // Clear previous properties
+
+  properties.forEach((property) => {
     const { id, type, city, state, price, status, purpose, images } = property;
     const urls = JSON.parse(images);
     const imageSrc = urls['profile-pic'];
@@ -118,7 +143,7 @@ function renderProperties(properties, container) {
     filePath = filePath.replace(/\\/g, '/');
 
     // Prepend '../' to the file path
-    const relativePath = '..' + filePath;
+    const relativePath = '../' + filePath;
 
     const propertyCard = `
       <div class="p-3 rounded-lg bg-white group transition-all">
@@ -140,6 +165,3 @@ function renderProperties(properties, container) {
     container.innerHTML += propertyCard;
   });
 }
-
-
-
