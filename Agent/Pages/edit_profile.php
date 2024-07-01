@@ -13,12 +13,12 @@
         <div class="flex gap-4">
           <img class="w-40 aspect-square rounded-xl shadow-card" src="https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8YXZhdGFyfGVufDB8fDB8fHww" alt="user_profile_pic" />
           <div class="flex-1">
-            <p class="font-bold text-lg">Sarah Reichert</p>
+            <p id="profile-name" class="font-bold text-lg"></p>
             <small class="text-gray-500 text-base">Estate Developer</small>
 
-            <hr class="border-t border-slate-100 my-4" />
+         <!--    <hr class="border-t border-slate-100 my-4" />
             <button class="px-4 py-2 text-white text-sm rounded-lg bg-error font-medium hover:bg-red-500">Delete Account</button>
-          </div>
+          --> </div>
         </div>
 
       </div>
@@ -32,85 +32,85 @@
 
             <div class="grid grid-cols-2 gap-4">
               <div class="">
-                <label for="name" class="text-sm text-gray-700 font-medium">First name</label>
-                <input type="text" id="name" name="name" placeholder="Enter first name" class="text-sm border-2 border-gray-200 px-4 py-3 text-gray-700 rounded-lg w-full outline-none focus:border-primary">
+                <label for="first-name" class="text-sm text-gray-700 font-medium">First name</label>
+                <input type="text" id="first-name" name="first-name" placeholder="Enter first name" class="text-sm border-2 border-gray-200 px-4 py-3 text-gray-700 rounded-lg w-full outline-none focus:border-primary">
               </div>
 
               <div class="">
-                <label for="email" class="text-sm text-gray-700 font-medium">Last name</label>
-                <input type="text" id="name" name="name" placeholder="Enter last name" class="text-sm border-2 border-gray-200 px-4 py-3 text-gray-700 rounded-lg w-full outline-none focus:border-primary">
+                <label for="last-name" class="text-sm text-gray-700 font-medium">Last name</label>
+                <input type="text" id="last-name" name="last-name" placeholder="Enter last name" class="text-sm border-2 border-gray-200 px-4 py-3 text-gray-700 rounded-lg w-full outline-none focus:border-primary">
               </div>
 
               <div class="">
-                <label for="city" class="text-sm text-gray-700 font-medium">Email</label>
+                <label for="email" class="text-sm text-gray-700 font-medium">Email</label>
                 <input type="email" id="email" name="email" placeholder="Enter email" class="text-sm border-2 border-gray-200 px-4 py-3 text-gray-700 rounded-lg w-full outline-none focus:border-primary">
               </div>
 
               <div class="">
-                <label for="city" class="text-sm text-gray-700 font-medium">Phone</label>
-                <input type="email" id="email" name="email" placeholder="Enter email" class="text-sm border-2 border-gray-200 px-4 py-3 text-gray-700 rounded-lg w-full outline-none focus:border-primary">
+                <label for="phone" class="text-sm text-gray-700 font-medium">Phone</label>
+                <input type="number" id="phone" name="phone" placeholder="phone" class="text-sm border-2 border-gray-200 px-4 py-3 text-gray-700 rounded-lg w-full outline-none focus:border-primary">
               </div>
 
               <div class="">
-                <label for="city" class="text-sm text-gray-700 font-medium">Address</label>
-                <input type="email" id="email" name="email" placeholder="Enter email" class="text-sm border-2 border-gray-200 px-4 py-3 text-gray-700 rounded-lg w-full outline-none focus:border-primary">
+                <label for="address" class="text-sm text-gray-700 font-medium">Address</label>
+                <input type="text" id="address" name="address" placeholder="Enter Address" class="text-sm border-2 border-gray-200 px-4 py-3 text-gray-700 rounded-lg w-full outline-none focus:border-primary">
               </div>
 
               <div class="">
-                <label for="city" class="text-sm text-gray-700 font-medium">DOB</label>
-                <input type="email" id="email" name="email" placeholder="Enter email" class="text-sm border-2 border-gray-200 px-4 py-3 text-gray-700 rounded-lg w-full outline-none focus:border-primary">
+                <label for="date-of-birth" class="text-sm text-gray-700 font-medium">DOB</label>
+                <input type="date" id="dob" name="dob" placeholder="dob" class="text-sm border-2 border-gray-200 px-4 py-3 text-gray-700 rounded-lg w-full outline-none focus:border-primary">
               </div>
 
               <div class="">
-                <span for="male" class="text-sm text-gray-700 font-medium">Gender</span>
+                <span for="gender" class="text-sm text-gray-700 font-medium">Gender</span>
                 <div class="flex gap-4 mt-2">
                   <div class="flex items-center gap-x-2">
                     <label for="male" class="text-sm text-gray-700 font-medium">Male</label>
-                    <input type="radio" id="email" name="email" placeholder="Enter email" class="">
+                    <input type="radio" id="male" name="male" placeholder="male" class="">
                   </div>
                   <div class="flex items-center gap-x-2">
                     <label for="female" class="text-sm text-gray-700 font-medium">Female</label>
-                    <input type="radio" id="email" name="email" placeholder="Enter email" class="">
+                    <input type="radio" id="female" name="female" placeholder="female" class="">
                   </div>
                 </div>
               </div>
 
               <div class="">
-                <span for="male" class="text-sm text-gray-700 font-medium">Marital Status</span>
+                <span for="marital-status" class="text-sm text-gray-700 font-medium">Marital Status</span>
                 <div class="flex gap-4 mt-2">
                   <div class="flex items-center gap-x-2">
-                    <label for="male" class="text-sm text-gray-700 font-medium">Single</label>
-                    <input type="radio" id="email" name="email" placeholder="Enter email" class="">
+                    <label for="single" class="text-sm text-gray-700 font-medium">Single</label>
+                    <input type="radio" id="single" name="single" placeholder="single" class="">
                   </div>
                   <div class="flex items-center gap-x-2">
-                    <label for="female" class="text-sm text-gray-700 font-medium">Married</label>
-                    <input type="radio" id="email" name="email" placeholder="Enter email" class="">
+                    <label for="married" class="text-sm text-gray-700 font-medium">Married</label>
+                    <input type="radio" id="married" name="married" placeholder="married" class="">
                   </div>
                   <div class="flex items-center gap-x-2">
-                    <label for="female" class="text-sm text-gray-700 font-medium">Divorced</label>
-                    <input type="radio" id="email" name="email" placeholder="Enter email" class="">
+                    <label for="divorced" class="text-sm text-gray-700 font-medium">Divorced</label>
+                    <input type="radio" id="divorced" name="divorced" placeholder="divorced" class="">
                   </div>
                   <div class="flex items-center gap-x-2">
-                    <label for="female" class="text-sm text-gray-700 font-medium">Widowed</label>
-                    <input type="radio" id="email" name="email" placeholder="Enter email" class="">
+                    <label for="widowed" class="text-sm text-gray-700 font-medium">Widowed</label>
+                    <input type="radio" id="widowed" name="widowed" placeholder="widowed" class="">
                   </div>
                 </div>
               </div>
 
               <div class="">
-                <span for="male" class="text-sm text-gray-700 font-medium">Employment Status</span>
+                <span for="employment-status" class="text-sm text-gray-700 font-medium">Employment Status</span>
                 <div class="flex gap-4 mt-2">
                   <div class="flex items-center gap-x-2">
-                    <label for="male" class="text-sm text-gray-700 font-medium">Employed</label>
-                    <input type="radio" id="email" name="email" placeholder="Enter email" class="">
+                    <label for="employed" class="text-sm text-gray-700 font-medium">Employed</label>
+                    <input type="radio" id="employed" name="employed" placeholder="employed" class="">
                   </div>
                   <div class="flex items-center gap-x-2">
-                    <label for="female" class="text-sm text-gray-700 font-medium">Unemployed</label>
-                    <input type="radio" id="email" name="email" placeholder="Enter email" class="">
+                    <label for="unemployed" class="text-sm text-gray-700 font-medium">Unemployed</label>
+                    <input type="radio" id="unemployed" name="unemployed" placeholder="unemployed" class="">
                   </div>
                   <div class="flex items-center gap-x-2">
-                    <label for="female" class="text-sm text-gray-700 font-medium">Self employed</label>
-                    <input type="radio" id="email" name="email" placeholder="Enter email" class="">
+                    <label for="self-employed" class="text-sm text-gray-700 font-medium">Self employed</label>
+                    <input type="radio" id="self-employed" name="self-employed" placeholder="self-employed" class="">
                   </div>
                 </div>
               </div>
@@ -118,8 +118,8 @@
               <div class="">
                 <label for="" class="text-sm text-gray-700 font-medium">State</label>
                 <div class="flex items-center relative w-full">
-                  <select name="" id="" class="bg-white appearance-none text-sm border-2 border-gray-200 px-4 py-3 text-gray-700 rounded-lg w-full outline-none focus:border-primary">
-                    <option value="">Select</option>
+                  <select name="" id="state-dropdown" class="bg-white appearance-none text-sm border-2 border-gray-200 px-4 py-3 text-gray-700 rounded-lg w-full outline-none focus:border-primary">
+                  <option value="">Select</option>
                     <option value="">Land</option>
                     <option value="">Hotel</option>
                     <option value="">House</option>
@@ -132,7 +132,7 @@
               <div class="">
                 <label for="lga" class="text-sm text-gray-700 font-medium">LGA</label>
                 <div class="flex items-center relative w-full">
-                  <select name="" id="" class="bg-white appearance-none text-sm border-2 border-gray-200 px-4 py-3 text-gray-700 rounded-lg w-full outline-none focus:border-primary">
+                  <select name="" id="lga-dropdown" class="bg-white appearance-none text-sm border-2 border-gray-200 px-4 py-3 text-gray-700 rounded-lg w-full outline-none focus:border-primary">
                     <option value="">Select</option>
                     <option value="">Land</option>
                     <option value="">Hotel</option>

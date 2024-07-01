@@ -74,7 +74,44 @@ if ($geocodedLocation) {
 }  */
 
 $db = database::getInstance();
-$db->execute_sql_script('findhousequick', 'sql/notifications.sql');
+/* $sql = "SELECT 
+    u.email AS tenant_email,
+    ud.first_name,
+    ud.last_name,
+    ud.phone,
+    ud.address AS tenant_address,
+    ud.age,
+    ud.sex,
+    ud.marital_status,
+    ud.employment_status,
+    t.tenancy_start_date,
+    t.tenancy_end_date,
+    p.address AS property_address,
+    p.city,
+    p.state,
+    p.lga,
+    p.type AS property_type,
+    p.bedrooms,
+    p.bathrooms
+FROM 
+    users u
+JOIN 
+    user_details ud ON u.id = ud.user_id
+JOIN 
+    tenants t ON u.id = t.tenant_id
+JOIN 
+    property p ON t.property_id = p.id
+WHERE 
+    p.id = 17;"
+;
+if ($db->query(($sql))){
+    var_dump($db->query($sql)->results());
+}; */
+$db->execute_sql_script('findhousequick', 'sql/tenants.sql');
+$db->execute_sql_script('findhousequick', 'sql/rent_payments.sql');
+$db->execute_sql_script('findhousequick', 'sql/property_types.sql');
+$db->execute_sql_script('findhousequick', 'sql/messages.sql');
+$db->execute_sql_script('findhousequick', 'sql/inspections.sql');
 //$db->execute_sql_script('findhousequick', 'sql/vincenty_radius.sql'); 
 // Send an activation email
 /* $email = new Email('ecoraegbu@gmail.com', 'Account Activation', 'account_activation_message','noreply@findhousequick.com','noreply@findhousequick.com', true);

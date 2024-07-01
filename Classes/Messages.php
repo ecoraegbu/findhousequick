@@ -24,11 +24,49 @@ class Messages{
         return "An error occurred: " . $e->getMessage();
     }
   }
-  public function get_all_messages($user_id){
-    $messages = $this->database_connection->get('messages', array('recipient_id', '=', $user_id));
-    return $messages->results();
+  public function get_all_messages($user_id, $type, $page, $itemsPerPage){
+    switch ($type){
+      case 'received':
+        $sql = "SELECT * FROM messages WHERE recipient_id = $user_id";
+        $totalItems = $this->database_connection->query($sql)->count();
+        // Calculate the offset
+        $offset = ($page - 1) * $itemsPerPage;
+        $itemsPerPage = (int) $itemsPerPage;
+        $sql = "SELECT * FROM messages WHERE recipient_id = $user_id LIMIT $itemsPerPage OFFSET $offset";
+        
+        $result = $this->database_connection->query($sql);
+            // Calculate total pages
+        $totalPages = ceil($totalItems / $itemsPerPage);
+        if ($totalItems > 0) {
+          
+          $messages = [
+              'items' => $result->results(),
+              'currentPage' => $page,
+              'itemsPerPage' => $itemsPerPage,
+              'totalItems' => $totalItems,
+              'totalPages' => $totalPages
+          ];
+      }else{
+        $messages = [
+          'items' => [],
+          'currentPage' => $page,
+          'itemsPerPage' => $itemsPerPage,
+          'totalItems' => 0,
+          'totalPages' => 0
+      ];
+      }
+        break;
+      case 'sent':
+        $messages = $this->database_connection->get('messages', array('sender_id', '=', $user_id))->results();
+      default:
+      //$messages = $this->database_connection->get('messages', array('recipient_id', '=', $user_id));
+    }
 
+    return $messages;
   }
+
+
+
   public function sent_messages($user_id){
     // Retrieve all outbound message from the database.
     $sql = "SELECT * FROM messages WHERE sender_id = ?";

@@ -5,13 +5,13 @@
       <table class="w-full min-w-table">
         <thead>
           <tr class="border-t border-b font-bold text-gray-500 text-xs uppercase">
-            <td class="py-4 w-1/12">#</td>
-            <td class="py-4">Subject</td>
-            <td class="py-4">Received From</td>
-            <td class="py-4">Time</td>
-            <td class="py-4">Status</td>
-            <td class="py-4">Actions</td>
-          </tr>
+              <td class="py-4 w-1/12">#</td>
+              <td class="py-4">Subject</td>
+              <td class="py-4">Received From</td>
+              <td class="py-4">Time</td>
+              <td class="py-4">Status</td>
+              <td class="py-4">Actions</td>
+            </tr>
         </thead>
         <tbody id="messages-table">
           <!-- Table rows will be populated here -->

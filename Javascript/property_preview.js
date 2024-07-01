@@ -41,15 +41,15 @@ document.addEventListener('DOMContentLoaded', function() {
 
 
 
-
-  function book_inspection(propertyId){
-    
+  function book_inspection(propertyId, user_id){
     const url = new URL('book_inspection.php', window.location.href);
-    url.searchParams.append(propertyId);
+    url.searchParams.append('property', propertyId);
+    url.searchParams.append('user_id', user_id);
     window.location.href = url.toString();
   }
+  
   function rent_now(propertyId){
-    terms_and_condition.php
+    //terms_and_condition.php
   }
   function fetchPropertyDetails(propertyId) {
     const url = new URL('findhousequick/engine/property_server.php', window.location.origin);

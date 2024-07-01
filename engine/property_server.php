@@ -34,7 +34,7 @@ switch ($type) {
 
     case 'nearby':
         if ($userLatitude && $userLongitude && $maxDistance) {
-            $nearbyProperties = $property->get_nearby_properties($userLatitude, $userLongitude, $maxDistance, $offset, $pageSize);
+            $nearbyProperties = $property->get_nearby_properties($filters, $offset, $pageSize);
             $response = $nearbyProperties;
         } else {
             $response = ['error' => 'Missing required parameters for nearby properties'];

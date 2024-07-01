@@ -6,9 +6,9 @@
         <thead>
           <tr class="border-t border-b font-bold text-gray-500 text-xs uppercase">
             <td class="py-4 w-1/12">#</td>
-            <td class="py-4">Subject</td>
-            <td class="py-4">Received From</td>
-            <td class="py-4">Time</td>
+            <td class="py-4">Image</td>
+            <td class="py-4">Description</td>
+            <td class="py-4">Address</td>
             <td class="py-4">Status</td>
             <td class="py-4">Actions</td>
           </tr>

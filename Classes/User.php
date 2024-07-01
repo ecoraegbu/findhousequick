@@ -51,7 +51,8 @@ class User {
         }
     }
     public function get_user_details($userid) {
-        $user_details = $this->database_connection->get('user_details', array('user_id', '=', $userid));
+        $sql = "SELECT * FROM users JOIN user_details on users.id = user_details.user_id WHERE users.id = $userid;";
+        $user_details = $this->database_connection->query($sql);
         if ($user_details->count()) {
             $user_details = $user_details->first();
             return $user_details;

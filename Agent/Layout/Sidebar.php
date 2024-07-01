@@ -16,7 +16,7 @@
       </li>
       <li class="px-10 relative hover:before:absolute hover:before:left-0 hover:before:bg-primary hover:before:bg-opacity-25 hover:before:h-full hover:before:w-1 hover:before:rounded-full">
         <div class="group" x-data="{open: false}">
-          <a href="#" @click="open=!open" class="group transition-all py-3 px-5 flex items-center gap-4 group-hover:bg-primary group-hover:bg-opacity-25 rounded-lg">
+          <a @click="open=!open" class="group transition-all py-3 px-5 flex items-center gap-4 group-hover:bg-primary group-hover:bg-opacity-25 rounded-lg">
             <i icon-name="component" class="h-5 w-5"></i> <span>Account</span>
           </a>
 
@@ -59,18 +59,18 @@
       <!-- </li> -->
       <li class="px-10 relative hover:before:absolute hover:before:left-0 hover:before:bg-primary hover:before:bg-opacity-25 hover:before:h-full hover:before:w-1 hover:before:rounded-full">
         <div class="group" x-data="{open: false}">
-          <a href="#" @click="open=!open" class="group transition-all py-3 px-5 flex items-center gap-4 group-hover:bg-primary group-hover:bg-opacity-25 rounded-lg">
+          <a  @click="open=!open" class="group transition-all py-3 px-5 flex items-center gap-4 group-hover:bg-primary group-hover:bg-opacity-25 rounded-lg">
           <i icon-name="mails" class="h-5 w-5"></i> <span>Messages</span>
           </a>
 
           <ul class="bg-primary bg-opacity-25 rounded-md" x-cloak x-show="open" @click.outside="open=false">
             <li class="">
-              <a href="#messages" class="flex items-center gap-4 py-2.5 px-5 text-sm text-gray-300 hover:text-white">
+              <a href="#inbox" class="flex items-center gap-4 py-2.5 px-5 text-sm text-gray-300 hover:text-white">
                 <i icon-name="chevron-right" class="h-4 w-4"></i> <span>Inbox</span>
               </a>
             </li>
             <li class="">
-              <a href="#messages" class="flex items-center gap-4 py-2.5 px-5 text-sm text-gray-300 hover:text-white">
+              <a href="#sent" class="flex items-center gap-4 py-2.5 px-5 text-sm text-gray-300 hover:text-white">
                 <i icon-name="chevron-right" class="h-4 w-4"></i> <span>Sent</span>
               </a>
             </li>
@@ -111,5 +111,8 @@
       </li>
 
     </ul>
+  </div>
+  <div class="absolute bottom-0 left-0 px-10 py-6 w-full text-white p-4">
+    &copy; FindHouseQuick
   </div>
 </aside>

@@ -363,4 +363,38 @@ class Property {
             return [];
         }
     }
+
+    public function get_similar($propertyId, $offset, $pageSize) {
+        $property = $this->get_property_details($propertyId);
+
+        $conditions = [
+            "type = ?",
+            "city = ?",
+            "state = ?",
+            "lga = ?",
+            "bedrooms = ?",
+            "bathrooms = ?",
+            "id <> ?"
+        ];
+
+        $params = [
+            'type' => $property->type,
+            'city' => $property->city,
+            'state' => $property->state,
+            'lga' => $property->lga,
+            'bedrooms' => $property->bedrooms,
+            'bathrooms' => $property->bathrooms,
+            'id' => $propertyId
+        ];
+
+        $conditions = implode(" AND ", $conditions);
+        //can implement closest property by odering by distance in the sql.
+        $sql = "SELECT * FROM property WHERE $conditions LIMIT $offset, $pageSize";
+
+        $stmt = $this->connection->query($sql, $params);
+        if (!$stmt->error()) {
+            return $stmt->results();
+        } else {
+
+        }}
 }

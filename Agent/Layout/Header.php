@@ -26,7 +26,7 @@
       <div class="flex items-center gap-3 text-sm">
         <img src="https://images.unsplash.com/photo-1599566150163-29194dcaad36?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8YXZhdGFyfGVufDB8fDB8fHww" class="object-cover h-8 w-8 bg-primary rounded-full" alt="">
         <div class="cursor-pointer" @click="open = !open">
-          <p class="font-semibold -mb-1">Sarah Reichert</p>
+          <p id="profile-n" class="font-semibold -mb-1">Sarah Reichert</p>
           <small class="text-gray-400">Estate developer</small>
         </div>
 

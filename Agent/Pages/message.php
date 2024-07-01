@@ -14,7 +14,7 @@
     <div class="flex flex-wrap flex-col md:flex-row gap-4">
       <div class="flex-1">
         <div class="mt-4">
-          <h2 class="text-sm text-gray-400 font-bold mb-2">Please be respectful in your messager</h2>
+          <h2 class="text-sm text-gray-400 font-bold mb-2">Please be respectful in your messaging</h2>
 
           <div class="grid gap-4">
             <div class="">
