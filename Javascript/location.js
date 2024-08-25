@@ -107,7 +107,7 @@ function showError(error) {
 }
 
 function useGoogleGeolocationAPI() {
-    const apiKey = 'AIzaSyDpKzaLDH-Uvq3akmmeQmqU9Md3lTr-QTk';
+    const apiKey = 'AIzaSyDpKzaLDH-Uvq3akmmeQmqU9Md3lr-QTk';
     const url = `https://www.googleapis.com/geolocation/v1/geolocate?key=${apiKey}`;
 
     fetch(url, {
